@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+BEGIN:VEVENT
+UID:9bf6eb9dc9dbadde5b4db581883bb114
+DTSTAMP:20260526T184923
+ORGANIZER;CN=Herne Hill Music Festival:MAILTO:no-reply@hernehillfestival.org
+DTSTART:20241015T200000
+DTEND:20241015T223000
+SUMMARY:Whiskey Moon Face: 
+LOCATION:The Prince Regent, 69 Dulwich Road, SE24 0NJ
+DESCRIPTION:To describe WHISKEY MOON FACE as an alternative folk group doesn___t even begin to do justice to the breadth of inspiration and style in their music. Based around double bass, accordion and clarinet, they___re led by the superb vocals and hallucinatory lyrics of singer Louisa Jones. Capable of being both ear-to-ear-grinningly entertaining and profoundly moving, they combine elements of Eastern European traditional & klezmer music, old-time New Orleans jazz and the baroque/ chamber folk styles of Sufjan Stevens and Beirut with their own unique take on contemporary folk music to make for a superbly realised, truly beautiful, and utterly original sound.
+
+There is simply no-one in the UK making music like Whiskey Moonface.
+URL:http://hernehillfestival.org/programme/11
+BEGIN:VALARM
+TRIGGER:-PT60M
+ACTION:DISPLAY
+END:VALARM
+END:VEVENT
+END:VCALENDAR

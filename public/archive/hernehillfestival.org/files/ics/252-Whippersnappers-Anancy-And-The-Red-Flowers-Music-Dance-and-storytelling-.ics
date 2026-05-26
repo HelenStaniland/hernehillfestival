@@ -1,0 +1,26 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+BEGIN:VEVENT
+UID:a582e6e7ec3d091d8d6980aad1c816b0
+DTSTAMP:20260526T184647
+ORGANIZER;CN=Herne Hill Music Festival:MAILTO:no-reply@hernehillfestival.org
+DTSTART:20251011T110000
+DTEND:20251011T123000
+SUMMARY:Whippersnappers: Anancy And The Red Flowers - Music, Dance and storytelling.
+LOCATION:Brockwell Lido, Dulwich Road, SE24 0PA
+DESCRIPTION:Anancy And The Red Flowers.
+
+Whippersnappers storytelling with songs and drumming for all the family.
+
+Suitable for young children and their siblings
+
+__14 Adults/Free for children (max 2 free children per adult order)
+
+Door time 10:50am (revised)
+URL:http://hernehillfestival.org/programme/252
+BEGIN:VALARM
+TRIGGER:-PT60M
+ACTION:DISPLAY
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,32 @@
+div.boxes {display:flex; padding:15px; flex-wrap:wrap; justify-content:center}
+
+div.boxes > * {margin:15px; border:1px solid rgba(0,0,0,0.1);}
+div.boxes > * {background-color:white; flex-basis:260px; height:260px; box-shadow:rgba(0,0,0,0.3) 0px 10px 20px }
+
+div.boxes > *:not([style*='background-']) {background-image:linear-gradient(to bottom left, rgba(0,0,0,0.1), transparent, transparent);}
+
+div.boxes > * {padding:10px; color:black}
+
+
+div.boxes > a { transition-property: transform; transition-duration: 1s; }
+	div.boxes > a:hover { transform: scale(1.06,1.06); }
+
+
+div.boxes > * :first-child {text-transform:uppercase; font-size:14px; font-weight:bold;}
+
+div.boxes > * {display:flex; flex-direction:column; justify-content:space-between}
+div.boxes > * .image {flex-grow:1; background-color:black; margin-top:15px; margin-bottom:15px; }
+
+
+div.boxes * .image {background-position:center center; background-repeat:no-repeat; background-size:contain;}
+div.boxes > a .image[style*='background-image'] {background-color:transparent;}
+
+
+div.boxes > * .image + *:last-child {font-size:12px; text-transform:uppercase; color:rgba(0,0,0,0.7)}
+
+
+
+@media screen and (max-width:520px)
+{
+	div.boxes > * {width:auto; flex-grow:1}
+}

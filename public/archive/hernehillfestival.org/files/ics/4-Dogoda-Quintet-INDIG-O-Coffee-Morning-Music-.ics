@@ -1,0 +1,23 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+BEGIN:VEVENT
+UID:efe254deb5b8055cf1cc093bcd40678d
+DTSTAMP:20260526T184840
+ORGANIZER;CN=Herne Hill Music Festival:MAILTO:no-reply@hernehillfestival.org
+DTSTART:20241012T110000
+DTEND:20241012T123000
+SUMMARY:Dogoda Quintet & INDIG+O - Coffee Morning Music: 
+LOCATION:Herne Hill United Church, Red Post Hill, SE24 9PW
+DESCRIPTION:Featuring Indig-O and The Dogoda Wind Quintet.
+
+Good music, refreshments, and fund-raising for
+the Norwood and Brixton Food Bank
+
+Free entry. Voluntary donation for Food Bank
+URL:http://hernehillfestival.org/programme/4
+BEGIN:VALARM
+TRIGGER:-PT60M
+ACTION:DISPLAY
+END:VALARM
+END:VEVENT
+END:VCALENDAR

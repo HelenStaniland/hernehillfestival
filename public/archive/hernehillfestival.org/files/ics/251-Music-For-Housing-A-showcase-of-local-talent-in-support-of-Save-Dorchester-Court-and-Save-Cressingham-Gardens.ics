@@ -1,0 +1,43 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+BEGIN:VEVENT
+UID:52b0d91e31cb8a1b5723a559e76da9ed
+DTSTAMP:20260526T184816
+ORGANIZER;CN=Herne Hill Music Festival:MAILTO:no-reply@hernehillfestival.org
+DTSTART:20251018T200000
+DTEND:20251018T230000
+SUMMARY:Music For Housing: A showcase of local talent in support of Save Dorchester Court and Save Cressingham Gardens
+LOCATION:Off The Cuff, 301 Railton Road, SE24 0JW
+DESCRIPTION:In collaboration with The Cost Of Living Crisis Concerts, a community group
+
+MUSIC FOR HOUSING
+
+Special Community Event for Save Dorchester Court & Save Cressingham Gardens, Herne Hill 
+Concert and awareness raiser in association with Cost of Living Crisis Concerts
+
+In the Stage Arch:
+
+THE NEW IMMIGRANTS (Camberwell) with PETER GORDENO (Depeche Mode)
+LOU TERRY BAND (Herne Hill)
+RADARBASE (Peckham)
+WINSTON SKERRITT (Camberwell)
+
+In the Lounge Arch: 
+
+DC/CG short films, and a ___Busker Station___ hosted by Jason U (solo or duo acts). Currently planned lineup includes Paul Betts (All the Presidents Men), Patrick Lyons (MeU), Simon Crafter (Orchestra Fantasma) and Jason Umbrellabird 
+
+DC Tenants Union/CG Residents installations
+Coop Housing Information in association with Olan Homes and Radical Roots
+
+Rupert Ingham of DC and Andy Plant of CG, Comp__res
+
+Other Special Guests and Speakers TBA
+
+Doors open 30 mins before the performance
+URL:http://hernehillfestival.org/programme/251
+BEGIN:VALARM
+TRIGGER:-PT60M
+ACTION:DISPLAY
+END:VALARM
+END:VEVENT
+END:VCALENDAR

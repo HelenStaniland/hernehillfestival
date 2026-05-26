@@ -1,0 +1,52 @@
+div.MainSponsor {background-color:white; max-width:870px; margin-left:auto; margin-right:auto; box-shadow:rgba(0,0,0,0.3) 0px 10px 20px}
+	div.MainSponsor .heading { background-color: #517AC8; padding:15px; }
+
+	div.MainSponsor .heading {display:flex; justify-content:space-around; flex-wrap:wrap;}
+	div.MainSponsor .heading > * {margin:10px;}
+		div.MainSponsor .heading .title { }
+
+
+	div.MainSponsor .main-sponsor {color:white; font-size:25px; font-weight:bold; margin-bottom:40px; display:block;}
+
+@media screen and (min-width:415px) {
+	div.MainSponsor .main-sponsor + * { margin-left: 50px; }
+		div.MainSponsor .heading > :first-child:not(:last-child) {margin-right:30px;}
+
+		div.MainSponsor .heading div + img {max-height:50vh; max-width:50%}
+}
+
+div.MainSponsor .heading > img {flex-shrink:0;}
+
+
+
+div.MainSponsor .text { padding: 20px; }
+div.MainSponsor .text p {margin-top:20px;}
+div.MainSponsor .text img {width:320px; margin-left:auto; margin-right:auto;}
+
+
+@media screen and (min-width:500px) {
+
+	div.MainSponsor .text { display: flex; align-items: center; }
+
+		div.MainSponsor .text img { width:163px; flex-basis: 163px; flex-shrink: 0; flex-grow: 0; height: auto; margin-left:0px; margin-right:0px; }
+
+		div.MainSponsor .text p { margin: 10px; }
+			div.MainSponsor .text p:not(:first-child) { margin-left: 30px; }
+}
+
+
+div.boxes > [style*='background-color'] {color:white;}
+
+
+#Sponsors div.boxes > a {min-height:260px; height:auto;}
+
+#Sponsors div.boxes p {text-transform:none; font-size:14px;}
+#Sponsors div.boxes [style*='background-color'] p { color: rgba(255,255,255,0.7); }
+
+
+#Sponsors div.boxes {max-width:900px; margin-left:auto; margin-right:auto;}
+
+
+#Sponsors h2 { margin-top: 40px; text-align: center; color:rgba(0,0,0,0.5) }
+
+#Sponsors > h2:first-of-type {margin-top:70px;}

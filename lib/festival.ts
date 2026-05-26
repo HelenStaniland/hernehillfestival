@@ -27,6 +27,11 @@ export const navLinks = [
   { href: "/sponsors", label: "Sponsors" },
 ] as const;
 
+export const pastFestivalsLink = {
+  href: "/archive/hernehillfestival.org/home.html",
+  label: "Past festivals",
+} as const;
+
 export const homeFeatures = [
   {
     href: "/news",

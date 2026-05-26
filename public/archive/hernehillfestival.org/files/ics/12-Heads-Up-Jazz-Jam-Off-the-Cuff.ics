@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+BEGIN:VEVENT
+UID:bb0be2447434e3489ceb57188460bc34
+DTSTAMP:20260526T184920
+ORGANIZER;CN=Herne Hill Music Festival:MAILTO:no-reply@hernehillfestival.org
+DTSTART:20241014T200000
+DTEND:20241014T230000
+SUMMARY:Heads Up Jazz Jam: Off the Cuff
+LOCATION:Off The Cuff, 301 Railton Road, SE24 0JW
+DESCRIPTION:This popular weekly Jazz Jam is once more included in the Festival lineup
+URL:http://hernehillfestival.org/programme/12
+BEGIN:VALARM
+TRIGGER:-PT60M
+ACTION:DISPLAY
+END:VALARM
+END:VEVENT
+END:VCALENDAR

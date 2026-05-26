@@ -1,0 +1,8 @@
+div#PhotoGallery.boxes > * {height:auto; flex-basis:auto;}
+
+@media screen and (min-width:683px)
+{
+	div#PhotoGallery.boxes > * {max-width:30vw}
+}
+
+div#PhotoGallery img {width:auto; margin-left:auto; margin-right:auto;}

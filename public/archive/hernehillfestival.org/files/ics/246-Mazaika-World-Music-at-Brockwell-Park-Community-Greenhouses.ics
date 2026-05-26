@@ -1,0 +1,31 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+BEGIN:VEVENT
+UID:ac85c915fba176a34f286f12c33f2d94
+DTSTAMP:20260526T184818
+ORGANIZER;CN=Herne Hill Music Festival:MAILTO:no-reply@hernehillfestival.org
+DTSTART:20251019T150000
+DTEND:20251019T170000
+SUMMARY:Mazaika: World Music at Brockwell Park Community Greenhouses
+LOCATION:Community Greenhouses, Brockwell Park
+DESCRIPTION:Doors open 30mins before the performance. Free seating.
+
+A magical and exhilarating performance full of Gypsy fire and Tango passion, operatic melodrama and classical virtuosity plus some hot club and hillbilly mayhem!
+
+'An evening of magic and passion' The Independent
+___A lovely tenor voice______by the end of the evening the Purcell Room had become a Tavern___ Independent
+'Wistful accordion' The Guardian
+'Hugely entertaining... the duo frequently brought the house down''**** The Scotsman [Edinburgh Festival]
+___Sensational violinist Sarah Harrison snd accordionist Igor Outkine___ Stage ****
+___Exelent musicians___ Corr Blimey review  ****
+___The musicians who tear with beautiful fury into Vivaldi___s Four Seasons___ The Times ****
+___You are the best entertainer I___ve ever seen, and I saw Elvis!!!___ Audience member at Bethnal Green Working Men___s Club, drunk of course!___.
+
+Expect a unique, humorous and uplifting take on East European Folk  and Gypsy, Classical, Opera, Tango, Jazz, Latin, Italian, French Chanson, Gypsy Swing, Pop evergreens plus evocative original material inspired by all of the above.
+URL:http://hernehillfestival.org/programme/246
+BEGIN:VALARM
+TRIGGER:-PT60M
+ACTION:DISPLAY
+END:VALARM
+END:VEVENT
+END:VCALENDAR

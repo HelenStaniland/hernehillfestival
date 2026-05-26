@@ -53,7 +53,7 @@ export const events: Event[] = [
     id: "2026-10-12-evening",
     date: "2026-10-12",
     artistId: "artist-tba",
-    venueId: "off-the-cuff",
+    venueId: "the-cuff-london",
     time: "19   :30",
   },
   {
@@ -74,7 +74,7 @@ export const events: Event[] = [
     id: "2026-10-17-evening",
     date: "2026-10-17",
     artistId: "artist-tba",
-    venueId: "off-the-cuff",
+    venueId: "the-cuff-london",
     time: "19:30",
   },
   {

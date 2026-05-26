@@ -1,0 +1,25 @@
+
+
+#content { display:flex; flex-direction: row; }
+#content > * { flex-grow: 1; flex-basis: 0px; }
+
+.CustomPage { min-height: 50vh; }
+
+.SlideShow {position:absolute; top:0px; left:0px; right:0px; bottom:0px;}
+
+
+.PageTexts {margin-left:20px; margin-right:20px;}
+
+
+
+@media screen and (max-width:600px) {
+	#content { flex-direction: column; }
+
+		#content > .CustomPage { flex-basis: 300px; min-height: 0px; }
+		#content .slide { background-position: center top !important; }
+
+	.PageTexts { margin-bottom: 20px; }
+
+	.CustomPage { order: 1; }
+	.CustomPage { order: 2; }
+}

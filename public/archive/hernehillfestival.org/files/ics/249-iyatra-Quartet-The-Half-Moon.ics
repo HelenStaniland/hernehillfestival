@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+BEGIN:VEVENT
+UID:f00ffb764a1d44772c166bf64ea828a1
+DTSTAMP:20260526T184747
+ORGANIZER;CN=Herne Hill Music Festival:MAILTO:no-reply@hernehillfestival.org
+DTSTART:20251016T200000
+DTEND:20251016T223000
+SUMMARY:iyatra Quartet: The Half Moon
+LOCATION:The Half Moon, 10 Half Moon Lane, SE24 9HU
+DESCRIPTION:Doors open 30mins before the performance. Free Seating.
+URL:http://hernehillfestival.org/programme/249
+BEGIN:VALARM
+TRIGGER:-PT60M
+ACTION:DISPLAY
+END:VALARM
+END:VEVENT
+END:VCALENDAR

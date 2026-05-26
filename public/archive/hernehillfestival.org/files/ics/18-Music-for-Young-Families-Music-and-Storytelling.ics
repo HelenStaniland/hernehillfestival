@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+BEGIN:VEVENT
+UID:f727f06448d82541c88cc702dd1ee922
+DTSTAMP:20260526T184934
+ORGANIZER;CN=Herne Hill Music Festival:MAILTO:no-reply@hernehillfestival.org
+DTSTART:20241019T110000
+DTEND:20241019T123000
+SUMMARY:Music for Young Families: Music and Storytelling
+LOCATION:Brockwell Lido, Dulwich Road, SE24 0PA
+DESCRIPTION:__12 Adults/Free for children
+URL:http://hernehillfestival.org/programme/18
+BEGIN:VALARM
+TRIGGER:-PT60M
+ACTION:DISPLAY
+END:VALARM
+END:VEVENT
+END:VCALENDAR

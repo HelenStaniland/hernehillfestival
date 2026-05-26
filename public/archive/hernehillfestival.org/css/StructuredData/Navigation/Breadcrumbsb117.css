@@ -1,0 +1,46 @@
+@import '../../Vars.css';
+
+.breadcrumbs-sharing {
+	background-color: var(--site-background-color);
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	padding-left: var(--side-padding);
+	padding-right: var(--side-padding);
+	padding-top: 15px;
+	gap: 10px;
+	align-items: center;
+}
+
+	.breadcrumbs-sharing > :last-child:not(:first-child) {
+		flex-grow: 1;
+		justify-content: flex-end;
+	}
+
+div[itemtype$='BreadcrumbList'] {
+	font-size: 12px;
+}
+
+	div[itemtype$='BreadcrumbList'] > * {
+		display: inline-block;
+	}
+
+	div[itemtype$='BreadcrumbList'] a {
+		color: rgba(0,0,0,0.4)
+	}
+
+		div[itemtype$='BreadcrumbList'] a:hover {
+			color: #517AC8;
+		}
+
+	div[itemtype$='BreadcrumbList'] > *::after {
+		content: ' > '
+	}
+
+	div[itemtype$='BreadcrumbList'][data-count="1"] {
+		display: none;
+	}
+
+	div[itemtype$='BreadcrumbList'] > [title='Details']:nth-child(3) {
+		display: none;
+	}

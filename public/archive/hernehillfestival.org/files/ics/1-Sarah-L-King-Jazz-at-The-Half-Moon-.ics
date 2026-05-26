@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+BEGIN:VEVENT
+UID:b6791ae03a1ab12bc0f2fc10b26a3752
+DTSTAMP:20260526T184834
+ORGANIZER;CN=Herne Hill Music Festival:MAILTO:no-reply@hernehillfestival.org
+DTSTART:20241011T200000
+DTEND:20241011T223000
+SUMMARY:Sarah L King - Jazz at The Half Moon: 
+LOCATION:The Half Moon, 10 Half Moon Lane, SE24 9HU
+DESCRIPTION:A big welcome this year to Sarah L. King from the Herne Hill Music Festival, with George Bone on piano, Ben Crane on bass and Matt Skeaping on drums.
+URL:http://hernehillfestival.org/programme/1
+BEGIN:VALARM
+TRIGGER:-PT60M
+ACTION:DISPLAY
+END:VALARM
+END:VEVENT
+END:VCALENDAR

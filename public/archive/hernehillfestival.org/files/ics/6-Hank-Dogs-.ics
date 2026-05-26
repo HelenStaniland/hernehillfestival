@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+BEGIN:VEVENT
+UID:a311516303194d3ac74bb1f9d53f1daa
+DTSTAMP:20260526T184951
+ORGANIZER;CN=Herne Hill Music Festival:MAILTO:no-reply@hernehillfestival.org
+DTSTART:20241020T150000
+DTEND:20241020T170000
+SUMMARY:Hank Dogs: 
+LOCATION:Community Greenhouses, Brockwell Park
+DESCRIPTION:___Buried British treasure, they deserve to be discovered___ The Independent 
+
+This year the wonderful Hank Dogs will be playing in the Greenhouse, check out their first two Joe Boyd produced albums Bareback & Half Smile.
+URL:http://hernehillfestival.org/programme/6
+BEGIN:VALARM
+TRIGGER:-PT60M
+ACTION:DISPLAY
+END:VALARM
+END:VEVENT
+END:VCALENDAR

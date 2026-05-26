@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+BEGIN:VEVENT
+UID:2263e07479770f127de4bd2744a2f5e1
+DTSTAMP:20260526T184709
+ORGANIZER;CN=Herne Hill Music Festival:MAILTO:no-reply@hernehillfestival.org
+DTSTART:20251011T200000
+DTEND:20251011T223000
+SUMMARY:Matt Kent & Olivia Lester: Matt Kent & Olivia Lester at The Prince Regent
+LOCATION:The Prince Regent, 69 Dulwich Road, SE24 0NJ
+DESCRIPTION:Doors open 30mins before the performance. Tickets can be bought at the Door. Free Seating. This venue has no wheelchair access.
+URL:http://hernehillfestival.org/programme/237
+BEGIN:VALARM
+TRIGGER:-PT60M
+ACTION:DISPLAY
+END:VALARM
+END:VEVENT
+END:VCALENDAR

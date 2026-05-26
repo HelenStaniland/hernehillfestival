@@ -1,0 +1,49 @@
+@import 'css/Vars.css';
+
+html {
+	-webkit-text-size-adjust: 100%;
+}
+
+body, input, textarea {
+	font-family: Arial,sans-serif
+}
+
+img {
+	max-width: 100%;
+	display: block;
+}
+
+
+div, input, button, select, a, img, form, h1, h2, h3, h4, h5, h6, progress, label, header, textarea, nav, footer, article, p {
+	box-sizing: border-box
+}
+
+
+h1, h2, h3, h4, h5, h6, p, form {
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+div#wrapper {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	right: 0px;
+	min-height: 100%;
+	height: auto;
+}
+
+div#wrapper {
+	background-color: var(--site-background-color);
+	border-top: 6px solid #517AC8;
+}
+
+a {
+	text-decoration: none;
+	transition-duration: 0.7s;
+	transition-property: color,background-color;
+}
+
+.CustomPage {
+	position: relative;
+}

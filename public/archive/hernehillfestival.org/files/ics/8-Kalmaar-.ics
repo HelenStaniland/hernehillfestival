@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+BEGIN:VEVENT
+UID:92bb7db18a18260e8b589b88b97e808a
+DTSTAMP:20260526T184928
+ORGANIZER;CN=Herne Hill Music Festival:MAILTO:no-reply@hernehillfestival.org
+DTSTART:20241016T200000
+DTEND:20241016T223000
+SUMMARY:Kalmaar: 
+LOCATION:The Half Moon, 10 Half Moon Lane, SE24 9HU
+DESCRIPTION:Innovative musical duo and special guests performing a blend of neo-soul, jazz, and more.
+URL:http://hernehillfestival.org/programme/8
+BEGIN:VALARM
+TRIGGER:-PT60M
+ACTION:DISPLAY
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,29 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+BEGIN:VEVENT
+UID:6a27343da188d0a263cafeea19abb514
+DTSTAMP:20260526T184744
+ORGANIZER;CN=Herne Hill Music Festival:MAILTO:no-reply@hernehillfestival.org
+DTSTART:20251015T190000
+DTEND:20251015T220000
+SUMMARY:Dance Class & Fabulous Honeys Swing Band: Free Dance Class at 19:00 followed by band
+LOCATION:St Paul's Hall, Herne Hill, SE24 9LY
+DESCRIPTION:Doors open 30mins before the performance. Tickets available on the Door.
+
+Swingland Dance Class
+
+Followed by:
+
+The Fabulous Honeys- South London___s sweetest big band
+
+7.00 - 7.45pm - Swing/Jive Dance class led by professional dance teacher Martin
+8.15 - 10.0pm - Band perform
+
+Children Free
+URL:http://hernehillfestival.org/programme/243
+BEGIN:VALARM
+TRIGGER:-PT60M
+ACTION:DISPLAY
+END:VALARM
+END:VEVENT
+END:VCALENDAR

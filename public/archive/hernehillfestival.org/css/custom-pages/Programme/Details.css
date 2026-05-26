@@ -1,0 +1,463 @@
+#content h1 {
+	text-align: center;
+	font-size: calc(10px + 3.3vw);
+	margin-left: 20px;
+	margin-right: 20px;
+	text-shadow: 6px 5px 5px rgba(0,0,0,0.2);
+}
+
+
+[itemtype$='MusicEvent'] [itemprop='alternateName'] {
+	text-align: center;
+	font-size: calc(8px + 1.5vw);
+	color: rgba(0,0,0,0.6);
+	margin-top: 5px;
+}
+
+[itemtype$='MusicEvent'] .titles {
+	margin-bottom: 35px;
+}
+
+	[itemtype$='MusicEvent'] .titles h1 {
+		margin: 0px !important;
+		text-align: left !important;
+	}
+
+
+[itemtype$='MusicEvent'] a[target="_blank"] {
+	font-size: 12px;
+}
+
+
+/* Box Shadows */
+[itemtype$='MusicEvent'] [itemprop='location'] {
+	box-shadow: rgba(0,0,0,0.3) 0px 10px 20px;
+}
+
+
+[itemtype$='MusicEvent'] .main {
+	display: flex;
+}
+
+	[itemtype$='MusicEvent'] .main .details {
+		margin-right: 20px;
+	}
+
+
+@media screen and (max-width:683px) {
+	[itemtype$='MusicEvent'] .main {
+		flex-wrap: wrap;
+	}
+
+		[itemtype$='MusicEvent'] .main .details {
+			margin-left: 20px;
+			margin-bottom: 20px;
+		}
+
+	[itemtype$='MusicEvent'] [itemprop='location'] {
+		flex-grow: 1;
+		order: 2;
+	}
+}
+
+
+[itemtype$='MusicEvent'] [itemprop='location'] {
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-bottom: 20px;
+	padding-bottom: 10px;
+	border: 1px solid rgba(0,0,0,0.6);
+	background-color: white;
+	border-radius: 3px;
+	align-self: flex-start;
+	flex-shrink: 0;
+}
+
+
+	[itemtype$='MusicEvent'] [itemprop='location'] .BackgroundImage {
+		height: 150px;
+		background-position: center center;
+		background-size: cover
+	}
+
+	[itemtype$='MusicEvent'] [itemprop='location'] > *:not(.BackgroundImage):not([itemprop='image']) {
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+
+	[itemtype$='MusicEvent'] [itemprop='location'] > [itemprop='name'] {
+		margin-top: 10px;
+	}
+
+
+	[itemtype$='MusicEvent'] [itemprop='location'] div[itemprop='image'] img {
+		max-width: 250px;
+		min-width: 100%;
+	}
+
+@media screen and (max-width:683px) {
+
+	[itemtype$='MusicEvent'] [itemprop='location'] div[itemprop='image'] img {
+		max-width: 100%;
+		min-width: initial;
+	}
+
+	[itemtype$='MusicEvent'] [itemprop='location'] {
+		flex-shrink: 1
+	}
+}
+
+[itemtype$='MusicEvent'] [itemprop='location'] [itemprop="address"] {
+	margin-top: 15px;
+	min-height: 20px;
+	position: relative;
+}
+
+	[itemtype$='MusicEvent'] [itemprop='location'] [itemprop="address"]::before {
+		position: absolute;
+		left: 0px;
+		top: 0px;
+		width: 20px;
+		height: 20px;
+		content: '';
+		display: block;
+		opacity: 0.6;
+		background-image: url('../../../images/address_icon.png');
+		background-repeat: no-repeat;
+		background-size: auto 20px;
+	}
+
+	[itemtype$='MusicEvent'] [itemprop='location'] [itemprop="address"] * {
+		font-size: 13px;
+		font-weight: normal;
+		display: block;
+		color: rgba(0,0,0,0.6)
+	}
+
+	[itemtype$='MusicEvent'] [itemprop='location'] [itemprop="address"] > * {
+		margin-left: 20px;
+	}
+
+	[itemtype$='MusicEvent'] [itemprop='location'] [itemprop="address"] > a { /*margin-left: 0px;*/
+		margin-top: 15px;
+		color: #517AC8;
+		text-decoration: underline;
+	}
+
+[itemtype$='MusicEvent'] [itemtype$='Country'] {
+	display: none !important;
+}
+
+
+/* Right */
+[itemtype$='MusicEvent'] .main .right {
+	flex-grow: 1;
+	display: flex;
+}
+
+	[itemtype$='MusicEvent'] .main .right .details {
+		flex-grow: 1
+	}
+
+
+[itemtype$='MusicEvent'] .main .right {
+	flex-direction: column
+}
+
+	[itemtype$='MusicEvent'] .main .right .quicklinks {
+		order: 1;
+		margin-bottom: 20px;
+	}
+
+	[itemtype$='MusicEvent'] .main .right .details {
+		order: 2
+	}
+
+@media screen and (min-width:1000px) {
+	[itemtype$='MusicEvent'] .main .right {
+		flex-direction: row
+	}
+
+		[itemtype$='MusicEvent'] .main .right .quicklinks {
+			order: initial
+		}
+
+		[itemtype$='MusicEvent'] .main .right .details {
+			order: initial
+		}
+}
+
+
+
+/* Quicklinks */
+[itemtype$='MusicEvent'] .main .quicklinks {
+	margin-left: 35px;
+	flex-basis: auto;
+	flex-shrink: 0;
+}
+
+	[itemtype$='MusicEvent'] .main .quicklinks > * {
+		padding-top: 10px;
+		padding-bottom: 10px;
+		padding-right: 25px;
+		padding-left: 5px;
+		font-weight: bold;
+		position: relative;
+		font-size: 18px;
+		display: block;
+	}
+
+		[itemtype$='MusicEvent'] .main .quicklinks > *::before {
+			content: '';
+			background-size: 100% 100%;
+			position: absolute;
+			right: 100%;
+			width: 23px;
+			top: 0px;
+			bottom: 0px;
+		}
+
+		[itemtype$='MusicEvent'] .main .quicklinks > *:not(:first-child) {
+			margin-top: 20px;
+		}
+
+	[itemtype$='MusicEvent'] .main .quicklinks .start-time {
+		background-color: #517AC8;
+		color: white;
+	}
+
+		[itemtype$='MusicEvent'] .main .quicklinks .start-time::before {
+			background-image: url('../../../images/svg/arrow_left_blue.svg');
+		}
+
+	[itemtype$='MusicEvent'] .main .quicklinks .tickets {
+		background-color: white;
+		color: #517AC8;
+		transition-duration: 0.5s;
+		transition-property: padding-top,padding-bottom;
+	}
+
+		[itemtype$='MusicEvent'] .main .quicklinks .tickets::before {
+			background-image: url('../../../images/svg/arrow_left_white.svg');
+			transition-duration: 0.5s;
+			transition-property: width;
+		}
+
+	[itemtype$='MusicEvent'] .main .quicklinks a.tickets:hover {
+		padding-top: 13px;
+		padding-bottom: 13px
+	}
+
+		[itemtype$='MusicEvent'] .main .quicklinks a.tickets:hover::before {
+			width: 30px;
+		}
+
+
+
+
+[itemtype$='MusicEvent'] .times {
+	font-size: 13px;
+	line-height: 1.5
+}
+
+	[itemtype$='MusicEvent'] .times::before {
+		content: "\01F4C5";
+		display: inline
+	}
+
+	[itemtype$='MusicEvent'] .times time {
+		display: inline;
+	}
+
+		[itemtype$='MusicEvent'] .times time span {
+			display: none;
+		}
+
+		[itemtype$='MusicEvent'] .times time[itemprop='startDate'][data-jSMY]::before {
+			content: attr(data-jSMY)' - ';
+		}
+
+		[itemtype$='MusicEvent'] .times time[itemprop='startDate'][data-gia]::after {
+			content: attr(data-gia)' - ';
+		}
+
+		[itemtype$='MusicEvent'] .times time[itemprop='endDate'][data-gia]::before {
+			content: attr(data-gia);
+		}
+
+a[href*='ics'] {
+	display: none;
+}
+
+[itemtype$='MusicEvent'] .times a[href*='ics'] {
+	display: inline-block;
+	color: black
+}
+
+	[itemtype$='MusicEvent'] .times a[href*='ics']:hover {
+		color: #517AC8
+	}
+
+
+[itemtype$='MusicEvent'] .offers {
+	margin-top: 15px
+}
+
+	[itemtype$='MusicEvent'] .offers::before {
+		content: "\01F3AB"
+	}
+
+	[itemtype$='MusicEvent'] .offers * {
+		display: inline;
+		font-size: 13px;
+		font-weight: normal;
+	}
+
+	[itemtype$='MusicEvent'] .offers [itemprop='offers'] {
+		display: inline-block;
+	}
+
+	[itemtype$='MusicEvent'] .offers img {
+		height: 20px;
+	}
+
+	[itemtype$='MusicEvent'] .offers > * + *::before {
+		content: ' / '
+	}
+
+	[itemtype$='MusicEvent'] .offers [itemprop='priceCurrency'] {
+		display: none;
+	}
+
+	[itemtype$='MusicEvent'] .offers [itemprop='price']::before {
+		content: '\00A3';
+	}
+
+	[itemtype$='MusicEvent'] .offers [itemprop='price'][data-number='0.00'] {
+		font-size: 0px;
+	}
+
+		[itemtype$='MusicEvent'] .offers [itemprop='price'][data-number='0.00']::after {
+			content: 'FREE';
+			font-size: 13px;
+		}
+
+[itemtype$='MusicEvent'] p[itemprop='description'] {
+	margin-bottom: 30px;
+}
+
+
+
+/* Play Day Signup */
+.main ~ div.VerifyableForm {
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+div.VerifyableForm {
+	display: block;
+	margin-top: 20px;
+}
+
+[itemtype$='MusicEvent'] div.VerifyableForm > form:first-child::before {
+	content: 'Sign up for this Play Day!';
+	display: block;
+	font-weight: bold;
+	margin-bottom: 15px;
+	font-size: calc(11px + 1vw)
+}
+
+[itemtype$='MusicEvent'] div.VerifyableForm > form:first-child[action*='paypal']::before {
+	content: 'Thank you for signing up! Please pay now.';
+}
+
+label[for*='mobile_phone']::after {
+	content: ' (no spaces)';
+	text-transform: none;
+}
+
+
+
+
+/* Performers */
+div.rowitems > div {
+	padding: 20px;
+	margin-top: 20px;
+}
+
+	div.rowitems > div > [itemprop='image'] {
+		margin-bottom: 10px;
+	}
+
+	div.rowitems > div img {
+		max-height: 90vh;
+	}
+
+
+
+/*div.rowitems > div { flex-wrap: wrap }*/
+
+
+@media screen and (min-width:415px) {
+
+	/*div.rowitems > div {flex-wrap:nowrap}*/
+
+	div.rowitems > div {
+		display: flex;
+	}
+
+		div.rowitems > div > [itemprop='image'] {
+			margin-right: 20px;
+			flex-basis: auto;
+			max-width: 30vw;
+			margin-bottom: 0px;
+		}
+
+		div.rowitems > div > div.text {
+			flex-basis: 0px;
+			flex-grow: 2;
+		}
+
+		div.rowitems > div img {
+			max-height: 30vw;
+		}
+}
+
+
+/* Hidden Image */
+[itemtype$='MusicEvent'] > [itemprop='image'] {
+	display: none;
+}
+
+
+
+/* Contributors */
+div.contributors.boxes > * {
+	height: auto;
+	flex-grow: 1;
+}
+
+div.contributors.boxes img {
+	max-height: 20vh;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+div.contributors.boxes [itemprop='image'] {
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+
+@media screen and (min-width:700px) {
+	div.contributors.boxes [itemprop='image'] {
+		max-width: 30vw;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	div.contributors.boxes > * {
+		flex-basis: 295px;
+		flex-grow: 0
+	}
+}

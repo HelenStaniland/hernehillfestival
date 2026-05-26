@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+BEGIN:VEVENT
+UID:91a05620662276690fc45d5bffa5a6a0
+DTSTAMP:20260526T184715
+ORGANIZER;CN=Herne Hill Music Festival:MAILTO:no-reply@hernehillfestival.org
+DTSTART:20251012T180000
+DTEND:20251012T190000
+SUMMARY:Festival Choral Evensong Sunday: Prof No__l Tredinnick & St Paul's Festival Choir
+LOCATION:St Paul's Church, Herne Hill, SE24 9LY
+DESCRIPTION:Doors open 30mins before the performance.
+URL:http://hernehillfestival.org/programme/247
+BEGIN:VALARM
+TRIGGER:-PT60M
+ACTION:DISPLAY
+END:VALARM
+END:VEVENT
+END:VCALENDAR

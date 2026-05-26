@@ -1,0 +1,27 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+BEGIN:VEVENT
+UID:8d2029beb1f0512b29183596219117c8
+DTSTAMP:20260526T184749
+ORGANIZER;CN=Herne Hill Music Festival:MAILTO:no-reply@hernehillfestival.org
+DTSTART:20251017T200000
+DTEND:20251017T230000
+SUMMARY:Creature & Machine Presents...: Living Room Acoustic Session: Jazz-Folk Upstairs at The Prince Regent
+LOCATION:The Prince Regent, 69 Dulwich Road, SE24 0NJ
+DESCRIPTION:Doors open 30mins before the performance. Free seating. This venue has no wheelchair access.
+
+Living Room Acoustic Session: Jazz-Folk Upstairs at the Prince Regent
+
+8:00pm Mica Bernard
+8:20pm Jid__ Kuti
+8:40pm Jas Ratchford
+INTERVAL
+9:15pm Evie Asio
+9:45pm Creature & Machine
+URL:http://hernehillfestival.org/programme/244
+BEGIN:VALARM
+TRIGGER:-PT60M
+ACTION:DISPLAY
+END:VALARM
+END:VEVENT
+END:VCALENDAR

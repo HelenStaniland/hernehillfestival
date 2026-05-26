@@ -1,0 +1,24 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+BEGIN:VEVENT
+UID:2c56f0255c4c5a4302d5727ff11324cb
+DTSTAMP:20260526T184642
+ORGANIZER;CN=Herne Hill Music Festival:MAILTO:no-reply@hernehillfestival.org
+DTSTART:20251011T110000
+DTEND:20251011T124500
+SUMMARY:Forest Hill Chamber Collective & Nigel Grice Jazz Collective: Herne Hill United Church Coffee Morning
+LOCATION:Herne Hill United Church, Red Post Hill, SE24 9PW
+DESCRIPTION:Doors open 30mins before the performance.
+
+Good music, refreshments, and fund-raising for the Lambeth and Croydon Food Bank. 
+
+With The Forest Hill Chamber Collective who will play a classical set followed by Nigel Grice Jazz Collective 
+
+Free entry. Voluntary donation for the Food Bank. Everyone Welcome!
+URL:http://hernehillfestival.org/programme/238
+BEGIN:VALARM
+TRIGGER:-PT60M
+ACTION:DISPLAY
+END:VALARM
+END:VEVENT
+END:VCALENDAR

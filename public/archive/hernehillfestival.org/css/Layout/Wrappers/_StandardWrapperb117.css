@@ -1,0 +1,7 @@
+@import '../../Vars.css';
+@import '../../StructuredData/Navigation/Breadcrumbs.css';
+
+#content {
+	padding-top: 20px;
+	background-image: linear-gradient(to bottom, var(--site-background-color), white);
+}

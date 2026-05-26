@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+BEGIN:VEVENT
+UID:68b2649aedf7b468fdc352b799a99faf
+DTSTAMP:20260526T184902
+ORGANIZER;CN=Herne Hill Music Festival:MAILTO:no-reply@hernehillfestival.org
+DTSTART:20241012T200000
+DTEND:20241012T223000
+SUMMARY:Creature & Machine: Electro-pop & spoken-word
+LOCATION:The Prince Regent, 69 Dulwich Road, SE24 0NJ
+DESCRIPTION:Electro-pop & spoken-word artist Creature & Machine curates an evening of acoustic and spoken word performances from emerging artists around the theme of ___Quiet Power___. Expect haunting vocals, luscious harmonies and intimate poetry from an eclectic line-up of up-and-coming music and spoken word artists.
+URL:http://hernehillfestival.org/programme/16
+BEGIN:VALARM
+TRIGGER:-PT60M
+ACTION:DISPLAY
+END:VALARM
+END:VEVENT
+END:VCALENDAR

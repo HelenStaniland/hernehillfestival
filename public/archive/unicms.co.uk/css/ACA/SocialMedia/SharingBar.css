@@ -1,0 +1,11 @@
+aside.SharingBar a { display: block; text-decoration: underline; }
+
+
+aside.SharingBar {display:flex; height:40px; align-items:stretch}
+
+	aside.SharingBar > * {width:30px; margin:5px}
+
+	 aside.SharingBar a > * { max-height: 100%; width: auto; }
+
+
+	 aside.SharingBar svg {max-width:100%; object-fit:contain; max-height:30px;}

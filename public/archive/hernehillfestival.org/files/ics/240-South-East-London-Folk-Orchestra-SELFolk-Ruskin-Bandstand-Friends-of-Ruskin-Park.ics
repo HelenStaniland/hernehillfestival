@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+BEGIN:VEVENT
+UID:a0756612415b9d2caccb03d655426264
+DTSTAMP:20260526T184712
+ORGANIZER;CN=Herne Hill Music Festival:MAILTO:no-reply@hernehillfestival.org
+DTSTART:20251012T150000
+DTEND:20251012T170000
+SUMMARY:South East London Folk Orchestra (SELFolk): Ruskin Bandstand/Friends of Ruskin Park
+LOCATION:Ruskin Park Bandstand, Ruskin Park, SE5 9BD
+DESCRIPTION:South East London Folk Orchestra (SELFolk) play the Ruskin Bandstand
+
+Supported by Friends of Ruskin Park
+URL:http://hernehillfestival.org/programme/240
+BEGIN:VALARM
+TRIGGER:-PT60M
+ACTION:DISPLAY
+END:VALARM
+END:VEVENT
+END:VCALENDAR

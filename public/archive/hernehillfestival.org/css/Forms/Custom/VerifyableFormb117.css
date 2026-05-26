@@ -1,0 +1,15 @@
+div.VerifyableForm {background-color:white;}
+
+div.VerifyableForm div.success,
+div.VerifyableForm div.error {padding:20px; white-space:pre-wrap;}
+
+div.VerifyableForm form div.success,
+div.VerifyableForm form div.error {padding:10px;}
+
+div.VerifyableForm .success {color:green; }
+div.VerifyableForm .error, div.VerifyableForm [class$='Exception'] {color:red; font-weight:bold;}
+
+div.VerifyableForm .error + .error {padding-top:0px;}
+
+div.VerifyableForm form [data-field] span {display:flex;}
+div.VerifyableForm form [data-field] span > * {flex-grow:1;}

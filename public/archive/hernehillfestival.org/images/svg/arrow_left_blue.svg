@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="50" height="100" viewbox="0 0 50 100" preserveAspectRatio="none">
+
+	<style type='text/css'>
+		<![CDATA[
+		path {fill:#517AC8; stroke:none; stroke-width:0;}
+	]]>
+	</style>
+
+	<defs>
+		<g>
+			<path id='taper' d="M50,0 L 0 50 L 50 100 Z" />
+		</g>
+	</defs>
+
+	<use xlink:href='#taper' x="0" y="0" />
+</svg>

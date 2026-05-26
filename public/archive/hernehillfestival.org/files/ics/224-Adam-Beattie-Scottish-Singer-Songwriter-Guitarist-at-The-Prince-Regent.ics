@@ -1,0 +1,33 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+BEGIN:VEVENT
+UID:aaca6cb68a47dedef0f80d4a4a906402
+DTSTAMP:20260526T184729
+ORGANIZER;CN=Herne Hill Music Festival:MAILTO:no-reply@hernehillfestival.org
+DTSTART:20251014T200000
+DTEND:20251014T223000
+SUMMARY:Adam Beattie: Scottish Singer-Songwriter Guitarist at The Prince Regent
+LOCATION:The Prince Regent, 69 Dulwich Road, SE24 0NJ
+DESCRIPTION:Doors open 30mins before the performance. Free seating. This venue has no wheelchair access.
+
+
+REVIEWS
+
+&quot;Uplifting Reveries Of Love&quot; (MOJO Magazine)
+
+&quot;***** Master of powerful narratives&quot; (RnR Magazine)
+
+&quot;Incredibly Beautiful&quot; (Mary Anne Hobbs, BBC Radio 6 Music)
+
+&quot;Call me for a jam when you get to London&quot; (Bert Jansch)
+
+&quot;(Beattie) furrows the pockets of Rabbie Burns and William Burroughs with equal reward; soft acoustics twist between the blooming countryside of the Scottish Highlands and the motoring city life of the London underground. Seedy gypsy swing riffs tap on the windows of gorgeous pastoral lullabies with grubby fingers, and songs of the city breathe with a homely wistfulness.&quot; (Loud And Quiet Magazine)
+
+&quot;Adam uses beautiful, intricate, finger-picked guitar and a distinctive voice steeped in smoke and honey to create ___stirring folk balladry___&quot; (Line Of Best Fit).
+URL:http://hernehillfestival.org/programme/224
+BEGIN:VALARM
+TRIGGER:-PT60M
+ACTION:DISPLAY
+END:VALARM
+END:VEVENT
+END:VCALENDAR

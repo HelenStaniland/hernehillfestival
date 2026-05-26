@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+BEGIN:VEVENT
+UID:7de7da212971b70e381c9e7b19625f33
+DTSTAMP:20260526T184620
+ORGANIZER;CN=Herne Hill Music Festival:MAILTO:no-reply@hernehillfestival.org
+DTSTART:20250914T120000
+DTEND:20250914T210000
+SUMMARY:Brockfest: Announcing BROCKFEST, 12-9pm 14th September, Brockwell Hall Stable Yard, Brockwell Park, London SE24
+LOCATION:Brockwell Hall, Brockwell Park
+DESCRIPTION:Brockfest
+We're pleased to partner with Junior Open Mic's Brockfest in the new Brockwell Hall SE24 on 14th September, 12-9pm. It's our &quot;Pre-Fest&quot; event! Come visit our table and talk about HHMF! Some really great acts will be on show for Brockfest, some have played our Fest in the recent past as JOM has been a final Sunday fixture. These include Kotoa, Sam Wilkinson Where's Rei, Undici, Shut Up Sally and many, many more! JOM is delighted to have Suena Bien Sound System on board who are providing an wonderful speaker array plus Emmy award-winning sound engineer Dalton Napier. And it won't just be music, there's also going to be Indoor Young Entrepeneurs' Market plus a licensed bar, pizza & hot dog stalls! Fingers crossed for some splendid sunshine! FREE ENTRY
+URL:http://hernehillfestival.org/programme/254
+BEGIN:VALARM
+TRIGGER:-PT60M
+ACTION:DISPLAY
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,22 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+BEGIN:VEVENT
+UID:26cfd8f47792a4331646a03c7b16c7f3
+DTSTAMP:20260526T184723
+ORGANIZER;CN=Herne Hill Music Festival:MAILTO:no-reply@hernehillfestival.org
+DTSTART:20251013T200000
+DTEND:20251013T230000
+SUMMARY:Heads Up Jazz Jam: Off The Cuff
+LOCATION:Off The Cuff, 301 Railton Road, SE24 0JW
+DESCRIPTION:Heads Up Jazz Jam at Off the Cuff
+
+FREE!
+
+Come and play, or just relax and enjoy a great varied evening! The regular Jazz Jam is a short set by resident band 'Head___s Up', followed by a jam hosted by Roger Humbles. Jazzers of all levels welcome! Be there early to grab a seat.
+URL:http://hernehillfestival.org/programme/242
+BEGIN:VALARM
+TRIGGER:-PT60M
+ACTION:DISPLAY
+END:VALARM
+END:VEVENT
+END:VCALENDAR

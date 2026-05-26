@@ -1,0 +1,22 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+BEGIN:VEVENT
+UID:a841f7e359badb7393ff03bf53f6fd80
+DTSTAMP:20260526T184933
+ORGANIZER;CN=Herne Hill Music Festival:MAILTO:no-reply@hernehillfestival.org
+DTSTART:20241018T193000
+DTEND:20241018T213000
+SUMMARY:SELFolk - Ceilidh: 
+LOCATION:St Paul's Hall, Herne Hill, SE24 9LY
+DESCRIPTION:South East London Folk Orchestra
+
+Back by popular demand, an evening of folk music and dancing for all ages with SELFolk
+
+Children FREE!
+URL:http://hernehillfestival.org/programme/3
+BEGIN:VALARM
+TRIGGER:-PT60M
+ACTION:DISPLAY
+END:VALARM
+END:VEVENT
+END:VCALENDAR

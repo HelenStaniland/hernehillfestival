@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+BEGIN:VEVENT
+UID:b76f937dc6dbe79889df312ddaf5ff8f
+DTSTAMP:20260526T184917
+ORGANIZER;CN=Herne Hill Music Festival:MAILTO:no-reply@hernehillfestival.org
+DTSTART:20241013T180000
+DTEND:20241013T203000
+SUMMARY:Come and Sing Evensong: Rehearsal 6pm Service 7.30pm
+LOCATION:St Faith's Church, 62 Red Post Hill, SE24 9JQ
+DESCRIPTION:Everybody is welcome to come along to a rehearsal, singing with choir members and directed by Bethany Reeves before the service - the more the merrier!  Check the Festival website or St Faith's Facebook page for details https://www.facebook.com/StFaithDulwich
+URL:http://hernehillfestival.org/programme/7
+BEGIN:VALARM
+TRIGGER:-PT60M
+ACTION:DISPLAY
+END:VALARM
+END:VEVENT
+END:VCALENDAR

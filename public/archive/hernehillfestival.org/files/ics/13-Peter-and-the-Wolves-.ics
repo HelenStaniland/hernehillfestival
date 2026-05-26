@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+BEGIN:VEVENT
+UID:3afd953807b82ca040f9738a353132c9
+DTSTAMP:20260526T184943
+ORGANIZER;CN=Herne Hill Music Festival:MAILTO:no-reply@hernehillfestival.org
+DTSTART:20241019T163000
+DTEND:20241019T173000
+SUMMARY:Peter and the Wolves: 
+LOCATION:St Faith's Church, 62 Red Post Hill, SE24 9JQ
+DESCRIPTION:- with a pack of wolves, and more, performed by Year 5 of Judith Kerr School, backed by Dulwich Symphony Orchestra.
+
+Sponsored by the Herne Hill Society
+URL:http://hernehillfestival.org/programme/13
+BEGIN:VALARM
+TRIGGER:-PT60M
+ACTION:DISPLAY
+END:VALARM
+END:VEVENT
+END:VCALENDAR

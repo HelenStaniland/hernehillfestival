@@ -1,0 +1,22 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+BEGIN:VEVENT
+UID:eed7183fa40dc829681f85419bccce15
+DTSTAMP:20260526T184714
+ORGANIZER;CN=Herne Hill Music Festival:MAILTO:no-reply@hernehillfestival.org
+DTSTART:20251012T153000
+DTEND:20251012T173000
+SUMMARY:Misty & Rufus Miller: Brockwell Park Community Greenhouses
+LOCATION:Community Greenhouses, Brockwell Park
+DESCRIPTION:Doors open 30mins before the performance.
+
+Misty and Rufus Miller are two South London musicians who also happen to be brother and sister. They perform as solo artists independently as well as performing with other artists. Both have a a long career of wowing audiences with their soulful voices and on this special concert they will come together to play songs from their back catalogue as well as some of their favourite music.
+ 
+They are very excited to play Herne Hill Music Festival and look forward to showcasing the music that they don't always get to do, making this a very special event. Expect to hear folk, country, Americana, raw confessional music. A moving show and a wholesome time as brother and sister share the stage together.
+URL:http://hernehillfestival.org/programme/199
+BEGIN:VALARM
+TRIGGER:-PT60M
+ACTION:DISPLAY
+END:VALARM
+END:VEVENT
+END:VCALENDAR

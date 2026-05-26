@@ -1,0 +1,34 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+BEGIN:VEVENT
+UID:a111228502639a9b7e4e1718fd86d6d2
+DTSTAMP:20260526T184720
+ORGANIZER;CN=Herne Hill Music Festival:MAILTO:no-reply@hernehillfestival.org
+DTSTART:20251013T190000
+DTEND:20251013T203000
+SUMMARY:Quantum Gong Bath Meditation with Alicia M__ Ri Atu M__: Whippersnappers Space at Brockwell Lido
+LOCATION:Brockwell Lido, Dulwich Road, SE24 0PA
+DESCRIPTION:We hope you can join us for what promises to be an amazing, first-ever Festival soundbath. It might even change your life!
+
+With powerful quantum gong baths, mystical guided meditation, light language and more, Alicia Ma Ri Atu Ma's HUSH HOUR is all about making time for YOU. A musician, sonic artist, nature lover and creative all-rounder, Alicia___s live Festival session will be as much an intimate performance as a transformative, immersive soundscape with healing instruments, quantum technology, percussion, and voice.
+
+Just a few HUSH HOUR testimonials:
+
+&quot;The gongs are strong Alicia and what you do has a depth to it that becomes inexplicable!&quot;
+
+&quot;You have an amazing voice, both spoken and singing&quot;
+
+&quot;I've been to MANY gong baths. This was the best l've ever experienced&quot;
+
+&quot;The combination of relaxation with meditation and being taken on a healing journey (of the imagination) is very powerful, and I felt safe and nurtured.&quot;
+
+&quot;:) ___Thank you so much! That felt really SACRED___.&quot;
+
+___The first time I came, I was high for 2 days!___
+URL:http://hernehillfestival.org/programme/248
+BEGIN:VALARM
+TRIGGER:-PT60M
+ACTION:DISPLAY
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,28 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+BEGIN:VEVENT
+UID:682fe5e3058044eea2b94399f1e93d1e
+DTSTAMP:20260526T184821
+ORGANIZER;CN=Herne Hill Music Festival:MAILTO:no-reply@hernehillfestival.org
+DTSTART:20251019T190000
+DTEND:20251019T203000
+SUMMARY:The Southwark Sinfonietta: Classical Music at St. Faith's Church
+LOCATION:St Faith's Church, 62 Red Post Hill, SE24 9JQ
+DESCRIPTION:Doors open 30mins before the performance. Free Seating.
+
+Once again the popular Southwark Sinfonietta will close the Festival with a performance of classical music.
+
+Vaughan Williams - The Wasps
+ 
+Faure - Pelleas et Melisande
+ 
+Imogen Holst - On Westhall Hill
+ 
+Mendelssohn - Symphony No.3 'Scottish'
+URL:http://hernehillfestival.org/programme/245
+BEGIN:VALARM
+TRIGGER:-PT60M
+ACTION:DISPLAY
+END:VALARM
+END:VEVENT
+END:VCALENDAR

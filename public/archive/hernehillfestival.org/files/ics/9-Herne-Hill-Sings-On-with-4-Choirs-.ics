@@ -1,0 +1,23 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+BEGIN:VEVENT
+UID:70b312b1a9bcfcc1f90f8f37aa264754
+DTSTAMP:20260526T184856
+ORGANIZER;CN=Herne Hill Music Festival:MAILTO:no-reply@hernehillfestival.org
+DTSTART:20241012T140000
+DTEND:20241012T160000
+SUMMARY:Herne Hill Sings On with 4 Choirs: 
+LOCATION:St Faith's Church, 62 Red Post Hill, SE24 9JQ
+DESCRIPTION:4 x Choirs performing:
+
+Clapham Community Choir
+Note-Orious
+Nunhead Community Choir
+West Norwood Community Choir
+URL:http://hernehillfestival.org/programme/9
+BEGIN:VALARM
+TRIGGER:-PT60M
+ACTION:DISPLAY
+END:VALARM
+END:VEVENT
+END:VCALENDAR

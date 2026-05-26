@@ -1,0 +1,24 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+BEGIN:VEVENT
+UID:4784a6739ecf5ecdfdd90bb2a97c9a63
+DTSTAMP:20260526T184756
+ORGANIZER;CN=Herne Hill Music Festival:MAILTO:no-reply@hernehillfestival.org
+DTSTART:20251018T160000
+DTEND:20251018T170000
+SUMMARY:The Last of the Boggarts: A Junior School Musical - Judith Kerr School
+LOCATION:St Faith's Church, 62 Red Post Hill, SE24 9JQ
+DESCRIPTION:If you live in an older house, you may have a boggart hole by your front doorstep. In the old days, coal was delivered down the hole. The boggarts who lived in your cellar tidied it up. This tale of the boggarts, their gradual disappearance as people switched to electricity, the children who knew about the boggarts, the adults who didn___t, the electricity men laying cables, and the coal men (and horses)) losing their jobs, will be performed by Year 5 from Judith Kerr Primary School. The tale ends with the last of the boggarts leaving Herne Hill to wander the world in search of other work.
+
+Adults __10
+Children FREE
+
+Tickets now on sale to the general public
+https://wegottickets.com/event/665250
+URL:http://hernehillfestival.org/programme/253
+BEGIN:VALARM
+TRIGGER:-PT60M
+ACTION:DISPLAY
+END:VALARM
+END:VEVENT
+END:VCALENDAR

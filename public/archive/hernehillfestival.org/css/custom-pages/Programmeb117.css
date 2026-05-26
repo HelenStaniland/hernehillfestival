@@ -1,0 +1,39 @@
+@import '../Modules/ProgrammeFilter.css';
+
+.boxes > a .details sup {
+	text-transform: none
+}
+
+.boxes > a .details {
+	display: flex;
+	align-items: flex-end;
+	justify-content: space-between
+}
+
+	.boxes > a .details .left {
+		flex-basis: auto;
+		white-space: nowrap;
+	}
+
+	.boxes > a .details .right {
+		margin-left: 30px;
+		text-align: right;
+	}
+
+div.boxes > a.hidden {
+	display: none;
+}
+
+/* Past Events */
+#Programme div.boxes > .past {
+	opacity: 0.5;
+	background-color: #EEE;
+}
+
+	#Programme div.boxes > .past * {
+		color: grey
+	}
+
+	#Programme div.boxes > .past:hover {
+		transform: none;
+	}

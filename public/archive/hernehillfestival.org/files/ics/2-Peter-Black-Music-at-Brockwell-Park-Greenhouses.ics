@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+BEGIN:VEVENT
+UID:08343db88bb9966cc09c148d452368b4
+DTSTAMP:20260526T184913
+ORGANIZER;CN=Herne Hill Music Festival:MAILTO:no-reply@hernehillfestival.org
+DTSTART:20241013T153000
+DTEND:20241013T173000
+SUMMARY:Peter Black: Music at Brockwell Park Greenhouses
+LOCATION:Community Greenhouses, Brockwell Park
+DESCRIPTION:Peter Black is a classically-trained guitarist who appeared on Sky TVs Guitar star who was recognised for his stylistic versatility and ability to captivate audiences. We are excited to announce that he is giving a concert as part of the Herne Hill Music Festival. The concert will feature__substantial classical works by Francisco T__rrega, Jorge Morel, Barrios-Mangor__ and Villa-Lobos, as well Classical crossover arrangements of Popular music from the UK and Latin America. There will also be a taste of other musical styles like Calypso, Flamenco and Blues, along with some of Peter's own compositions.
+
+Do not miss this chance to be mesmerised by Peter's performance that he describes__as an International Tour of Guitar Music.__
+URL:http://hernehillfestival.org/programme/2
+BEGIN:VALARM
+TRIGGER:-PT60M
+ACTION:DISPLAY
+END:VALARM
+END:VEVENT
+END:VCALENDAR

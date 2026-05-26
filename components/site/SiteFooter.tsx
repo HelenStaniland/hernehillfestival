@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { festival, navLinks } from "@/lib/festival";
+import { festival, navLinks, pastFestivalsLink } from "@/lib/festival";
 
 export function SiteFooter() {
   return (
@@ -20,6 +20,14 @@ export function SiteFooter() {
                 </Link>
               </li>
             ))}
+            <li>
+              <a
+                href={pastFestivalsLink.href}
+                className="text-sm font-semibold text-white/90 hover:text-festival-mint"
+              >
+                {pastFestivalsLink.label}
+              </a>
+            </li>
           </ul>
         </nav>
       </div>

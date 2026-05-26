@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+BEGIN:VEVENT
+UID:54e1dafcb0a873d01cd7be3317cb46fa
+DTSTAMP:20260526T184932
+ORGANIZER;CN=Herne Hill Music Festival:MAILTO:no-reply@hernehillfestival.org
+DTSTART:20241017T200000
+DTEND:20241017T223000
+SUMMARY:Grinch Mountain Bluegrass Band: Grinch Mountain Bluegrass
+LOCATION:The Half Moon, 10 Half Moon Lane, SE24 9HU
+DESCRIPTION:Traditional music from America's Deep South comes to South London
+URL:http://hernehillfestival.org/programme/17
+BEGIN:VALARM
+TRIGGER:-PT60M
+ACTION:DISPLAY
+END:VALARM
+END:VEVENT
+END:VCALENDAR

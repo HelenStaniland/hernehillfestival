@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+BEGIN:VEVENT
+UID:509a2d810cb65e5e3df41d4c080d9723
+DTSTAMP:20260526T184911
+ORGANIZER;CN=Herne Hill Music Festival:MAILTO:no-reply@hernehillfestival.org
+DTSTART:20241013T150000
+DTEND:20241013T170000
+SUMMARY:The Big Swing Band: 
+LOCATION:Ruskin Park Bandstand, Ruskin Park, SE5 9BD
+DESCRIPTION:More music organised by The Friends of Ruskin Park featuring:
+The Big Swing Band
+URL:http://hernehillfestival.org/programme/14
+BEGIN:VALARM
+TRIGGER:-PT60M
+ACTION:DISPLAY
+END:VALARM
+END:VEVENT
+END:VCALENDAR

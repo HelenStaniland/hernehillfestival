@@ -1,0 +1,24 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+BEGIN:VEVENT
+UID:0302752d06b1984e4835d501847cba0e
+DTSTAMP:20260526T184633
+ORGANIZER;CN=Herne Hill Music Festival:MAILTO:no-reply@hernehillfestival.org
+DTSTART:20251010T200000
+DTEND:20251010T220000
+SUMMARY:Nel Begley & Friends: Jazz at The Half Moon Herne Hill
+LOCATION:The Half Moon, 10 Half Moon Lane, SE24 9HU
+DESCRIPTION:Doors open 30mins before the performance.
+
+Opening the Herne Hill Music Festival is South London-based jazz singer and songwriter Nel Begley. A graduate of both Leeds Conservatoire and Guildhall School of Music & Drama, Nel blends classic jazz influences with a contemporary edge, delivering soulful melodies and heartfelt lyrics that captivate audiences.
+
+ Honey Boulton (one of London___s premier guitarists and banjoists), the remarkably versatile Harry Brunt on saxophone and on Bass, her partner in both music and life, Luke Fowler.
+
+Nel will be launching her brand-new album ___Small Flame___. Available now on Bandcamp, signed copies of the CD will also be available on the night.
+URL:http://hernehillfestival.org/programme/236
+BEGIN:VALARM
+TRIGGER:-PT60M
+ACTION:DISPLAY
+END:VALARM
+END:VEVENT
+END:VCALENDAR

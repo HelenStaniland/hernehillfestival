@@ -57,11 +57,10 @@ export const venues: Venue[] = [
     lng: -0.0964647,
   },
   {
-    id: "off-the-cuff",
-    name: "Off the Cuff",
-    address:
-      "Off The Cuff, Arch 645, 301-303 Railton Road, Herne Hill, London SE24 0JN",
-    website: "https://offthecuffbar.co.uk/",
+    id: "the-cuff-london",
+    name: "The Cuff London",
+    address: "Arch 648, 301-303 Railton Road, Herne Hill, London SE24 0JN",
+    website: "https://www.thecufflondon.co.uk/",
     lat: 51.4529782,
     lng: -0.102118,
   },
