@@ -1,24 +1,35 @@
 @import "tailwindcss";
 
 :root {
-  --festival-bg: #4a6f9a;
-  --festival-surface: #567da8;
-  --festival-card: #6b90b8;
-  --festival-cream: #f8f4ec;
-  --festival-accent: #e8c56a;
-  --festival-copper: #a8c4e8;
+  --festival-warm: #eef4fc;
+  --festival-warm-deep: #dce8f5;
+  --festival-ink: #141c2e;
+  --festival-muted: #3d4f6e;
+  --festival-coral: #e85d4c;
+  --festival-purple: #5b4b9a;
+  --festival-gold: #e8b84a;
+  --festival-teal: #2a8f8a;
+  --festival-blue-deep: #1a3560;
+  --festival-blue: #2d5088;
+  --festival-blue-mid: #4169a8;
+  --festival-blue-light: #5a82b8;
 }
 
 @theme inline {
-  --color-festival-bg: var(--festival-bg);
-  --color-festival-surface: var(--festival-surface);
-  --color-festival-card: var(--festival-card);
-  --color-festival-cream: var(--festival-cream);
-  --color-festival-accent: var(--festival-accent);
-  --color-festival-copper: var(--festival-copper);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-  --font-display: var(--font-playfair);
+  --color-festival-warm: var(--festival-warm);
+  --color-festival-warm-deep: var(--festival-warm-deep);
+  --color-festival-ink: var(--festival-ink);
+  --color-festival-muted: var(--festival-muted);
+  --color-festival-coral: var(--festival-coral);
+  --color-festival-purple: var(--festival-purple);
+  --color-festival-gold: var(--festival-gold);
+  --color-festival-teal: var(--festival-teal);
+  --color-festival-blue-deep: var(--festival-blue-deep);
+  --color-festival-blue: var(--festival-blue);
+  --color-festival-blue-mid: var(--festival-blue-mid);
+  --color-festival-blue-light: var(--festival-blue-light);
+  --font-sans: var(--font-dm-sans);
+  --font-display: var(--font-bebas);
 }
 
 html {
@@ -26,7 +37,37 @@ html {
 }
 
 body {
-  background: var(--festival-bg);
-  color: var(--festival-cream);
-  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  background: var(--festival-blue-deep);
+  color: white;
+  font-family: var(--font-dm-sans), system-ui, sans-serif;
+}
+
+@layer components {
+  .festival-main {
+    @apply flex-1 bg-gradient-to-b from-festival-blue-deep via-festival-purple to-festival-blue-light text-white;
+  }
+
+  .festival-card {
+    @apply rounded-xl border border-white/25 bg-white/10 backdrop-blur-sm;
+  }
+
+  .festival-page-title {
+    @apply font-display text-4xl tracking-wide text-white sm:text-5xl;
+  }
+
+  .festival-section-title {
+    @apply font-display border-b-2 border-festival-gold/60 pb-2 text-2xl tracking-wide text-white;
+  }
+
+  .festival-label {
+    @apply text-sm font-bold uppercase tracking-wide text-festival-gold;
+  }
+
+  .festival-body {
+    @apply text-white/80;
+  }
+
+  .festival-link {
+    @apply font-semibold text-festival-gold hover:underline;
+  }
 }

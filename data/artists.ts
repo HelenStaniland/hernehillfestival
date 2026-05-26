@@ -1,10 +1,17 @@
 export const artists = [
   {
+    id: "artist-tba",
+    name: "Artist TBA",
+    genre: "TBA",
+    bio: "Artist TBA",
+  },
+  {
     id: "marama-cafe-band",
     name: "Marama Cafe Band",
     genre: "Latin Jazz",
     image: "artists/Marama-Cafe-Band.jpg",
     bio: "Marama Cafe Band is a jazz band that plays Latin jazz music. They are from London, England.",
+    website: "https://www.petewatsonaccordion.com/marama-cafe-band/",
   },
   {
     id: "pop-up-jazz-club",
@@ -13,4 +20,52 @@ export const artists = [
     image: "artists/pop-up-jazz-club.jpg",
     bio: "Pop Up Jazz Club brings live jazz in a speakeasy vibe to unexpected spaces around South London.",
   },
-]
+  {
+    id: "southwark-sinfonietta",
+    name: "Southwark Sinfonietta",
+    genre: "Classical",
+    bio: "South London ensemble bringing orchestral music to local audiences.",
+    website: "https://swksinf.co.uk/",
+  },
+  {
+    id: "rita-tam",
+    name: "Rita Tam",
+    genre: "Live music",
+    bio: "Performing at Herne Hill Music Festival.",
+    website: "https://hotvox.co.uk/artist/rita-tam/",
+  },
+  {
+    id: "vincent-burke",
+    name: "Vincent Burke",
+    genre: "Live music",
+    bio: "Performing at Herne Hill Music Festival.",
+    website: "https://www.vincentburke.co.uk/",
+  },
+  {
+    id: "mamma-grande",
+    name: "Mamma Grande",
+    genre: "Live music",
+    bio: "Performing at Herne Hill Music Festival.",
+  },
+  {
+    id: "kotota",
+    name: "Kotota",
+    genre: "Live music",
+    bio: "Performing at Herne Hill Music Festival.",
+    website: "https://kotoa.bandcamp.com/",
+  },
+  {
+    id: "hot-motel",
+    name: "Hot Motel",
+    genre: "Live music",
+    bio: "Performing at Herne Hill Music Festival.",
+    website: "https://hotmotel.bandcamp.com/",
+  },
+  {
+    id: "jo-wilkes",
+    name: "Jo Wilkes",
+    genre: "Live music",
+    bio: "Performing at Herne Hill Music Festival.",
+    website: "https://www.joewilkes.co.uk/",
+  },
+];

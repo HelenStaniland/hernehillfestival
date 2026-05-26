@@ -1,35 +1,52 @@
-import { events } from "@/data/events";
-import { formatEventDate } from "@/lib/programme";
-
 export const festival = {
   name: "Herne Hill Music Festival",
+  intro:
+    "A vibrant local community music festival bringing live music to venues across Herne Hill over two weekends.",
   location: "Herne Hill, London",
-  tagline: "Live music in the heart of South London",
+  weekends: [
+    {
+      id: "weekend-1",
+      label: "Weekend 1",
+      dates: "Friday 10 October – Monday 12 October",
+    },
+    {
+      id: "weekend-2",
+      label: "Weekend 2",
+      dates: "Friday 16 October – Sunday 18 October",
+    },
+  ],
 } as const;
 
-function parseEventDate(date: string) {
-  const [year, month, day] = date.split("-").map(Number);
-  return new Date(year, month - 1, day);
-}
+export const navLinks = [
+  { href: "/news", label: "News" },
+  { href: "/artists", label: "Artists" },
+  { href: "/venues", label: "Venues" },
+  { href: "/events", label: "Events" },
+] as const;
 
-export function getFestivalDateRange(): string {
-  const sorted = [...new Set(events.map((event) => event.date))].sort();
-  if (sorted.length === 0) return "Dates coming soon";
-  if (sorted.length === 1) return formatEventDate(sorted[0]);
-
-  const start = parseEventDate(sorted[0]);
-  const end = parseEventDate(sorted[sorted.length - 1]);
-  const monthYear = end.toLocaleDateString("en-GB", {
-    month: "long",
-    year: "numeric",
-  });
-
-  if (
-    start.getMonth() === end.getMonth() &&
-    start.getFullYear() === end.getFullYear()
-  ) {
-    return `${start.getDate()}–${end.getDate()} ${monthYear}`;
-  }
-
-  return `${formatEventDate(sorted[0])} – ${formatEventDate(sorted[sorted.length - 1])}`;
-}
+export const homeFeatures = [
+  {
+    href: "/news",
+    title: "Latest News",
+    description: "Dates, announcements and festival updates.",
+    accent: "coral" as const,
+  },
+  {
+    href: "/artists",
+    title: "Artists",
+    description: "Who’s on the bill this year.",
+    accent: "purple" as const,
+  },
+  {
+    href: "/venues",
+    title: "Venues",
+    description: "Pubs and halls hosting live music.",
+    accent: "gold" as const,
+  },
+  {
+    href: "/events",
+    title: "Events",
+    description: "Times, line-up and where to go.",
+    accent: "teal" as const,
+  },
+] as const;

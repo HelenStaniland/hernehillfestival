@@ -25,6 +25,22 @@ const timeFormatter = new Intl.DateTimeFormat("en-GB", {
   minute: "2-digit",
 });
 
+const periodLabels: Record<string, string> = {
+  morning: "Morning",
+  afternoon: "Afternoon",
+  evening: "Evening",
+};
+
+export function getEventPeriod(id: string) {
+  const period = id.split("-").at(-1);
+  return period && period in periodLabels ? period : null;
+}
+
+export function getEventPeriodLabel(id: string) {
+  const period = getEventPeriod(id);
+  return period ? periodLabels[period] : null;
+}
+
 export function formatEventTime(time: string) {
   const [hours, minutes] = time.split(":").map(Number);
   const date = new Date(2000, 0, 1, hours, minutes);
@@ -43,7 +59,7 @@ export function getProgramme(): ProgrammeEvent[] {
   return [...events]
     .map((event) => ({
       ...event,
-      artist: artistById.get(event.artistId),
+      artist: event.artistId ? artistById.get(event.artistId) : undefined,
       venue: venueById.get(event.venueId),
     }))
     .sort((a, b) => {
@@ -64,9 +80,11 @@ export function groupProgrammeByDate(
     days.set(event.date, existing);
   }
 
-  return [...days.entries()].map(([date, dayEvents]) => ({
-    date,
-    label: formatEventDate(date),
-    events: dayEvents,
-  }));
+  return [...days.entries()]
+    .sort(([a], [b]) => a.localeCompare(b))
+    .map(([date, dayEvents]) => ({
+      date,
+      label: formatEventDate(date),
+      events: dayEvents,
+    }));
 }
