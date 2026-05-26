@@ -20,9 +20,8 @@ export default function Home() {
         </section>
 
         <div className="mx-auto max-w-5xl px-4 pt-6 sm:px-6 sm:pt-8">
-          <div className="max-w-2xl space-y-4 text-lg leading-relaxed text-white/90 sm:text-xl">
+          <div className="max-w-2xl text-lg leading-relaxed text-white/90 sm:text-xl">
             <p>{festival.intro}</p>
-            <p>{festival.introExtended}</p>
           </div>
 
           <section

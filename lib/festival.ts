@@ -1,9 +1,7 @@
 export const festival = {
   name: "Herne Hill Music Festival",
   intro:
-    "A vibrant local community music festival bringing live music to venues across Herne Hill over two weekends.",
-  introExtended:
-    "Herne Hill comes alive with live jazz, Latin rhythms, and late-night sets in pubs, halls, and pop-up rooms. Wander between venues, discover new artists, and settle in for evenings built around the music — not the queue.",
+    "Herne Hill comes alive over two weekends of live music, performances, and community events across the neighbourhood. From jazz and Latin rhythms to choirs, family concerts, and late-night sessions, the festival brings together artists, audiences, pubs, halls, churches and community spaces in celebration of local music and culture.",
   location: "Herne Hill, London",
   weekends: [
     {

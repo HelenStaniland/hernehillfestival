@@ -45,10 +45,10 @@ export const artists = [
     website: "https://www.instagram.com/mamagrandeproduction/",
   },
   {
-    id: "kotota",
-    name: "Kotota",
+    id: "kotoa",
+    name: "Kotoa",
     genre: "Live music",
-    image: "artists/kotota.jpg",
+    image: "artists/kotoa.jpg",
     bio: "Performing at Herne Hill Music Festival.",
     website: "https://kotoa.bandcamp.com/",
   },
