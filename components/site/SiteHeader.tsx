@@ -22,7 +22,7 @@ export function SiteHeader() {
             {navLinks.map((link) => {
               const isActive =
                 pathname === link.href ||
-                (link.href !== "/" && pathname.startsWith(link.href));
+                pathname.startsWith(`${link.href}/`);
 
               return (
                 <li key={link.href}>
