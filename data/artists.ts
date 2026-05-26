@@ -37,14 +37,6 @@ export const artists = [
     website: "https://hotvox.co.uk/artist/rita-tam/",
   },
   {
-    id: "vincent-burke",
-    name: "Vincent Burke",
-    genre: "Live music",
-    image: "artists/vincent-burke.jpg",
-    bio: "Performing at Herne Hill Music Festival.",
-    website: "https://www.vincentburke.co.uk/",
-  },
-  {
     id: "mama-grande",
     name: "Mama Grande",
     genre: "Latin",
