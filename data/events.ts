@@ -80,7 +80,7 @@ export const events: Event[] = [
   {
     id: "2026-10-18-afternoon",
     date: "2026-10-18",
-    artistId: "mamma-grande",
+    artistId: "mama-grande",
     venueId: "brockwell-hall",
     time: "14:30",
   },
