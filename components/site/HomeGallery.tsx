@@ -1,13 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
+import { SponsorCarousel } from "@/components/site/SponsorCarousel";
 import {
   getHomeGalleryArtists,
   getHomeGallerySponsors,
   type HomeGalleryArtist,
-  type HomeGallerySponsor,
 } from "@/lib/homeGallery";
-
-type GalleryItem = HomeGalleryArtist | HomeGallerySponsor;
 
 function repeatForMarquee<T>(items: T[], minCount = 6): T[] {
   if (items.length === 0) {
@@ -23,38 +21,21 @@ function repeatForMarquee<T>(items: T[], minCount = 6): T[] {
   return result;
 }
 
-function SponsorTile({ item }: { item: HomeGallerySponsor }) {
-  return (
-    <div className="flex h-20 w-64 shrink-0 items-center justify-center rounded-xl border border-white/20 bg-white/5 px-5 py-3 sm:h-24 sm:w-72">
-      {/* Native img scales SVG and mixed-format logos more reliably than fill-based Image */}
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        src={`/${item.logo}`}
+function GalleryTile({ item }: { item: HomeGalleryArtist }) {
+  const content = (
+    <div className="relative h-44 w-64 shrink-0 overflow-hidden rounded-xl border border-white/20 bg-festival-blue-deep">
+      <Image
+        src={`/${item.image}`}
         alt={item.name}
-        className="max-h-full max-w-full object-contain object-center"
+        fill
+        className="object-cover"
+        sizes="256px"
       />
+      <p className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-festival-blue-deep/95 to-transparent px-3 pb-3 pt-8 font-display text-xl tracking-wide">
+        {item.name}
+      </p>
     </div>
   );
-}
-
-function GalleryTile({ item }: { item: GalleryItem }) {
-  const content =
-    item.kind === "artist" ? (
-      <div className="relative h-44 w-64 shrink-0 overflow-hidden rounded-xl border border-white/20 bg-festival-blue-deep">
-        <Image
-          src={`/${item.image}`}
-          alt={item.name}
-          fill
-          className="object-cover"
-          sizes="256px"
-        />
-        <p className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-festival-blue-deep/95 to-transparent px-3 pb-3 pt-8 font-display text-xl tracking-wide">
-          {item.name}
-        </p>
-      </div>
-    ) : (
-      <SponsorTile item={item} />
-    );
 
   if (item.href) {
     return (
@@ -78,7 +59,7 @@ function GalleryStrip({
   durationSeconds,
 }: {
   title: string;
-  items: GalleryItem[];
+  items: HomeGalleryArtist[];
   durationSeconds: number;
 }) {
   if (items.length === 0) {
@@ -105,7 +86,7 @@ function GalleryStrip({
           style={useMarquee ? { animationDuration: `${durationSeconds}s` } : undefined}
         >
           {loop.map((item, index) => (
-            <li key={`${item.kind}-${item.id}-${index}`} className="shrink-0">
+            <li key={`${item.id}-${index}`} className="shrink-0">
               <GalleryTile item={item} />
             </li>
           ))}
@@ -135,11 +116,7 @@ export function HomeGallery() {
         This year&apos;s festival
       </h2>
       <GalleryStrip title="On the bill" items={artists} durationSeconds={45} />
-      <GalleryStrip
-        title="Supported by"
-        items={sponsors}
-        durationSeconds={35}
-      />
+      <SponsorCarousel sponsors={sponsors} />
     </section>
   );
 }

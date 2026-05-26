@@ -33,7 +33,7 @@ export default function Home() {
               id="festival-dates-heading"
               className="font-display text-3xl tracking-wide text-festival-mint sm:text-4xl"
             >
-              Festival dates
+              Festival dates 2026
             </h2>
             <ul className="mt-6 grid gap-4 sm:grid-cols-2">
               {festival.weekends.map((weekend) => (

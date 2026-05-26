@@ -41,7 +41,9 @@ export function getHomeGallerySponsors(): HomeGallerySponsor[] {
   return sponsors
     .filter(
       (sponsor): sponsor is typeof sponsor & { logo: string } =>
-        sponsor.showOnHome !== false && Boolean(sponsor.logo),
+        sponsor.showOnHome !== false &&
+        Boolean(sponsor.logo) &&
+        sponsor.tier !== "supporter",
     )
     .sort((a, b) => {
       const aTier = a.tier ? tierOrder[a.tier] : tierOrder.supporter;
