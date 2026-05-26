@@ -1,26 +1,32 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --festival-bg: #4a6f9a;
+  --festival-surface: #567da8;
+  --festival-card: #6b90b8;
+  --festival-cream: #f8f4ec;
+  --festival-accent: #e8c56a;
+  --festival-copper: #a8c4e8;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-festival-bg: var(--festival-bg);
+  --color-festival-surface: var(--festival-surface);
+  --color-festival-card: var(--festival-card);
+  --color-festival-cream: var(--festival-cream);
+  --color-festival-accent: var(--festival-accent);
+  --color-festival-copper: var(--festival-copper);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-display: var(--font-playfair);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--festival-bg);
+  color: var(--festival-cream);
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
 }
