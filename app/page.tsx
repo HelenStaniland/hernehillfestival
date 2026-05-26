@@ -1,4 +1,5 @@
 import { FeatureCard } from "@/components/site/FeatureCard";
+import { HomeGallery } from "@/components/site/HomeGallery";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { festival, homeFeatures } from "@/lib/festival";
@@ -12,41 +13,44 @@ export default function Home() {
         <section className="px-4 pt-10 sm:px-6 sm:pt-14">
           <div className="mx-auto max-w-5xl">
             <p className="festival-label">{festival.location}</p>
-            <h1 className="font-display mt-2 text-[3.25rem] leading-[0.9] tracking-wide sm:text-7xl lg:text-8xl">
+            <h1 className="font-display mt-2 text-[3.25rem] leading-[0.9] tracking-wide text-festival-mint sm:text-7xl lg:text-8xl">
               {festival.name}
             </h1>
           </div>
         </section>
 
         <div className="mx-auto max-w-5xl px-4 pt-6 sm:px-6 sm:pt-8">
-          <p className="max-w-2xl text-lg leading-relaxed text-white/90 sm:text-xl">
-            {festival.intro}
-          </p>
+          <div className="max-w-2xl space-y-4 text-lg leading-relaxed text-white/90 sm:text-xl">
+            <p>{festival.intro}</p>
+            <p>{festival.introExtended}</p>
+          </div>
 
           <section
-            className="festival-card mt-8 p-5 sm:p-6"
+            className="festival-dates-card mt-10"
             aria-labelledby="festival-dates-heading"
           >
             <h2
               id="festival-dates-heading"
-              className="font-display text-2xl tracking-wide sm:text-3xl"
+              className="font-display text-3xl tracking-wide text-festival-mint sm:text-4xl"
             >
               Festival dates
             </h2>
-            <ul className="mt-4 space-y-3">
+            <ul className="mt-6 grid gap-4 sm:grid-cols-2">
               {festival.weekends.map((weekend) => (
                 <li
                   key={weekend.id}
-                  className="border-l-4 border-festival-gold pl-4"
+                  className="rounded-lg border border-festival-mint/25 bg-white/10 p-4 sm:p-5"
                 >
                   <p className="festival-label">{weekend.label}</p>
-                  <p className="mt-0.5 text-base font-semibold sm:text-lg">
+                  <p className="font-display mt-1 text-2xl leading-tight tracking-wide text-white sm:text-3xl">
                     {weekend.dates}
                   </p>
                 </li>
               ))}
             </ul>
           </section>
+
+          <HomeGallery />
 
           <section className="mt-10" aria-labelledby="explore-heading">
             <h2 id="explore-heading" className="sr-only">

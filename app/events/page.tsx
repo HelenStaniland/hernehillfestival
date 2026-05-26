@@ -38,7 +38,7 @@ export default function EventsPage() {
                       {periodLabel ? (
                         <p className="festival-label">{periodLabel}</p>
                       ) : null}
-                      <p className="font-display text-3xl text-festival-gold">
+                      <p className="font-display text-3xl text-festival-mint">
                         {formatEventTime(event.time)}
                       </p>
                       <h3 className="mt-2 font-display text-2xl tracking-wide text-white">

@@ -7,7 +7,7 @@
   --festival-muted: #3d4f6e;
   --festival-coral: #e85d4c;
   --festival-purple: #5b4b9a;
-  --festival-gold: #e8b84a;
+  --festival-mint: #72e0ca;
   --festival-teal: #2a8f8a;
   --festival-blue-deep: #1a3560;
   --festival-blue: #2d5088;
@@ -22,7 +22,7 @@
   --color-festival-muted: var(--festival-muted);
   --color-festival-coral: var(--festival-coral);
   --color-festival-purple: var(--festival-purple);
-  --color-festival-gold: var(--festival-gold);
+  --color-festival-mint: #72e0ca;
   --color-festival-teal: var(--festival-teal);
   --color-festival-blue-deep: var(--festival-blue-deep);
   --color-festival-blue: var(--festival-blue);
@@ -56,18 +56,64 @@ body {
   }
 
   .festival-section-title {
-    @apply font-display border-b-2 border-festival-gold/60 pb-2 text-2xl tracking-wide text-white;
+    @apply font-display border-b-2 border-festival-mint/45 pb-2 text-2xl tracking-wide text-white;
   }
 
   .festival-label {
-    @apply text-sm font-bold uppercase tracking-wide text-festival-gold;
+    @apply text-sm font-bold uppercase tracking-wide text-festival-mint;
   }
 
   .festival-body {
     @apply text-white/80;
   }
 
+  .festival-dates-card {
+    @apply rounded-xl border-2 border-festival-mint/40 bg-white/15 p-6 backdrop-blur-sm sm:p-8;
+  }
+
   .festival-link {
-    @apply font-semibold text-festival-gold hover:underline;
+    @apply font-semibold text-festival-mint hover:underline;
+  }
+
+  .festival-gallery-mask {
+    @apply overflow-hidden;
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 8%,
+      black 92%,
+      transparent
+    );
+  }
+
+  .festival-gallery-track {
+    animation: festival-gallery-scroll linear infinite;
+  }
+
+  .festival-gallery-track:hover {
+    animation-play-state: paused;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .festival-gallery-track {
+      animation: none;
+      flex-wrap: wrap;
+      width: auto;
+    }
+
+    .festival-gallery-mask {
+      mask-image: none;
+      overflow: visible;
+    }
+  }
+}
+
+@keyframes festival-gallery-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
   }
 }

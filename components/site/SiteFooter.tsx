@@ -14,7 +14,7 @@ export function SiteFooter() {
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className="text-sm font-semibold text-white/90 hover:text-festival-gold"
+                  className="text-sm font-semibold text-white/90 hover:text-festival-mint"
                 >
                   {link.label}
                 </Link>

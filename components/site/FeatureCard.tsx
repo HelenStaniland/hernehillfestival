@@ -1,9 +1,8 @@
 import Link from "next/link";
 
 const accentStyles = {
-  coral: "border-festival-coral/70 bg-white/10 hover:bg-white/20",
+  mint: "border-festival-mint/80 bg-white/10 hover:bg-white/20",
   purple: "border-festival-purple/70 bg-white/10 hover:bg-white/20",
-  gold: "border-festival-gold/80 bg-white/10 hover:bg-white/20",
   teal: "border-festival-teal/70 bg-white/10 hover:bg-white/20",
 } as const;
 
@@ -24,7 +23,7 @@ export function FeatureCard({ href, title, description, accent }: FeatureCardPro
       <p className="mt-2 text-sm leading-relaxed text-white/80 sm:text-base">
         {description}
       </p>
-      <span className="mt-3 inline-block text-sm font-bold text-festival-gold">
+      <span className="mt-3 inline-block text-sm font-bold text-festival-mint">
         Go →
       </span>
     </Link>

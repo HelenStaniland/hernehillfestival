@@ -17,7 +17,7 @@ const bebas = Bebas_Neue({
 
 export const metadata: Metadata = {
   title: `${festival.name} | Herne Hill`,
-  description: festival.intro,
+  description: `${festival.intro} ${festival.introExtended}`,
 };
 
 export default function RootLayout({

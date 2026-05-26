@@ -2,6 +2,8 @@ export const festival = {
   name: "Herne Hill Music Festival",
   intro:
     "A vibrant local community music festival bringing live music to venues across Herne Hill over two weekends.",
+  introExtended:
+    "Herne Hill comes alive with live jazz, Latin rhythms, and late-night sets in pubs, halls, and pop-up rooms. Wander between venues, discover new artists, and settle in for evenings built around the music — not the queue.",
   location: "Herne Hill, London",
   weekends: [
     {
@@ -22,6 +24,7 @@ export const navLinks = [
   { href: "/artists", label: "Artists" },
   { href: "/venues", label: "Venues" },
   { href: "/events", label: "Events" },
+  { href: "/sponsors", label: "Sponsors" },
 ] as const;
 
 export const homeFeatures = [
@@ -29,7 +32,7 @@ export const homeFeatures = [
     href: "/news",
     title: "Latest News",
     description: "Dates, announcements and festival updates.",
-    accent: "coral" as const,
+    accent: "mint" as const,
   },
   {
     href: "/artists",
@@ -41,7 +44,7 @@ export const homeFeatures = [
     href: "/venues",
     title: "Venues",
     description: "Pubs and halls hosting live music.",
-    accent: "gold" as const,
+    accent: "mint" as const,
   },
   {
     href: "/events",
