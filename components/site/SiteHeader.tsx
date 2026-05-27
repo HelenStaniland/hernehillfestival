@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { LogoMark } from "@/components/site/LogoMark";
 import { festival, navLinks } from "@/lib/festival";
 
 export function SiteHeader() {
@@ -13,12 +12,9 @@ export function SiteHeader() {
       <div className="mx-auto flex max-w-5xl flex-col gap-4 px-4 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-6">
         <Link
           href="/"
-          className="group flex items-center gap-2.5 sm:gap-3"
+          className="font-display text-2xl leading-none tracking-wide text-white hover:text-festival-mint sm:text-3xl"
         >
-          <LogoMark className="h-9 w-9 sm:h-10 sm:w-10" />
-          <span className="font-display text-2xl leading-none tracking-wide text-white group-hover:text-festival-mint sm:text-3xl">
-            {festival.name}
-          </span>
+          {festival.name}
         </Link>
 
         <nav aria-label="Main">

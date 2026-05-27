@@ -19,6 +19,7 @@ export const festival = {
 } as const;
 
 export const navLinks = [
+  { href: "/", label: "Home" },
   { href: "/news", label: "News" },
   { href: "/artists", label: "Artists" },
   { href: "/venues", label: "Venues" },

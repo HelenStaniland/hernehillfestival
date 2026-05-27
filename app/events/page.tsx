@@ -38,9 +38,9 @@ export default function EventsPage() {
 
                   return (
                     <li key={event.id} className="festival-card overflow-hidden">
-                      <div className="flex flex-col sm:flex-row">
+                      <div className="flex flex-col sm:flex-row sm:items-stretch">
                         {image ? (
-                          <div className="relative aspect-[4/3] w-full shrink-0 bg-festival-blue-deep sm:aspect-auto sm:h-48 sm:w-48">
+                          <div className="relative aspect-[4/3] w-full shrink-0 bg-festival-blue-deep sm:aspect-auto sm:w-48 sm:min-h-48 sm:self-stretch">
                             <Image
                               src={`/${image}`}
                               alt=""
@@ -50,7 +50,7 @@ export default function EventsPage() {
                             />
                           </div>
                         ) : null}
-                        <div className="p-5 sm:p-6">
+                        <div className="flex flex-1 flex-col p-5 sm:p-6">
                           {periodLabel ? (
                             <p className="festival-label">{periodLabel}</p>
                           ) : null}
@@ -78,7 +78,12 @@ export default function EventsPage() {
                           ) : null}
                           {event.venue ? (
                             <div className="mt-3">
-                              <VenueDetails venue={event.venue} />
+                              <VenueDetails
+                                venue={event.venue}
+                                linkToVenuePage
+                                showAddress={false}
+                                showWebsite={false}
+                              />
                             </div>
                           ) : null}
                         </div>

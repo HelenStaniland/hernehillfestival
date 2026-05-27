@@ -25,7 +25,11 @@ export default function VenuesPage() {
           </h2>
           <ul className="mt-4 grid gap-4 sm:grid-cols-2">
             {venues.map((venue) => (
-              <li key={venue.id} className="festival-card p-5 sm:p-6">
+              <li
+                key={venue.id}
+                id={venue.id}
+                className="festival-card scroll-mt-28 p-5 sm:p-6"
+              >
                 <VenueDetails venue={venue} prominentName />
               </li>
             ))}
