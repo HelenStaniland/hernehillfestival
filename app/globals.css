@@ -75,6 +75,18 @@ body {
     @apply font-semibold text-festival-mint hover:underline;
   }
 
+  .festival-logo-mark {
+    background-color: var(--festival-mint);
+    mask-image: url("/logos/logo-light.png");
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    -webkit-mask-image: url("/logos/logo-light.png");
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+  }
+
   .festival-gallery-mask {
     @apply overflow-hidden;
     mask-image: linear-gradient(

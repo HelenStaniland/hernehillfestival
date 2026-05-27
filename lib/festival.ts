@@ -3,6 +3,7 @@ export const festival = {
   intro:
     "Herne Hill comes alive over two weekends of live music, performances, and community events across the neighbourhood. From jazz and Latin rhythms to choirs, family concerts, and late-night sessions, the festival brings together artists, audiences, pubs, halls, churches and community spaces in celebration of local music and culture.",
   location: "Herne Hill, London",
+  homeEyebrow: "Live in South London",
   weekends: [
     {
       id: "weekend-1",

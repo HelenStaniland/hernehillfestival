@@ -1,5 +1,6 @@
 import { FeatureCard } from "@/components/site/FeatureCard";
 import { HomeGallery } from "@/components/site/HomeGallery";
+import { LogoMark } from "@/components/site/LogoMark";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { festival, homeFeatures } from "@/lib/festival";
@@ -12,10 +13,13 @@ export default function Home() {
       <main className="festival-main pb-10 sm:pb-14">
         <section className="px-4 pt-10 sm:px-6 sm:pt-14">
           <div className="mx-auto max-w-5xl">
-            <p className="festival-label">{festival.location}</p>
-            <h1 className="font-display mt-2 text-[2.75rem] leading-tight tracking-tight text-festival-mint sm:text-6xl lg:text-7xl">
-              {festival.name}
-            </h1>
+            <p className="festival-label">{festival.homeEyebrow}</p>
+            <div className="mt-2 flex items-center gap-4 sm:gap-6">
+              <h1 className="font-display text-[2.75rem] leading-tight tracking-tight text-festival-mint sm:text-6xl lg:text-7xl">
+                {festival.name}
+              </h1>
+              <LogoMark className="h-20 w-20 sm:h-28 sm:w-28 lg:h-32 lg:w-32" />
+            </div>
           </div>
         </section>
 
