@@ -4,6 +4,7 @@ import { venues } from "@/data/venues";
 
 export type ProgrammeEvent = (typeof events)[number] & {
   artist: (typeof artists)[number] | undefined;
+  artists: (typeof artists)[number][];
   venue: (typeof venues)[number] | undefined;
 };
 
@@ -60,6 +61,11 @@ export function getProgramme(): ProgrammeEvent[] {
     .map((event) => ({
       ...event,
       artist: event.artistId ? artistById.get(event.artistId) : undefined,
+      artists: (event.artistIds ?? [])
+        .map((id) => artistById.get(id))
+        .filter(
+          (artist): artist is (typeof artists)[number] => artist !== undefined,
+        ),
       venue: venueById.get(event.venueId),
     }))
     .sort((a, b) => {

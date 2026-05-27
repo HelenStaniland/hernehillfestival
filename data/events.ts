@@ -4,6 +4,9 @@ export type Event = {
   venueId: string;
   time: string; // HH:MM
   artistId?: string;
+  title?: string;
+  artistIds?: string[];
+  image?: string;
 };
 
 export const events: Event[] = [
@@ -24,7 +27,15 @@ export const events: Event[] = [
   {
     id: "2026-10-10-afternoon",
     date: "2026-10-10",
-    artistId: "artist-tba",
+    title: "Herne Hill Sings On",
+    artistIds: [
+      "cambria-choir",
+      "west-norwood-community-choir",
+      "lambeth-ladies-choir",
+      "nunhead-community-choir",
+      "note-orious",
+    ],
+    image: "artists/cambria-choir.jpg",
     venueId: "st-faiths",
     time: "14:30",
   },
@@ -55,6 +66,13 @@ export const events: Event[] = [
     artistId: "artist-tba",
     venueId: "the-cuff-london",
     time: "19   :30",
+  },
+  {
+    id: "2026-10-16-evening",
+    date: "2026-10-16",
+    artistId: "jo-wilkes",
+    venueId: "half-moon",
+    time: "19:30",
   },
   {
     id: "2026-10-17-morning",

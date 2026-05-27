@@ -11,14 +11,20 @@ export const metadata: Metadata = {
 };
 
 export default function ArtistsPage() {
+  const listedArtists = artists.filter((artist) => artist.id !== "artist-tba");
+
   return (
     <PageShell
       title="Artists"
       description="Acts appearing at this year’s festival."
     >
       <ul className="space-y-6">
-        {artists.map((artist) => (
-          <li key={artist.id} className="festival-card overflow-hidden">
+        {listedArtists.map((artist) => (
+          <li
+            key={artist.id}
+            id={artist.id}
+            className="festival-card scroll-mt-28 overflow-hidden"
+          >
             <div className="flex flex-col sm:flex-row">
               {artist.image ? (
                 <div className="relative aspect-[4/3] w-full shrink-0 bg-festival-blue-deep sm:aspect-auto sm:h-48 sm:w-48">

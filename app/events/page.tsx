@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import { EventLineup, getEventImage } from "@/components/site/EventLineup";
 import { PageShell } from "@/components/site/PageShell";
 import { VenueDetails } from "@/components/site/VenueDetails";
 import { festival } from "@/lib/festival";
@@ -34,7 +35,7 @@ export default function EventsPage() {
                 {day.events.map((event) => {
                   const periodLabel = getEventPeriodLabel(event.id);
 
-                  const image = event.artist?.image;
+                  const image = getEventImage(event);
 
                   return (
                     <li key={event.id} className="festival-card overflow-hidden">
@@ -57,25 +58,7 @@ export default function EventsPage() {
                           <p className="font-display text-3xl text-festival-mint">
                             {formatEventTime(event.time)}
                           </p>
-                          <h3 className="mt-2 font-display text-2xl tracking-wide text-white">
-                            {event.artist?.name ?? "Line-up to be announced"}
-                          </h3>
-                          {event.artist?.genre &&
-                          event.artist.genre !== "TBA" ? (
-                            <p className="mt-1 text-sm font-semibold text-white/80">
-                              {event.artist.genre}
-                            </p>
-                          ) : null}
-                          {event.artist?.website ? (
-                            <a
-                              href={event.artist.website}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="festival-link mt-2 inline-block text-sm"
-                            >
-                              Artist website →
-                            </a>
-                          ) : null}
+                          <EventLineup event={event} />
                           {event.venue ? (
                             <div className="mt-3">
                               <VenueDetails
