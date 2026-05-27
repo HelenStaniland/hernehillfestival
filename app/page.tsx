@@ -13,7 +13,7 @@ export default function Home() {
         <section className="px-4 pt-10 sm:px-6 sm:pt-14">
           <div className="mx-auto max-w-5xl">
             <p className="festival-label">{festival.location}</p>
-            <h1 className="font-display mt-2 text-[3.25rem] leading-[0.9] tracking-wide text-festival-mint sm:text-7xl lg:text-8xl">
+            <h1 className="font-display mt-2 text-[2.75rem] leading-tight tracking-tight text-festival-mint sm:text-6xl lg:text-7xl">
               {festival.name}
             </h1>
           </div>
