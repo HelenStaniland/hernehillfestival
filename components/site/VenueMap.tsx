@@ -1,6 +1,7 @@
 "use client";
 
 import type { Venue } from "@/data/venues";
+import type { VenueEventSummary } from "@/lib/programme";
 import L from "leaflet";
 import { useEffect, useRef } from "react";
 import "leaflet/dist/leaflet.css";
@@ -15,9 +16,17 @@ const markerIcon = L.divIcon({
 
 type VenueMapProps = {
   venues: Venue[];
+  venueEvents?: Record<string, VenueEventSummary[]>;
 };
 
-export function VenueMap({ venues }: VenueMapProps) {
+function escapeHtml(value: string) {
+  return value
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
+}
+
+export function VenueMap({ venues, venueEvents }: VenueMapProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const mapRef = useRef<L.Map | null>(null);
 
@@ -37,10 +46,24 @@ export function VenueMap({ venues }: VenueMapProps) {
     }).addTo(map);
 
     for (const venue of venues) {
+      const events = venueEvents?.[venue.id] ?? [];
+      const eventsHtml = events.length
+        ? `<ul style="margin:6px 0 0;padding-left:16px;">${events
+            .map(
+              (event) =>
+                `<li>${escapeHtml(event.dateLabel)}, ${escapeHtml(
+                  event.time,
+                )} — ${escapeHtml(event.title)}</li>`,
+            )
+            .join("")}</ul>`
+        : "";
+
       L.marker([venue.lat, venue.lng], { icon: markerIcon })
         .addTo(map)
         .bindPopup(
-          `<strong>${venue.name}</strong><br>${venue.address}${
+          `<strong>${escapeHtml(venue.name)}</strong><br>${escapeHtml(
+            venue.address,
+          )}${eventsHtml}${
             venue.website
               ? `<br><a href="${venue.website}" target="_blank" rel="noopener noreferrer">Visit website</a>`
               : ""
@@ -54,7 +77,7 @@ export function VenueMap({ venues }: VenueMapProps) {
       map.remove();
       mapRef.current = null;
     };
-  }, [venues]);
+  }, [venues, venueEvents]);
 
   return (
     <div

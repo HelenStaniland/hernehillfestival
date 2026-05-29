@@ -21,6 +21,12 @@ const dateFormatter = new Intl.DateTimeFormat("en-GB", {
   year: "numeric",
 });
 
+const shortDateFormatter = new Intl.DateTimeFormat("en-GB", {
+  weekday: "short",
+  day: "numeric",
+  month: "short",
+});
+
 const timeFormatter = new Intl.DateTimeFormat("en-GB", {
   hour: "numeric",
   minute: "2-digit",
@@ -53,6 +59,15 @@ export function formatEventDate(date: string) {
   return dateFormatter.format(new Date(year, month - 1, day));
 }
 
+export function formatEventDateShort(date: string) {
+  const [year, month, day] = date.split("-").map(Number);
+  return shortDateFormatter.format(new Date(year, month - 1, day));
+}
+
+export function getEventTitle(event: ProgrammeEvent) {
+  return event.title ?? event.artist?.name ?? "Line-up to be announced";
+}
+
 export function getProgramme(): ProgrammeEvent[] {
   const artistById = new Map(artists.map((artist) => [artist.id, artist]));
   const venueById = new Map(venues.map((venue) => [venue.id, venue]));
@@ -73,6 +88,29 @@ export function getProgramme(): ProgrammeEvent[] {
       if (byDate !== 0) return byDate;
       return a.time.localeCompare(b.time);
     });
+}
+
+export type VenueEventSummary = {
+  id: string;
+  dateLabel: string;
+  time: string;
+  title: string;
+};
+
+export function getEventsByVenue(): Record<string, VenueEventSummary[]> {
+  const result: Record<string, VenueEventSummary[]> = {};
+
+  for (const event of getProgramme()) {
+    if (!event.venue) continue;
+    (result[event.venue.id] ??= []).push({
+      id: event.id,
+      dateLabel: formatEventDateShort(event.date),
+      time: formatEventTime(event.time),
+      title: getEventTitle(event),
+    });
+  }
+
+  return result;
 }
 
 export function groupProgrammeByDate(

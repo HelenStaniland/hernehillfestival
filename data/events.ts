@@ -65,7 +65,7 @@ export const events: Event[] = [
     date: "2026-10-12",
     artistId: "artist-tba",
     venueId: "the-cuff-london",
-    time: "19   :30",
+    time: "19:30",
   },
   {
     id: "2026-10-16-evening",

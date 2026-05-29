@@ -4,6 +4,7 @@ import { VenueDetails } from "@/components/site/VenueDetails";
 import { VenueMapSection } from "@/components/site/VenueMapSection";
 import { venues } from "@/data/venues";
 import { festival } from "@/lib/festival";
+import { getEventsByVenue } from "@/lib/programme";
 
 export const metadata: Metadata = {
   title: `Venues | ${festival.name}`,
@@ -11,13 +12,15 @@ export const metadata: Metadata = {
 };
 
 export default function VenuesPage() {
+  const venueEvents = getEventsByVenue();
+
   return (
     <PageShell
       title="Venues"
       description="Where to find live music around Herne Hill."
     >
       <div className="space-y-10">
-        <VenueMapSection venues={venues} />
+        <VenueMapSection venues={venues} venueEvents={venueEvents} />
 
         <section aria-labelledby="venue-list-heading">
           <h2 id="venue-list-heading" className="festival-label">
