@@ -1,6 +1,6 @@
 import { FeatureCard } from "@/components/site/FeatureCard";
+import { HeronLogo } from "@/components/site/HeronLogo";
 import { HomeGallery } from "@/components/site/HomeGallery";
-import { LogoMark } from "@/components/site/LogoMark";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { festival, homeFeatures } from "@/lib/festival";
@@ -18,7 +18,7 @@ export default function Home() {
               <h1 className="font-display text-[2.75rem] leading-tight tracking-tight text-festival-mint sm:text-6xl lg:text-7xl">
                 {festival.name}
               </h1>
-              <LogoMark className="h-20 w-20 sm:h-28 sm:w-28 lg:h-32 lg:w-32" />
+              <HeronLogo className="h-24 w-24 sm:h-32 sm:w-32 lg:h-40 lg:w-40" />
             </div>
           </div>
         </section>

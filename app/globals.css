@@ -7,6 +7,7 @@
   --festival-muted: #3d4f6e;
   --festival-coral: #e85d4c;
   --festival-purple: #5b4b9a;
+  --festival-lilac: #b8a4e6;
   --festival-mint: #72e0ca;
   --festival-teal: #2a8f8a;
   --festival-blue-deep: #1a3560;
@@ -22,6 +23,7 @@
   --color-festival-muted: var(--festival-muted);
   --color-festival-coral: var(--festival-coral);
   --color-festival-purple: var(--festival-purple);
+  --color-festival-lilac: var(--festival-lilac);
   --color-festival-mint: #72e0ca;
   --color-festival-teal: var(--festival-teal);
   --color-festival-blue-deep: var(--festival-blue-deep);
@@ -85,6 +87,39 @@ body {
     -webkit-mask-size: contain;
     -webkit-mask-repeat: no-repeat;
     -webkit-mask-position: center;
+  }
+
+  /* Recolorable heron lockup, split into two aligned layers so the notes and
+     "MUSIC FESTIVAL" can carry an accent colour. Retint by changing the two
+     `background-color` values below (they use the site palette variables). */
+  .festival-heron-logo {
+    position: relative;
+    aspect-ratio: 1067 / 1072;
+  }
+
+  .festival-heron-logo::before,
+  .festival-heron-logo::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+  }
+
+  .festival-heron-logo::before {
+    background-color: var(--festival-mint);
+    mask-image: url("/logos/heron-mask-main.png");
+    -webkit-mask-image: url("/logos/heron-mask-main.png");
+  }
+
+  .festival-heron-logo::after {
+    background-color: var(--festival-lilac);
+    mask-image: url("/logos/heron-mask-accent.png");
+    -webkit-mask-image: url("/logos/heron-mask-accent.png");
   }
 
   .festival-gallery-mask {
