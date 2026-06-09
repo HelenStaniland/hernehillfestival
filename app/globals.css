@@ -111,13 +111,13 @@ body {
   }
 
   .festival-heron-logo::before {
-    background-color: #ffffff;
+    background-color: var(--festival-mint);
     mask-image: url("/logos/heron-mask-main.png");
     -webkit-mask-image: url("/logos/heron-mask-main.png");
   }
 
   .festival-heron-logo::after {
-    background-color: var(--festival-mint);
+    background-color: #ffffff;
     mask-image: url("/logos/heron-mask-accent.png");
     -webkit-mask-image: url("/logos/heron-mask-accent.png");
   }
@@ -142,13 +142,13 @@ body {
   }
 
   .festival-heron-mark::before {
-    background-color: #ffffff;
+    background-color: var(--festival-mint);
     mask-image: url("/logos/heron-mark-main.png");
     -webkit-mask-image: url("/logos/heron-mark-main.png");
   }
 
   .festival-heron-mark::after {
-    background-color: var(--festival-mint);
+    background-color: #ffffff;
     mask-image: url("/logos/heron-mark-accent.png");
     -webkit-mask-image: url("/logos/heron-mark-accent.png");
   }
