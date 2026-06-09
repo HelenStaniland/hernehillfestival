@@ -143,6 +143,62 @@ async function writeLayer(buffer, output, crop) {
   console.log(`Wrote ${output} (${meta.width}x${meta.height})`);
 }
 
+// Favicon: just the heron's head and beak, cropped from the (text-free,
+// note-free) main mark layer, tinted mint on transparency.
+async function writeFavicon() {
+  const src = path.join(outputDir, "heron-mark-main.png");
+  const meta = await sharp(src).metadata();
+  const head = {
+    left: 185,
+    top: 5,
+    width: Math.min(480, meta.width - 185),
+    height: Math.round(0.27 * meta.height) - 5,
+  };
+
+  const cropped = await sharp(src).extract(head).png().toBuffer();
+  const trimmed = await sharp(cropped).trim({ threshold: 10 }).png().toBuffer();
+
+  const { data: hd, info: hi } = await sharp(trimmed)
+    .ensureAlpha()
+    .raw()
+    .toBuffer({ resolveWithObject: true });
+  for (let i = 0; i < hi.width * hi.height; i += 1) {
+    if (hd[i * 4 + 3] > 0) {
+      hd[i * 4] = 114; // festival mint
+      hd[i * 4 + 1] = 224;
+      hd[i * 4 + 2] = 202;
+    }
+  }
+  const tinted = await sharp(hd, {
+    raw: { width: hi.width, height: hi.height, channels: 4 },
+  })
+    .png()
+    .toBuffer();
+
+  const size = 512;
+  const inner = Math.round(size * 0.84);
+  const resized = await sharp(tinted)
+    .resize(inner, inner, {
+      fit: "contain",
+      background: { r: 0, g: 0, b: 0, alpha: 0 },
+    })
+    .png()
+    .toBuffer();
+
+  await sharp({
+    create: {
+      width: size,
+      height: size,
+      channels: 4,
+      background: { r: 0, g: 0, b: 0, alpha: 0 },
+    },
+  })
+    .composite([{ input: resized, gravity: "center" }])
+    .png()
+    .toFile(path.join(root, "../app/icon.png"));
+  console.log("Wrote app/icon.png (512x512, heron head)");
+}
+
 console.log(
   `Background sampled as rgb(${bg.map((v) => Math.round(v)).join(", ")})`,
 );
@@ -156,3 +212,5 @@ await writeLayer(accent, "heron-mask-accent.png", region);
 // Mark only (heron + staff + notes, no wordmark).
 await writeLayer(markMain, "heron-mark-main.png", markRegion);
 await writeLayer(markAccent, "heron-mark-accent.png", markRegion);
+// Favicon from the heron head.
+await writeFavicon();

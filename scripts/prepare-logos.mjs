@@ -46,38 +46,6 @@ async function logoToTransparentPng(input, output, { r, g, b, invertAlpha }) {
   console.log(`Wrote ${output} (${metadata.width}x${metadata.height})`);
 }
 
-async function writeAppIcon() {
-  const inputPath = path.join(outputDir, "logo-light.png");
-  const iconOutput = path.join(root, "../app/icon.png");
-
-  const { data, info } = await sharp(inputPath)
-    .ensureAlpha()
-    .raw()
-    .toBuffer({ resolveWithObject: true });
-
-  const rgba = Buffer.from(data);
-
-  for (let i = 0; i < info.width * info.height; i += 1) {
-    if (rgba[i * 4 + 3] > 0) {
-      rgba[i * 4] = 114;
-      rgba[i * 4 + 1] = 224;
-      rgba[i * 4 + 2] = 202;
-    }
-  }
-
-  await sharp(rgba, {
-    raw: { width: info.width, height: info.height, channels: 4 },
-  })
-    .resize(512, 512, {
-      fit: "contain",
-      background: { r: 0, g: 0, b: 0, alpha: 0 },
-    })
-    .png()
-    .toFile(iconOutput);
-
-  console.log("Wrote app/icon.png (512x512)");
-}
-
 await fs.mkdir(outputDir, { recursive: true });
 
 const hasArchiveSources =
@@ -108,4 +76,5 @@ if (hasArchiveSources) {
   console.log("Archive logo sources missing; keeping existing public/logos PNGs");
 }
 
-await writeAppIcon();
+// The favicon (app/icon.png) is generated from the heron head by
+// scripts/prepare-heron-logo.mjs.
