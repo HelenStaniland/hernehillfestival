@@ -111,15 +111,46 @@ body {
   }
 
   .festival-heron-logo::before {
-    background-color: var(--festival-mint);
+    background-color: #ffffff;
     mask-image: url("/logos/heron-mask-main.png");
     -webkit-mask-image: url("/logos/heron-mask-main.png");
   }
 
   .festival-heron-logo::after {
-    background-color: var(--festival-lilac);
+    background-color: var(--festival-mint);
     mask-image: url("/logos/heron-mask-accent.png");
     -webkit-mask-image: url("/logos/heron-mask-accent.png");
+  }
+
+  /* Heron mark only (no wordmark) for use beside the title text. */
+  .festival-heron-mark {
+    position: relative;
+    aspect-ratio: 1067 / 974;
+  }
+
+  .festival-heron-mark::before,
+  .festival-heron-mark::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+  }
+
+  .festival-heron-mark::before {
+    background-color: #ffffff;
+    mask-image: url("/logos/heron-mark-main.png");
+    -webkit-mask-image: url("/logos/heron-mark-main.png");
+  }
+
+  .festival-heron-mark::after {
+    background-color: var(--festival-mint);
+    mask-image: url("/logos/heron-mark-accent.png");
+    -webkit-mask-image: url("/logos/heron-mark-accent.png");
   }
 
   .festival-gallery-mask {

@@ -18,6 +18,12 @@ const HIGH = 90; // distance at/over which a pixel is fully foreground
 const ACCENT_BG_DELTA = 20; // (blue - green) above which a pixel is "accent"
 const PAD = 24;
 
+// The wordmark sits in the lower-right; the heron's tail occupies the far-left
+// columns of the same band. Erasing this rectangle drops "HERNE HILL" and
+// "MUSIC FESTIVAL" while leaving the heron, staff and notes intact.
+const TEXT_X = 0.17;
+const TEXT_Y = 0.69;
+
 const { data, info } = await sharp(source)
   .ensureAlpha()
   .raw()
@@ -45,11 +51,21 @@ bg[2] /= corners.length;
 const colour = Buffer.alloc(pixels * 4);
 const main = Buffer.alloc(pixels * 4);
 const accent = Buffer.alloc(pixels * 4);
+const markMain = Buffer.alloc(pixels * 4);
+const markAccent = Buffer.alloc(pixels * 4);
 
-let minX = width;
-let minY = height;
-let maxX = -1;
-let maxY = -1;
+const full = { minX: width, minY: height, maxX: -1, maxY: -1 };
+const mark = { minX: width, minY: height, maxX: -1, maxY: -1 };
+
+const textX = TEXT_X * width;
+const textY = TEXT_Y * height;
+
+function grow(box, x, y) {
+  if (x < box.minX) box.minX = x;
+  if (x > box.maxX) box.maxX = x;
+  if (y < box.minY) box.minY = y;
+  if (y > box.maxY) box.maxY = y;
+}
 
 for (let i = 0; i < pixels; i += 1) {
   const o = i * channels;
@@ -67,13 +83,16 @@ for (let i = 0; i < pixels; i += 1) {
   const a = Math.round(alpha * 255);
 
   const isAccent = b - g > ACCENT_BG_DELTA;
+  const x = i % width;
+  const y = (i / width) | 0;
+  const isText = x >= textX && y >= textY;
 
   colour[i * 4] = r;
   colour[i * 4 + 1] = g;
   colour[i * 4 + 2] = b;
   colour[i * 4 + 3] = a;
 
-  for (const buf of [main, accent]) {
+  for (const buf of [main, accent, markMain, markAccent]) {
     buf[i * 4] = 255;
     buf[i * 4 + 1] = 255;
     buf[i * 4 + 2] = 255;
@@ -81,29 +100,36 @@ for (let i = 0; i < pixels; i += 1) {
   main[i * 4 + 3] = isAccent ? 0 : a;
   accent[i * 4 + 3] = isAccent ? a : 0;
 
+  const markAlpha = isText ? 0 : a;
+  markMain[i * 4 + 3] = isAccent ? 0 : markAlpha;
+  markAccent[i * 4 + 3] = isAccent ? markAlpha : 0;
+
   if (a > 10) {
-    const x = i % width;
-    const y = (i / width) | 0;
-    if (x < minX) minX = x;
-    if (x > maxX) maxX = x;
-    if (y < minY) minY = y;
-    if (y > maxY) maxY = y;
+    grow(full, x, y);
+    if (!isText) grow(mark, x, y);
   }
 }
 
 // Crop every layer to the same bounding box so they stay in registration when
 // overlaid, then pad by an equal margin.
 const region = {
-  left: minX,
-  top: minY,
-  width: maxX - minX + 1,
-  height: maxY - minY + 1,
+  left: full.minX,
+  top: full.minY,
+  width: full.maxX - full.minX + 1,
+  height: full.maxY - full.minY + 1,
 };
 
-async function writeLayer(buffer, output) {
+const markRegion = {
+  left: mark.minX,
+  top: mark.minY,
+  width: mark.maxX - mark.minX + 1,
+  height: mark.maxY - mark.minY + 1,
+};
+
+async function writeLayer(buffer, output, crop) {
   const outputPath = path.join(outputDir, output);
   await sharp(buffer, { raw: { width, height, channels: 4 } })
-    .extract(region)
+    .extract(crop)
     .extend({
       top: PAD,
       bottom: PAD,
@@ -121,8 +147,12 @@ console.log(
   `Background sampled as rgb(${bg.map((v) => Math.round(v)).join(", ")})`,
 );
 console.log(
-  `Logo box ${region.width}x${region.height} -> padded ${region.width + PAD * 2}x${region.height + PAD * 2}`,
+  `Lockup box ${region.width}x${region.height}; mark box ${markRegion.width}x${markRegion.height}`,
 );
-await writeLayer(colour, "heron-color.png");
-await writeLayer(main, "heron-mask-main.png");
-await writeLayer(accent, "heron-mask-accent.png");
+// Full lockup (with wordmark).
+await writeLayer(colour, "heron-color.png", region);
+await writeLayer(main, "heron-mask-main.png", region);
+await writeLayer(accent, "heron-mask-accent.png", region);
+// Mark only (heron + staff + notes, no wordmark).
+await writeLayer(markMain, "heron-mark-main.png", markRegion);
+await writeLayer(markAccent, "heron-mark-accent.png", markRegion);
