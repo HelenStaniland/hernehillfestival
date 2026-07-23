@@ -68,6 +68,7 @@ export const events: Event[] = [
     id: "2026-10-11-evening",
     date: "2026-10-11",
     title: "Come and Sing Festival Evensong",
+    image: "events/festival-evensong.jpg",
     venueId: "st-faiths",
     time: "19:30",
     endTime: "20:30",
