@@ -1,5 +1,9 @@
 import { festival } from "@/lib/festival";
-import { getEventTitle, type ProgrammeEvent } from "@/lib/programme";
+import {
+  formatEventTime,
+  getEventTitle,
+  type ProgrammeEvent,
+} from "@/lib/programme";
 
 const DEFAULT_DURATION_HOURS = 2;
 
@@ -37,9 +41,12 @@ export function buildEventIcs(event: ProgrammeEvent): string {
   const [year, month, day] = event.date.split("-").map(Number);
   const [hours, minutes] = event.time.split(":").map(Number);
   const start = new Date(year, month - 1, day, hours, minutes);
-  const end = new Date(
-    start.getTime() + DEFAULT_DURATION_HOURS * 60 * 60 * 1000,
-  );
+  const end = event.endTime
+    ? (() => {
+        const [endHours, endMinutes] = event.endTime.split(":").map(Number);
+        return new Date(year, month - 1, day, endHours, endMinutes);
+      })()
+    : new Date(start.getTime() + DEFAULT_DURATION_HOURS * 60 * 60 * 1000);
 
   const title = getEventTitle(event);
   const summary = `${title} — ${festival.name}`;
@@ -47,6 +54,7 @@ export function buildEventIcs(event: ProgrammeEvent): string {
     ? [event.venue.name, event.venue.address].filter(Boolean).join(", ")
     : festival.location;
   const descriptionParts = [
+    event.entryTime ? `Entry from ${formatEventTime(event.entryTime)}` : null,
     event.venue ? `At ${event.venue.name}` : null,
     event.venue?.website ?? null,
   ].filter((part): part is string => Boolean(part));

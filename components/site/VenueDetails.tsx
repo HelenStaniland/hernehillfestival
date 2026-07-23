@@ -24,7 +24,7 @@ function VenueName({
     ? "font-display text-2xl tracking-wide text-white sm:text-3xl"
     : "font-semibold text-white";
 
-  if (linkToVenuePage) {
+  if (linkToVenuePage && venue.id !== "venue-tba") {
     return (
       <Link
         href={`/venues#${venue.id}`}

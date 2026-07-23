@@ -3,11 +3,16 @@ export type Venue = {
   name: string;
   address: string;
   website?: string;
-  lat: number;
-  lng: number;
+  lat?: number;
+  lng?: number;
 };
 
 export const venues: Venue[] = [
+  {
+    id: "venue-tba",
+    name: "Venue TBA",
+    address: "",
+  },
   {
     id: "half-moon",
     name: "Half Moon",
@@ -49,12 +54,12 @@ export const venues: Venue[] = [
     lng: -0.1091145,
   },
   {
-    id: "carnegie-library",
-    name: "Carnegie Library",
-    address: "192 Herne Hill Road, London SE24 0AG",
-    website: "https://libraries.lambeth.gov.uk/-/carnegie-library",
-    lat: 51.460696,
-    lng: -0.0964647,
+    id: "herne-hill-baptist-church",
+    name: "Herne Hill Baptist Church",
+    address: "Half Moon Lane, London SE24 9HU",
+    website: "https://hhbc.org.uk/",
+    lat: 51.4524646,
+    lng: -0.0981548,
   },
   {
     id: "the-cuff-london",
@@ -63,14 +68,6 @@ export const venues: Venue[] = [
     website: "https://www.thecufflondon.co.uk/",
     lat: 51.4529782,
     lng: -0.102118,
-  },
-  {
-    id: "st-pauls-church",
-    name: "St Paul’s Church",
-    address: "Herne Hill SE24 9LY",
-    website: "https://hernehillparish.org.uk/church/",
-    lat: 51.4554407,
-    lng: -0.1001002,
   },
   {
     id: "brockwell-hall",

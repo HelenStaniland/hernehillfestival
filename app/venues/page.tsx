@@ -12,7 +12,12 @@ export const metadata: Metadata = {
 };
 
 export default function VenuesPage() {
+  const listedVenues = venues.filter((venue) => venue.id !== "venue-tba");
   const venueEvents = getEventsByVenue();
+  const mapVenues = listedVenues.filter(
+    (venue): venue is (typeof venues)[number] & { lat: number; lng: number } =>
+      typeof venue.lat === "number" && typeof venue.lng === "number",
+  );
 
   return (
     <PageShell
@@ -20,14 +25,14 @@ export default function VenuesPage() {
       description="Where to find live music around Herne Hill."
     >
       <div className="space-y-10">
-        <VenueMapSection venues={venues} venueEvents={venueEvents} />
+        <VenueMapSection venues={mapVenues} venueEvents={venueEvents} />
 
         <section aria-labelledby="venue-list-heading">
           <h2 id="venue-list-heading" className="festival-label">
             All venues
           </h2>
           <ul className="mt-4 grid gap-4 sm:grid-cols-2">
-            {venues.map((venue) => (
+            {listedVenues.map((venue) => (
               <li
                 key={venue.id}
                 id={venue.id}

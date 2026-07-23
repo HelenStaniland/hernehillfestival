@@ -54,6 +54,15 @@ export function formatEventTime(time: string) {
   return timeFormatter.format(date);
 }
 
+export function formatEventTimeRange(event: {
+  time: string;
+  endTime?: string;
+}) {
+  const start = formatEventTime(event.time);
+  if (!event.endTime) return start;
+  return `${start} – ${formatEventTime(event.endTime)}`;
+}
+
 export function formatEventDate(date: string) {
   const [year, month, day] = date.split("-").map(Number);
   return dateFormatter.format(new Date(year, month - 1, day));
@@ -65,7 +74,11 @@ export function formatEventDateShort(date: string) {
 }
 
 export function getEventTitle(event: ProgrammeEvent) {
-  return event.title ?? event.artist?.name ?? "Line-up to be announced";
+  if (event.title) return event.title;
+  if (event.artists.length > 0) {
+    return event.artists.map((artist) => artist.name).join(" & ");
+  }
+  return event.artist?.name ?? "Line-up to be announced";
 }
 
 export function getProgramme(): ProgrammeEvent[] {
@@ -105,7 +118,7 @@ export function getEventsByVenue(): Record<string, VenueEventSummary[]> {
     (result[event.venue.id] ??= []).push({
       id: event.id,
       dateLabel: formatEventDateShort(event.date),
-      time: formatEventTime(event.time),
+      time: formatEventTimeRange(event),
       title: getEventTitle(event),
     });
   }

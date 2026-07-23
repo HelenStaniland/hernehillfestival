@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { EventsBrowser } from "@/components/site/EventsBrowser";
 import { PageShell } from "@/components/site/PageShell";
-import { venues } from "@/data/venues";
 import { festival } from "@/lib/festival";
 import { getProgramme } from "@/lib/programme";
 
@@ -18,7 +17,7 @@ export default function EventsPage() {
       {programme.length === 0 ? (
         <p className="festival-body">Events will be listed here soon.</p>
       ) : (
-        <EventsBrowser programme={programme} venues={venues} />
+        <EventsBrowser programme={programme} />
       )}
     </PageShell>
   );

@@ -31,11 +31,18 @@ export function VenueMap({ venues, venueEvents }: VenueMapProps) {
   const mapRef = useRef<L.Map | null>(null);
 
   useEffect(() => {
-    if (!containerRef.current || venues.length === 0 || mapRef.current) {
+    const mappedVenues = venues.filter(
+      (venue): venue is Venue & { lat: number; lng: number } =>
+        typeof venue.lat === "number" && typeof venue.lng === "number",
+    );
+
+    if (!containerRef.current || mappedVenues.length === 0 || mapRef.current) {
       return;
     }
 
-    const bounds = L.latLngBounds(venues.map((venue) => [venue.lat, venue.lng]));
+    const bounds = L.latLngBounds(
+      mappedVenues.map((venue) => [venue.lat, venue.lng]),
+    );
     const map = L.map(containerRef.current, {
       scrollWheelZoom: false,
     }).fitBounds(bounds, { padding: [48, 48], maxZoom: 15 });
@@ -45,7 +52,7 @@ export function VenueMap({ venues, venueEvents }: VenueMapProps) {
         '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
     }).addTo(map);
 
-    for (const venue of venues) {
+    for (const venue of mappedVenues) {
       const events = venueEvents?.[venue.id] ?? [];
       const eventsHtml = events.length
         ? `<ul style="margin:6px 0 0;padding-left:16px;">${events
