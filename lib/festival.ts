@@ -8,7 +8,7 @@ export const festival = {
     {
       id: "weekend-1",
       label: "Weekend 1",
-      dates: "Friday 10 October – Monday 12 October",
+      dates: "Friday 9 October – Monday 12 October",
     },
     {
       id: "weekend-2",

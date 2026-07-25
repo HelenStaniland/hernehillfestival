@@ -2,7 +2,7 @@ import type { Sponsor, SponsorTier } from "@/data/sponsors";
 
 const tierLabels: Record<SponsorTier, string> = {
   principal: "Principal sponsor",
-  partner: "Partner",
+  partner: "Sponsor",
   supporter: "Supporter",
 };
 
