@@ -1,6 +1,7 @@
 import { FeatureCard } from "@/components/site/FeatureCard";
 import { HeronLogo } from "@/components/site/HeronLogo";
 import { HomeGallery } from "@/components/site/HomeGallery";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { festival, homeFeatures } from "@/lib/festival";
@@ -67,6 +68,8 @@ export default function Home() {
               ))}
             </ul>
           </section>
+
+          <NewsletterSignup />
         </div>
       </main>
 
