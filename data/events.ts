@@ -126,7 +126,7 @@ export const events: Event[] = [
     id: "2026-10-18-evening",
     date: "2026-10-18",
     artistId: "southwark-sinfonietta",
-    venueId: "st-faiths",
+    venueId: "st-faiths-community-centre",
     time: "18:00",
     endTime: "20:00",
   },

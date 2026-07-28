@@ -46,6 +46,14 @@ export const venues: Venue[] = [
     lng: -0.0900625,
   },
   {
+    id: "st-faiths-community-centre",
+    name: "St Faith’s Community Centre",
+    address: "Red Post Hill, London SE24 9JQ",
+    website: "https://www.stfaithscentre.org/",
+    lat: 51.455339,
+    lng: -0.089709,
+  },
+  {
     id: "brockwell-greenhouses",
     name: "Brockwell Greenhouses",
     address: "Brockwell Park, Dulwich Road, London SE24 0PA",
