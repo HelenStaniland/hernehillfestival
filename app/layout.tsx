@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
 import { Lato, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { festival } from "@/lib/festival";
@@ -30,7 +31,10 @@ export default function RootLayout({
       lang="en"
       className={`${lato.variable} ${playfair.variable} h-full antialiased`}
     >
-      <body className="flex min-h-full flex-col">{children}</body>
+      <body className="flex min-h-full flex-col">
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }
