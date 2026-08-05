@@ -60,7 +60,9 @@ export function VenueMap({ venues, venueEvents }: VenueMapProps) {
               (event) =>
                 `<li>${escapeHtml(event.dateLabel)}, ${escapeHtml(
                   event.time,
-                )} — ${escapeHtml(event.title)}</li>`,
+                )} — <a href="/events/${escapeHtml(event.id)}">${escapeHtml(
+                  event.title,
+                )}</a></li>`,
             )
             .join("")}</ul>`
         : "";

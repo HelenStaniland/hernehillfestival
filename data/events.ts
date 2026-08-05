@@ -8,6 +8,10 @@ export type Event = {
   artistId?: string;
   title?: string;
   subtitle?: string;
+  /** Longer copy for the individual event page */
+  description?: string;
+  /** Optional heading override used only on the event detail page */
+  pageTitle?: string;
   artistIds?: string[];
   image?: string;
 };
@@ -108,7 +112,8 @@ export const events: Event[] = [
   {
     id: "2026-10-17-evening",
     date: "2026-10-17",
-    artistIds: ["kotoa", "hot-motel", "john-mcclean"],
+    artistIds: ["john-mcclean", "kotoa", "hot-motel"],
+    pageTitle: "John McClean and the Clan",
     venueId: "venue-tba",
     time: "20:00",
     endTime: "22:30",

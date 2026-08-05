@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useMemo } from "react";
 import { EventLineup, getEventImages } from "@/components/site/EventLineup";
 import { VenueDetails } from "@/components/site/VenueDetails";
@@ -9,6 +10,7 @@ import {
   formatEventDate,
   formatEventTime,
   formatEventTimeRange,
+  getEventPath,
   getEventPeriodLabel,
   type ProgrammeEvent,
 } from "@/lib/programme";
@@ -71,12 +73,14 @@ export function EventsBrowser({ programme }: EventsBrowserProps) {
               const periodLabel = getEventPeriodLabel(event.id);
               const images = getEventImages(event);
               const imageCount = images.length;
+              const eventHref = getEventPath(event.id);
 
               return (
                 <li key={event.id} className="festival-card overflow-hidden">
                   <div className="flex flex-col sm:flex-row sm:items-stretch">
                     {images.length > 0 ? (
-                      <div
+                      <Link
+                        href={eventHref}
                         className={`flex w-full shrink-0 bg-festival-blue-deep sm:self-stretch ${
                           imageCount === 3
                             ? "aspect-[12/3] sm:aspect-auto sm:w-96 sm:min-h-48"
@@ -84,6 +88,7 @@ export function EventsBrowser({ programme }: EventsBrowserProps) {
                               ? "aspect-[8/3] sm:aspect-auto sm:w-72 sm:min-h-48"
                               : "aspect-[4/3] sm:aspect-auto sm:w-48 sm:min-h-48"
                         }`}
+                        aria-label="View event details"
                       >
                         {images.map((image) => (
                           <div
@@ -103,7 +108,7 @@ export function EventsBrowser({ programme }: EventsBrowserProps) {
                             />
                           </div>
                         ))}
-                      </div>
+                      </Link>
                     ) : null}
                     <div className="flex flex-1 flex-col p-5 sm:p-6">
                       {periodLabel ? (
@@ -128,7 +133,13 @@ export function EventsBrowser({ programme }: EventsBrowserProps) {
                           />
                         </div>
                       ) : null}
-                      <div className="mt-4">
+                      <div className="mt-4 flex flex-wrap gap-3">
+                        <Link
+                          href={eventHref}
+                          className="inline-flex items-center gap-2 rounded-lg border border-festival-mint/50 px-3 py-1.5 text-sm font-semibold text-festival-mint hover:bg-festival-mint/10"
+                        >
+                          Event details →
+                        </Link>
                         <button
                           type="button"
                           onClick={() => downloadIcs(event)}

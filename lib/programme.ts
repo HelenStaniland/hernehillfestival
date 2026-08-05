@@ -81,6 +81,19 @@ export function getEventTitle(event: ProgrammeEvent) {
   return event.artist?.name ?? "Line-up to be announced";
 }
 
+/** Title for the individual event page (and its metadata). */
+export function getEventPageTitle(event: ProgrammeEvent) {
+  return event.pageTitle ?? getEventTitle(event);
+}
+
+export function getEventById(id: string): ProgrammeEvent | undefined {
+  return getProgramme().find((event) => event.id === id);
+}
+
+export function getEventPath(id: string) {
+  return `/events/${id}`;
+}
+
 export function getProgramme(): ProgrammeEvent[] {
   const artistById = new Map(artists.map((artist) => [artist.id, artist]));
   const venueById = new Map(venues.map((venue) => [venue.id, venue]));

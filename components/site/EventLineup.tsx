@@ -9,12 +9,15 @@ export function EventLineup({ event }: EventLineupProps) {
   const isGroupEvent = event.artists.length > 0;
   const isChoirEvent =
     isGroupEvent && event.artists.every((artist) => artist.genre === "Choir");
+  const eventHref = `/events/${event.id}`;
 
   if (isGroupEvent && event.title) {
     return (
       <>
         <h3 className="mt-2 font-display text-2xl tracking-wide text-white">
-          {event.title}
+          <Link href={eventHref} className="hover:text-festival-mint">
+            {event.title}
+          </Link>
         </h3>
         {isChoirEvent ? (
           <p className="mt-1 text-sm font-semibold text-white/80">Choir</p>
@@ -41,7 +44,7 @@ export function EventLineup({ event }: EventLineupProps) {
         {event.artists.map((artist) => (
           <li key={artist.id}>
             <Link
-              href={`/artists#${artist.id}`}
+              href={eventHref}
               className="festival-link font-display text-2xl tracking-wide"
             >
               {artist.name}
@@ -58,7 +61,9 @@ export function EventLineup({ event }: EventLineupProps) {
   return (
     <>
       <h3 className="mt-2 font-display text-2xl tracking-wide text-white">
-        {title}
+        <Link href={eventHref} className="hover:text-festival-mint">
+          {title}
+        </Link>
       </h3>
       {!event.title && event.artist?.genre && event.artist.genre !== "TBA" ? (
         <p className="mt-1 text-sm font-semibold text-white/80">

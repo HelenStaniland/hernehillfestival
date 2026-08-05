@@ -63,10 +63,10 @@ export const artists = [
   },
   {
     id: "john-mcclean",
-    name: "John McClean",
+    name: "John McClean and the Clan",
     genre: "Blues / soul / gospel / rock",
     image: "artists/john-mcclean.jpg",
-    bio: "London-based band known for blistering live sets — John’s gritty vocals, original songs and the Clan’s tight, funky backing, combining blues, soul, gospel and rock.",
+    bio: "Based in London, John McClean and the Clan are known for blistering live sets — John’s gritty, passionate vocals, original songs and the Clan’s tight, funky backing. Blues, soul, gospel and rock combine into their own unique, mighty sound. Line-up: John McClean (vocals, guitar), Alastair Murray (vocals, lead guitar), Jennie McClean (vocals, percussion), Gary Cain (bass) and Ben McClean (drums).",
     website: "https://johnmccleanandtheclan.com/",
   },
   {
