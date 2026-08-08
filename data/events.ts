@@ -189,7 +189,7 @@ export const events: Event[] = [
     date: "2026-10-18",
     artistId: "southwark-sinfonietta",
     description:
-      "Southwark Sinfonietta closes the festival with an evening of orchestral music, performed by this South London ensemble for its local audience.",
+      "This Southwark Sinfonietta concert will take a relaxed approach to movement and noise, welcoming audience members who may usually find it difficult to attend concerts. This is why this year’s event will take place in the hall rather than the church.\n\nThe programme will be classical, with interesting works that are manageable in length, contrasting in style and featuring soloists and some audience participation. Introductions to each piece will guide the audience through descriptions and musical illustrations.\n\nThe concert is also planned to include an audience-facing musician who can mingle with guests and play some of the themes on their instrument. The conductor and soloists will be approachable too, making the music more accessible through narrative and demonstration.",
     venueId: "st-faiths-community-centre",
     time: "18:00",
     endTime: "20:00",

@@ -128,7 +128,7 @@ export default async function EventPage({ params }: EventPageProps) {
           </p>
         ) : null}
         {event.description ? (
-          <p className="mt-4 max-w-2xl festival-body text-base leading-relaxed">
+          <p className="mt-4 max-w-2xl whitespace-pre-line festival-body text-base leading-relaxed">
             {event.description}
           </p>
         ) : null}

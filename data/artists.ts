@@ -97,6 +97,7 @@ export const artists = [
     id: "calton-string-quartet",
     name: "The Calton String Quartet",
     genre: "Classical",
+    image: "artists/calton-string-quartet.jpg",
     bio: "A returning Herne Hill Music Festival ensemble, previously appearing at festival concerts including Music and Coffee at Herne Hill United Church.",
   },
   {
