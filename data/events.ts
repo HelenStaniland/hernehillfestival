@@ -88,7 +88,7 @@ export const events: Event[] = [
     date: "2026-10-11",
     artistIds: ["rita-tam", "tuomo-karjalainen"],
     description:
-      "Rita Tam and Finnish guitarist Tuomo Karjalainen share an afternoon of live music at Brockwell Community Greenhouses, including Tuomo’s cinematic blend of classical, rock, world and soundtrack influences.",
+      "South-East London singer-songwriter Rita Tam brings heartfelt folk pop shaped by her East-meets-West heritage, personal experiences and stories, including music from her album Flores, which explores hope, love and nature. She shares the afternoon with Finnish guitarist Tuomo Karjalainen, whose cinematic acoustic style weaves together classical, rock, world and soundtrack influences.",
     venueId: "brockwell-greenhouses",
     time: "15:00",
     endTime: "17:00",

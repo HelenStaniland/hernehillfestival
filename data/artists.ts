@@ -40,9 +40,9 @@ export const artists = [
   {
     id: "rita-tam",
     name: "Rita Tam",
-    genre: "Live music",
+    genre: "Folk pop",
     image: "artists/rita-tam.jpg",
-    bio: "Performing at Herne Hill Music Festival.",
+    bio: "A singer-songwriter based in South-East London whose East-meets-West heritage shapes a natural, intuitive folk-pop style that comes from the heart. Rita draws her songs from personal experiences and stories she has heard; her album Flores explores hope, love and the celebration of nature.",
     website: "https://hotvox.co.uk/artist/rita-tam/",
   },
   {
