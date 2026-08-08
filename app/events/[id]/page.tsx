@@ -15,7 +15,6 @@ import {
   formatEventTimeRange,
   getEventById,
   getEventPageTitle,
-  getEventPeriodLabel,
 } from "@/lib/programme";
 
 type EventPageProps = {
@@ -51,8 +50,9 @@ export default async function EventPage({ params }: EventPageProps) {
   if (!event) notFound();
 
   const title = getEventPageTitle(event);
-  const periodLabel = getEventPeriodLabel(event.id);
-  const images = getEventImages(event);
+  const images = event.detailImage
+    ? [event.detailImage]
+    : getEventImages(event);
   const imageCount = images.length;
   const lineupArtists =
     event.artists.length > 0
@@ -73,36 +73,47 @@ export default async function EventPage({ params }: EventPageProps) {
       </p>
 
       {images.length > 0 ? (
-        <div
-          className={`mb-8 flex w-full overflow-hidden rounded-xl bg-festival-blue-deep ${
-            imageCount === 3
-              ? "aspect-[12/5] sm:aspect-[12/4]"
-              : imageCount === 2
-                ? "aspect-[8/4] sm:aspect-[8/3]"
-                : "aspect-[16/9] sm:aspect-[21/9]"
-          }`}
-        >
-          {images.map((image) => (
-            <div key={image} className="relative min-h-0 min-w-0 flex-1">
-              <Image
-                src={`/${image}`}
-                alt=""
-                fill
-                className="object-cover"
-                sizes={
-                  imageCount >= 2
-                    ? `(max-width: 640px) ${Math.round(100 / imageCount)}vw, ${Math.round(1024 / imageCount)}px`
-                    : "(max-width: 640px) 100vw, 1024px"
-                }
-                priority
-              />
-            </div>
-          ))}
-        </div>
+        <figure className="mb-8">
+          <div
+            className={`flex w-full overflow-hidden rounded-xl bg-festival-blue-deep ${
+              imageCount === 3
+                ? "aspect-[12/5] sm:aspect-[12/4]"
+                : imageCount === 2
+                  ? "aspect-[8/4] sm:aspect-[8/3]"
+                  : "aspect-[16/9] sm:aspect-[21/9]"
+            }`}
+          >
+            {images.map((image) => (
+              <div key={image} className="relative min-h-0 min-w-0 flex-1">
+                <Image
+                  src={`/${image}`}
+                  alt=""
+                  fill
+                  className={
+                    event.imagePosition === "top"
+                      ? "object-cover object-top"
+                      : "object-cover"
+                  }
+                  sizes={
+                    imageCount >= 2
+                      ? `(max-width: 640px) ${Math.round(100 / imageCount)}vw, ${Math.round(1024 / imageCount)}px`
+                      : "(max-width: 640px) 100vw, 1024px"
+                  }
+                  priority
+                />
+              </div>
+            ))}
+          </div>
+          {event.imageCredit ? (
+            <figcaption className="mt-2 text-right text-xs text-white/60">
+              {event.imageCredit}
+            </figcaption>
+          ) : null}
+        </figure>
       ) : null}
 
       <div className="festival-card p-5 sm:p-8">
-        {periodLabel ? <p className="festival-label">{periodLabel}</p> : null}
+        <p className="festival-label">{formatEventDate(event.date)}</p>
         <p className="font-display mt-1 text-3xl text-festival-mint sm:text-4xl">
           {formatEventTimeRange(event)}
         </p>
@@ -137,6 +148,7 @@ export default async function EventPage({ params }: EventPageProps) {
                 linkToVenuePage
                 showAddress
                 showWebsite
+                showAccessibility
               />
             </div>
           </section>

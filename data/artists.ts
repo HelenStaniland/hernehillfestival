@@ -86,6 +86,12 @@ export const artists = [
     website: "https://www.instagram.com/_freddiebenedict/",
   },
   {
+    id: "calton-string-quartet",
+    name: "The Calton String Quartet",
+    genre: "Classical",
+    bio: "A returning Herne Hill Music Festival ensemble, previously appearing at festival concerts including Music and Coffee at Herne Hill United Church.",
+  },
+  {
     id: "vincent-burke",
     name: "Vincent Burke",
     genre: "Songwriter",
@@ -100,6 +106,14 @@ export const artists = [
     image: "artists/margaret-omoniyi.jpg",
     bio: "Founder of Margaret’s Music Ltd (2014). Primary teacher turned community music leader in Peckham, Nunhead and Bermondsey — family classes, holiday camps and choirs that help children aged 0–17 find their musical potential.",
     website: "https://www.margaretsmusicltd.com/",
+  },
+  {
+    id: "alicia-ma-ri-atu-ma",
+    name: "Alicia Mâ Ri Atu Mâ",
+    genre: "Therapeutic sound",
+    image: "artists/alicia-ma-ri-atu-ma.jpg",
+    bio: "The musician, sonic artist and creative practitioner behind Hush Hour. Alicia is a fully certified and insured therapeutic sound practitioner, a percussionist with more than 30 years’ experience, and has spent over a decade exploring therapeutic sound and its transformative potential.",
+    website: "https://www.hushhour.net/",
   },
   {
     id: "cambria-choir",

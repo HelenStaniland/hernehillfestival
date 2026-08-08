@@ -38,7 +38,11 @@ export default function VenuesPage() {
                 id={venue.id}
                 className="festival-card scroll-mt-28 p-5 sm:p-6"
               >
-                <VenueDetails venue={venue} prominentName />
+                <VenueDetails
+                  venue={venue}
+                  prominentName
+                  showAccessibility
+                />
               </li>
             ))}
           </ul>

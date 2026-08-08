@@ -8,6 +8,7 @@ type VenueDetailsProps = {
   prominentName?: boolean;
   showAddress?: boolean;
   showWebsite?: boolean;
+  showAccessibility?: boolean;
   linkToVenuePage?: boolean;
 };
 
@@ -47,6 +48,7 @@ export function VenueDetails({
   prominentName = false,
   showAddress = true,
   showWebsite = true,
+  showAccessibility = false,
   linkToVenuePage = false,
 }: VenueDetailsProps) {
   return (
@@ -68,6 +70,22 @@ export function VenueDetails({
         >
           Visit website →
         </a>
+      ) : null}
+      {showAccessibility ? (
+        <div className="mt-4 rounded-lg border border-white/15 bg-white/5 p-4">
+          <p className="festival-label">Accessibility</p>
+          <p className="mt-2 festival-body text-sm">{venue.accessibility}</p>
+          {venue.accessibilityUrl ? (
+            <a
+              href={venue.accessibilityUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="festival-link mt-2 inline-block text-sm"
+            >
+              Accessibility source →
+            </a>
+          ) : null}
+        </div>
       ) : null}
     </div>
   );

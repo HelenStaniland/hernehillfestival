@@ -99,7 +99,11 @@ export function EventsBrowser({ programme }: EventsBrowserProps) {
                               src={`/${image}`}
                               alt=""
                               fill
-                              className="object-cover"
+                              className={
+                                event.imagePosition === "top"
+                                  ? "object-cover object-top"
+                                  : "object-cover"
+                              }
                               sizes={
                                 imageCount >= 2
                                   ? `(max-width: 640px) ${Math.round(100 / imageCount)}vw, ${Math.round(288 / imageCount)}px`
