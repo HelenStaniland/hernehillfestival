@@ -10,6 +10,10 @@ export type Event = {
   subtitle?: string;
   /** Longer copy for the individual event page */
   description?: string;
+  descriptionLink?: {
+    href: string;
+    label: string;
+  };
   /** Optional heading override used only on the event detail page */
   pageTitle?: string;
   artistIds?: string[];
@@ -26,7 +30,7 @@ export const events: Event[] = [
     date: "2026-10-09",
     artistId: "freddie-benedict-quartet",
     description:
-      "Jazz vocalist and trumpeter Freddie Benedict brings his quartet to the Half Moon for an evening of warm baritone interpretations, jazz standards, Brazilian songbook favourites and original compositions.",
+      "Jazz vocalist and trumpeter Freddie Benedict brings his quartet to The Half Moon Pub for an evening of warm baritone interpretations, jazz standards, Brazilian songbook favourites and original compositions.",
     venueId: "half-moon",
     time: "20:00",
     endTime: "22:00",
@@ -38,7 +42,11 @@ export const events: Event[] = [
     artistId: "calton-string-quartet",
     subtitle: "String quartet · light music",
     description:
-      "The Calton String Quartet makes a welcome return to the festival for a relaxed morning of light music and coffee at Herne Hill United Church.",
+      "The Calton String Quartet makes a welcome return to the festival for a relaxed morning of light music and coffee at Herne Hill United Church. A collection will be taken, with all proceeds going to the Lambeth & Croydon Foodbank.",
+    descriptionLink: {
+      href: "https://lambethcroydon.foodbank.org.uk/home",
+      label: "Lambeth & Croydon Foodbank",
+    },
     image: "events/coffee-morning.jpg",
     venueId: "herne-hill-united-church",
     time: "10:30",
@@ -67,19 +75,35 @@ export const events: Event[] = [
     id: "2026-10-10-evening",
     date: "2026-10-10",
     artistId: "pop-up-jazz-club",
+    subtitle: "Bring your own bottle",
     description:
-      "Pop Up Jazz Club brings its signature speakeasy atmosphere and live jazz to Station Hall for a lively Saturday night at the festival.",
+      "Pop Up Jazz Club brings its signature speakeasy atmosphere and live jazz to Station Hall for a lively Saturday night at the festival. This is a bring your own bottle event; glasses, ice buckets and bottle openers will be provided.",
     venueId: "station-hall",
     entryTime: "19:30",
-    time: "20:15",
+    time: "20:00",
+    endTime: "23:00",
   },
   {
     id: "2026-10-11-afternoon",
     date: "2026-10-11",
     artistIds: ["rita-tam", "tuomo-karjalainen"],
     description:
-      "Rita Tam and Finnish guitarist Tuomo Karjalainen share an afternoon of live music at Brockwell Greenhouses, including Tuomo’s cinematic blend of classical, rock, world and soundtrack influences.",
+      "Rita Tam and Finnish guitarist Tuomo Karjalainen share an afternoon of live music at Brockwell Community Greenhouses, including Tuomo’s cinematic blend of classical, rock, world and soundtrack influences.",
     venueId: "brockwell-greenhouses",
+    time: "15:00",
+    endTime: "17:00",
+  },
+  {
+    id: "2026-10-11-ruskin-park-afternoon",
+    date: "2026-10-11",
+    artistId: "south-london-jazz-orchestra",
+    description:
+      "South London Jazz Orchestra brings the exhilarating sound of a full big band to Ruskin Park, sharing its love of jazz with the community as part of the park’s Music at the Bandstand programme.",
+    descriptionLink: {
+      href: "https://www.friendsofruskinpark.org.uk/whats-on/",
+      label: "Ruskin Park’s Music at the Bandstand programme",
+    },
+    venueId: "ruskin-park-bandstand",
     time: "15:00",
     endTime: "17:00",
   },
@@ -106,14 +130,14 @@ export const events: Event[] = [
     imageCredit: "Photo: Adrian Flower",
     venueId: "herne-hill-baptist-church",
     time: "19:00",
-    endTime: "20:30",
+    endTime: "20:15",
   },
   {
     id: "2026-10-16-evening",
     date: "2026-10-16",
     artistId: "vincent-burke",
     description:
-      "South London songwriter, guitarist and vocalist Vincent Burke brings his lyrical, melodic songs to the Half Moon for the festival’s second Friday night.",
+      "South London songwriter, guitarist and vocalist Vincent Burke brings his lyrical, melodic songs to The Half Moon Pub for the festival’s second Friday night.",
     venueId: "half-moon",
     time: "20:00",
     endTime: "22:00",
@@ -123,7 +147,7 @@ export const events: Event[] = [
     date: "2026-10-17",
     artistId: "margaret-omoniyi",
     description:
-      "Community music leader Margaret Omoniyi leads a welcoming children’s workshop designed to help young people explore music, build confidence and enjoy making music together.",
+      "Join Margaret and friends for an interactive musical experience for parents, carers and children aged 0–7. Children will experience a musical feast of songs and stories, with props and puppets to spark the imagination — all performed with live musical instruments.",
     venueId: "herne-hill-united-church",
     time: "10:00",
     endTime: "11:30",
@@ -133,7 +157,7 @@ export const events: Event[] = [
     date: "2026-10-17",
     artistId: "marama-cafe-band",
     description:
-      "Marama Cafe Band brings an afternoon of vibrant Latin jazz to Brockwell Greenhouses, combining infectious rhythms with the relaxed atmosphere of this much-loved local venue.",
+      "Marama Cafe Band brings an afternoon of vibrant Latin jazz to Brockwell Community Greenhouses, combining infectious rhythms with the relaxed atmosphere of this much-loved local venue.",
     venueId: "brockwell-greenhouses",
     time: "14:00",
     endTime: "16:00",

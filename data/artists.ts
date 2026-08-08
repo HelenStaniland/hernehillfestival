@@ -30,6 +30,14 @@ export const artists = [
     website: "https://swksinf.co.uk/",
   },
   {
+    id: "south-london-jazz-orchestra",
+    name: "South London Jazz Orchestra",
+    genre: "Big band jazz",
+    image: "artists/south-london-jazz-orchestra.jpg",
+    bio: "A diverse community orchestra based in Brixton, sharing its love of big band jazz while supporting good causes. The orchestra performs more than 30 gigs each year across London and beyond.",
+    website: "https://sljo.org.uk/",
+  },
+  {
     id: "rita-tam",
     name: "Rita Tam",
     genre: "Live music",
@@ -101,10 +109,10 @@ export const artists = [
   },
   {
     id: "margaret-omoniyi",
-    name: "Margaret Omoniyi",
+    name: "Margaret’s Music",
     genre: "Children's workshop",
     image: "artists/margaret-omoniyi.jpg",
-    bio: "Founder of Margaret’s Music Ltd (2014). Primary teacher turned community music leader in Peckham, Nunhead and Bermondsey — family classes, holiday camps and choirs that help children aged 0–17 find their musical potential.",
+    bio: "Margaret’s Music was created in 2014 by Margaret Omoniyi, a primary teacher turned community music leader in Peckham, Nunhead and Bermondsey. Its family classes, holiday camps and choirs help children aged 0–17 find their musical potential.",
     website: "https://www.margaretsmusicltd.com/",
   },
   {

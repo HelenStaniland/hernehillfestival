@@ -132,6 +132,16 @@ export default async function EventPage({ params }: EventPageProps) {
             {event.description}
           </p>
         ) : null}
+        {event.descriptionLink ? (
+          <a
+            href={event.descriptionLink.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="festival-link mt-3 inline-block text-sm"
+          >
+            Find out more about {event.descriptionLink.label} →
+          </a>
+        ) : null}
 
         {event.venue ? (
           <section className="mt-8" aria-labelledby="event-venue-heading">

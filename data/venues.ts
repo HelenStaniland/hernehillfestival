@@ -19,7 +19,7 @@ export const venues: Venue[] = [
   },
   {
     id: "half-moon",
-    name: "Half Moon",
+    name: "The Half Moon Pub",
     address: "10 Half Moon Lane, Herne Hill, London SE24 9HU",
     website: "https://www.halfmoonhernehill.co.uk/",
     accessibility:
@@ -75,7 +75,7 @@ export const venues: Venue[] = [
   },
   {
     id: "brockwell-greenhouses",
-    name: "Brockwell Greenhouses",
+    name: "Brockwell Community Greenhouses",
     address: "Brockwell Park, Dulwich Road, London SE24 0PA",
     website: "https://www.brockwellgreenhouses.org.uk/",
     accessibility:
@@ -119,5 +119,17 @@ export const venues: Venue[] = [
       "https://www.accessable.co.uk/london-borough-of-lambeth/access-guides/brockwell-park",
     lat: 51.4515818,
     lng: -0.1012349,
+  },
+  {
+    id: "ruskin-park-bandstand",
+    name: "Ruskin Park Bandstand",
+    address: "Ruskin Park, Denmark Hill, London SE5 8EL",
+    website: "https://www.friendsofruskinpark.org.uk/visit/",
+    accessibility:
+      "The park and audience area can be reached by step-free routes, although some surfaces are uneven. The bandstand platform itself has four steps with handrails and no step-free platform access. Accessible parking is limited.",
+    accessibilityUrl:
+      "https://www.accessable.co.uk/london-borough-of-lambeth/access-guides/ruskin-park",
+    lat: 51.465707,
+    lng: -0.09234,
   },
 ];

@@ -65,6 +65,16 @@ export function EventLineup({ event }: EventLineupProps) {
           {title}
         </Link>
       </h3>
+      {event.title && event.artist ? (
+        <p className="mt-1 text-sm font-semibold text-white/80">
+          <Link
+            href={`/artists#${event.artist.id}`}
+            className="festival-link"
+          >
+            {event.artist.name}
+          </Link>
+        </p>
+      ) : null}
       {!event.title && event.artist?.genre && event.artist.genre !== "TBA" ? (
         <p className="mt-1 text-sm font-semibold text-white/80">
           {event.artist.genre}
