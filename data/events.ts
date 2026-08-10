@@ -121,7 +121,7 @@ export const events: Event[] = [
   {
     id: "2026-10-12-evening",
     date: "2026-10-12",
-    title: "Gong Bath",
+    title: "Quantum Gong Bath Meditation",
     artistId: "alicia-ma-ri-atu-ma",
     description:
       "With powerful quantum gong baths, mystical guided meditation, light language and more, Alicia Mâ Ri Atu Mâ’s Hush Hour is all about making time for you. A musician, sonic artist, nature lover and creative all-rounder, Alicia’s live festival session is as much an intimate performance as a transformative, immersive soundscape combining healing instruments, quantum technology, percussion and voice.",
@@ -183,6 +183,7 @@ export const events: Event[] = [
     time: "14:00",
     endTime: "16:00",
     subtitle: "Bar Available",
+    imagePosition: "top",
   },
   {
     id: "2026-10-18-evening",

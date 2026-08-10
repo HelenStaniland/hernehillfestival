@@ -25,7 +25,11 @@ const banners = [
   ["tuomo-karjalainen", "tuomo-karjalainen.jpg"],
   ["freddie-benedict-quartet", "freddie-benedict-quartet.jpg"],
   ["vincent-burke", "vincent-burke.jpg"],
+  ["sascha-osborn", "sascha-osborn.jpg"],
   ["margaret-omoniyi", "margaret-omoniyi.jpg"],
+  ["alicia-ma-ri-atu-ma", "alicia-ma-ri-atu-ma.jpg"],
+  ["calton-quintet", "calton-quintet.jpg"],
+  ["south-london-jazz-orchestra", "south-london-jazz-orchestra.jpg"],
   ["cambria-choir", "cambria-choir.jpg"],
   ["west-norwood-community-choir", "west-norwood-community-choir.jpg"],
   ["lambeth-ladies-choir", "lambeth-ladies-choir.jpg"],
@@ -40,6 +44,8 @@ const verticalFocus = new Map([
   ["rita-tam", 0.24],
   ["mama-grande", 0.08],
   ["vincent-burke", 0.08],
+  ["sascha-osborn", 0.18],
+  ["alicia-ma-ri-atu-ma", 0.05],
   ["west-norwood-community-choir", 0.36],
 ]);
 
