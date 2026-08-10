@@ -94,10 +94,10 @@ export const artists = [
     website: "https://www.instagram.com/_freddiebenedict/",
   },
   {
-    id: "calton-string-quartet",
-    name: "The Calton String Quartet",
+    id: "calton-quintet",
+    name: "The Calton Quintet",
     genre: "Classical",
-    image: "artists/calton-string-quartet.jpg",
+    image: "artists/calton-quintet.jpg",
     bio: "A returning Herne Hill Music Festival ensemble, previously appearing at festival concerts including Music and Coffee at Herne Hill United Church.",
   },
   {
@@ -107,6 +107,14 @@ export const artists = [
     image: "artists/vincent-burke.jpg",
     bio: "South London songwriter, guitarist and vocalist. Lyrical, melodic songs often joined live by violin and double bass. BBC Introducing artist; played Latitude; praised by Tom Robinson (BBC 6 Music) and Max Reinhardt (BBC Radio 3).",
     website: "https://www.vincentburke.co.uk/",
+  },
+  {
+    id: "sascha-osborn",
+    name: "Sascha Osborn",
+    genre: "Folk / jazz / retro-soul",
+    image: "artists/sascha-osborn.jpg",
+    bio: "Inspired by jazz harmony, soulful melodies, curiosity and a love of everyday natural beauty, Sascha Osborn writes and performs reflective, heartfelt songs. Blending folk, jazz and retro-soul, she draws on relationships and life experience — love, loss and hope. Her debut album Looking Out And After received airplay on BBC Radio 6 Music, BBC Scotland and BBC Radio Suffolk.",
+    website: "https://saschaosborn.co.uk/",
   },
   {
     id: "margaret-omoniyi",

@@ -39,10 +39,10 @@ export const events: Event[] = [
     id: "2026-10-10-morning",
     date: "2026-10-10",
     title: "Coffee morning concert",
-    artistId: "calton-string-quartet",
-    subtitle: "String quartet · light music",
+    artistId: "calton-quintet",
+    subtitle: "String quintet · light music",
     description:
-      "The Calton String Quartet makes a welcome return to the festival for a relaxed morning of light music and coffee at Herne Hill United Church. A collection will be taken, with all proceeds going to the Lambeth & Croydon Foodbank.",
+      "The Calton Quintet makes a welcome return to the festival for a relaxed morning of light music and coffee at Herne Hill United Church. A collection will be taken, with all proceeds going to the Lambeth & Croydon Foodbank.",
     descriptionLink: {
       href: "https://lambethcroydon.foodbank.org.uk/home",
       label: "Lambeth & Croydon Foodbank",
@@ -135,9 +135,9 @@ export const events: Event[] = [
   {
     id: "2026-10-16-evening",
     date: "2026-10-16",
-    artistId: "vincent-burke",
+    artistIds: ["vincent-burke", "sascha-osborn"],
     description:
-      "South London songwriter, guitarist and vocalist Vincent Burke brings his lyrical, melodic songs to The Half Moon Pub for the festival’s second Friday night.",
+      "South London songwriter Vincent Burke brings his lyrical, melodic songs to The Half Moon Pub, joined by Sascha Osborn, whose reflective songs blend folk, jazz and retro-soul. A Friday night of heartfelt songwriting from two distinctive voices.",
     venueId: "half-moon",
     time: "20:00",
     endTime: "22:00",
