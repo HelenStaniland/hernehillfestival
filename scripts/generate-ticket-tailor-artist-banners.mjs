@@ -45,6 +45,7 @@ const verticalFocus = new Map([
   ["mama-grande", 0.08],
   ["vincent-burke", 0.08],
   ["sascha-osborn", 0.18],
+  ["southwark-sinfonietta", 0.25],
   ["alicia-ma-ri-atu-ma", 0.05],
   ["west-norwood-community-choir", 0.36],
 ]);
