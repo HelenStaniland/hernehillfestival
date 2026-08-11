@@ -7,6 +7,8 @@ export type Venue = {
   lng?: number;
   accessibility: string;
   accessibilityUrl?: string;
+  capacity?: string;
+  capacityUrl?: string;
 };
 
 export const venues: Venue[] = [
@@ -25,6 +27,9 @@ export const venues: Venue[] = [
     accessibility:
       "Step-free access, an accessible toilet and a listening system are available. There is no on-site parking; paid street parking is available nearby.",
     accessibilityUrl: "https://www.halfmoonhernehill.co.uk/",
+    capacity:
+      "65 (standing)",
+    capacityUrl: "https://www.halfmoonhernehill.co.uk/functions",
     lat: 51.4530888,
     lng: -0.1010589,
   },
@@ -36,6 +41,9 @@ export const venues: Venue[] = [
     accessibility:
       "Station Hall is accessed by several flights of stairs and currently has no lift or wheelchair access. There is no accessible toilet.",
     accessibilityUrl: "https://www.stationhallhernehill.org/vision",
+    capacity:
+      "70",
+    capacityUrl: "https://www.stationhallhernehill.org/hireus",
     lat: 51.4532075,
     lng: -0.1016409,
   },
@@ -47,6 +55,9 @@ export const venues: Venue[] = [
     accessibility:
       "Disabled access and an accessible toilet are available. Limited on-site parking is provided; contact the church about specific access or parking requirements.",
     accessibilityUrl: "https://www.hhuc.co.uk/rooms-for-hire/",
+    capacity:
+      "80",
+    capacityUrl: "https://www.hhuc.co.uk/rooms-for-hire/",
     lat: 51.459613,
     lng: -0.093352,
   },
@@ -59,6 +70,8 @@ export const venues: Venue[] = [
       "A hearing loop and portable internal ramp are available. A small car park is reserved for mobility-impaired visitors. Please confirm entrance and toilet access with the church.",
     accessibilityUrl:
       "https://www.achurchnearyou.com/church/733/facilities/",
+    capacity: "Seats up to 200 people.",
+    capacityUrl: "https://www.stfaithschurch.org/hiring-our-space-1",
     lat: 51.4568125,
     lng: -0.0900625,
   },
@@ -70,6 +83,8 @@ export const venues: Venue[] = [
     accessibility:
       "Wheelchair-accessible toilets and an on-site car park are available. Contact the centre to confirm step-free routes and accessible parking.",
     accessibilityUrl: "https://www.stfaithscentre.org/weekend-event-hire",
+    capacity: "160 seated",
+    capacityUrl: "https://www.stfaithscentre.org/weekend-event-hire",
     lat: 51.455339,
     lng: -0.089709,
   },
@@ -81,6 +96,8 @@ export const venues: Venue[] = [
     accessibility:
       "Public buildings have step-free access, most grounds are wheelchair-accessible, and two accessible toilets are available. Some paths are narrow, uneven or surfaced with woodchip. Brockwell Park is hilly; avoid the steep Tulse Hill entrance if possible.",
     accessibilityUrl: "https://www.brockwellgreenhouses.org.uk/visit-us/",
+    capacity: "30 seated / 50 standing (Dec–Jun)",
+    capacityUrl: "https://www.brockwellgreenhouses.org.uk/site-hire-at-bpcg/",
     lat: 51.4499882,
     lng: -0.1091145,
   },
@@ -93,6 +110,8 @@ export const venues: Venue[] = [
       "Wheelchair access is via the Winterbrook Road side entrance and should be arranged in advance. The Worship Hall is upstairs; lift, accessible-toilet and hearing-loop provision are unconfirmed.",
     accessibilityUrl:
       "https://dnd.u3asite.uk/u3a_venues/herne-hill-baptist-church/",
+    capacity: "100 (downstairs)",
+    capacityUrl: "https://hhbc.org.uk/hire/",
     lat: 51.4524646,
     lng: -0.0981548,
   },
@@ -105,6 +124,8 @@ export const venues: Venue[] = [
       "Directory information reports ground-level wheelchair access, but no accessible toilet or dedicated accessible parking. Some facilities are on a mezzanine with no lift; contact the venue to confirm your requirements.",
     accessibilityUrl:
       "https://www.tagvenue.com/rooms/london/99449/the-cuff-london-arch-golf/arch-golf",
+    capacity: "80",
+    capacityUrl: "https://www.venuesearchlondon.com/venues/hire-off-the-cuff",
     lat: 51.4529782,
     lng: -0.102118,
   },
@@ -117,6 +138,8 @@ export const venues: Venue[] = [
       "Wheelchair access, accessible toilets, ramps and lifts are available. Two Blue Badge bays are beside the hall, reached by a step-free but uneven route approximately 800 metres inside the park. There is no designated drop-off point.",
     accessibilityUrl:
       "https://www.accessable.co.uk/london-borough-of-lambeth/access-guides/brockwell-park",
+    capacity: "Capacity up to 200 guests.",
+    capacityUrl: "https://hire.lambeth.gov.uk/venues/369-brockwell-hall",
     lat: 51.4515818,
     lng: -0.1012349,
   },
@@ -129,6 +152,9 @@ export const venues: Venue[] = [
       "The park and audience area can be reached by step-free routes, although some surfaces are uneven. The bandstand platform itself has four steps with handrails and no step-free platform access. Accessible parking is limited.",
     accessibilityUrl:
       "https://www.accessable.co.uk/london-borough-of-lambeth/access-guides/ruskin-park",
+    capacity: "Unlimited (audience standing in the park)",
+    capacityUrl:
+      "https://event.lambeth.gov.uk/venues/ruskin-park/ruskin-park-bandstand/",
     lat: 51.465707,
     lng: -0.09234,
   },

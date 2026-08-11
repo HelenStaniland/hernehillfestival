@@ -159,6 +159,7 @@ export default async function EventPage({ params }: EventPageProps) {
                 showAddress
                 showWebsite
                 showAccessibility
+                showCapacity
               />
             </div>
           </section>

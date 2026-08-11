@@ -42,6 +42,7 @@ export default function VenuesPage() {
                   venue={venue}
                   prominentName
                   showAccessibility
+                  showCapacity
                 />
               </li>
             ))}

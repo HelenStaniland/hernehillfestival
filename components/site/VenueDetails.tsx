@@ -9,6 +9,7 @@ type VenueDetailsProps = {
   showAddress?: boolean;
   showWebsite?: boolean;
   showAccessibility?: boolean;
+  showCapacity?: boolean;
   linkToVenuePage?: boolean;
 };
 
@@ -49,6 +50,7 @@ export function VenueDetails({
   showAddress = true,
   showWebsite = true,
   showAccessibility = false,
+  showCapacity = false,
   linkToVenuePage = false,
 }: VenueDetailsProps) {
   return (
@@ -85,6 +87,13 @@ export function VenueDetails({
               Accessibility source →
             </a>
           ) : null}
+        </div>
+      ) : null}
+
+      {showCapacity && venue.capacity ? (
+        <div className="mt-4 rounded-lg border border-white/15 bg-white/5 p-4">
+          <p className="festival-label">Capacity</p>
+          <p className="mt-2 festival-body text-sm">{venue.capacity}</p>
         </div>
       ) : null}
     </div>
