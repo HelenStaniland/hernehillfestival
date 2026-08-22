@@ -19,7 +19,6 @@ const banners = [
   ["southwark-sinfonietta", "southwark-sinfonietta.jpg"],
   ["rita-tam", "rita-tam.jpg"],
   ["mama-grande", "mama-grande.jpg"],
-  ["hot-motel", "hot-motel.jpg"],
   ["john-mcclean-and-the-clan", "john-mcclean2.jpg"],
   ["the-long-string-hawkers", "the-long-string-hawkers.jpg"],
   ["the-grove", "the-grove.jpg"],

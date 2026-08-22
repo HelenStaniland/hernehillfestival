@@ -54,14 +54,6 @@ export const artists = [
     website: "https://www.instagram.com/mamagrandeproduction/",
   },
   {
-    id: "hot-motel",
-    name: "Hot Motel",
-    genre: "Live music",
-    image: "artists/hot-motel.jpg",
-    bio: "Performing at Herne Hill Music Festival.",
-    website: "https://hotmotel.bandcamp.com/",
-  },
-  {
     id: "the-long-string-hawkers",
     name: "The Long String Hawkers",
     genre: "Americana / blues / bluegrass",
