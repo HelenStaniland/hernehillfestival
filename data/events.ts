@@ -165,13 +165,23 @@ export const events: Event[] = [
   {
     id: "2026-10-17-evening",
     date: "2026-10-17",
-    artistIds: ["john-mcclean", "kotoa", "hot-motel"],
+    title: "John McClean and the Clan",
+    artistIds: [
+      "the-long-string-hawkers",
+      "the-grove",
+      "john-mcclean",
+      "dj-padlo",
+    ],
     pageTitle: "John McClean and the Clan",
+    subtitle: "Ticketed live music 7–10pm · free DJ set from 10pm",
     description:
-      "John McClean and the Clan headline a powerful evening of live music, bringing their distinctive blend of blues, soul, gospel and rock alongside Kotoa and Hot Motel.",
-    venueId: "venue-tba",
-    time: "20:00",
-    endTime: "22:30",
+      "John McClean and the Clan headline a fantastic lineup of live music at Effra Social which they've curated. They'll bring their distinctive blend of blues, soul, gospel and rock alongside The Grove and The Long String Hawkers.\n\nDoors open at 6:30pm. Ticketed live music runs from 7pm to 10pm, with London-based DJ PadLo on the decks from 10pm till late — free entry for the afterparty set.",
+    image: "artists/john-mcclean2.jpg",
+    detailImage: "events/john-mcclean-effra-social.jpg",
+    venueId: "effra-social",
+    entryTime: "18:30",
+    time: "19:00",
+    endTime: "22:00",
   },
   {
     id: "2026-10-18-afternoon",

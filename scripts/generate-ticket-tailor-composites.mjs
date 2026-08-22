@@ -26,8 +26,13 @@ const composites = [
     sources: ["vincent-burke.jpg", "sascha-osborn.jpg"],
   },
   {
-    slug: "john-mcclean-kotoa-hot-motel",
-    sources: ["john-mcclean.jpg", "kotoa.jpg", "hot-motel.jpg"],
+    slug: "john-mcclean-effra-social-lineup",
+    sources: [
+      "the-long-string-hawkers.jpg",
+      "the-grove.jpg",
+      "john-mcclean2.jpg",
+      "dj-padlo2.jpg",
+    ],
   },
 ];
 

@@ -116,6 +116,18 @@ export const venues: Venue[] = [
     lng: -0.0981548,
   },
   {
+    id: "effra-social",
+    name: "Effra Social",
+    address: "89 Effra Road, London SW2 1DF",
+    website: "https://effrasocial.co.uk/",
+    accessibility:
+      "There are steps at the entrance and toilets are downstairs. The venue is not currently wheelchair accessible and has no lift or accessible toilet.",
+    accessibilityUrl: "https://www.tagvenue.com/rooms/london/109059/effra-social/main-bar",
+    capacity: "200 standing",
+    lat: 51.4556826,
+    lng: -0.1135047,
+  },
+  {
     id: "the-cuff-london",
     name: "The Cuff London",
     address: "Arch 648, 301-303 Railton Road, Herne Hill, London SE24 0JN",

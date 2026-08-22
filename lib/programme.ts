@@ -74,6 +74,7 @@ export function formatEventDateShort(date: string) {
 }
 
 export function getEventTitle(event: ProgrammeEvent) {
+  if (event.pageTitle) return event.pageTitle;
   if (event.title) return event.title;
   if (event.artists.length > 0) {
     return event.artists.map((artist) => artist.name).join(" & ");
