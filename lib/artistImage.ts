@@ -1,5 +1,5 @@
 export function getArtistImageClass(artist: {
-  imagePosition?: "center" | "top" | "top-left";
+  imagePosition?: string;
 }) {
   if (artist.imagePosition === "top-left") {
     return "object-cover object-[28%_top]";

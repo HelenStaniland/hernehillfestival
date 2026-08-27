@@ -58,7 +58,7 @@ export const artists = [
     name: "The Long String Hawkers",
     genre: "Americana / blues / bluegrass",
     image: "artists/the-long-string-hawkers2.jpeg",
-    imagePosition: "top-left",
+    imagePosition: "top-left" as const,
     bio: "North Londoners The Long String Hawkers purvey an energetic mix of Americana, blues, bluegrass, and the odd backwoods gospel hoedown! Expect songs about trains, heartbreak, and dubious life choices. Music to move you and make you move!",
     website: "https://hotvox.co.uk/artist/the-long-string-hawkers/",
   },

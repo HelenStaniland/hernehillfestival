@@ -34,8 +34,9 @@ export function getHomeGalleryArtists(): HomeGalleryArtist[] {
       id: artist.id,
       name: artist.name,
       image: artist.image,
-      imagePosition:
-        "imagePosition" in artist ? artist.imagePosition : undefined,
+      ...("imagePosition" in artist && artist.imagePosition
+        ? { imagePosition: artist.imagePosition }
+        : {}),
       href: artist.website,
     }));
 }
