@@ -3,6 +3,7 @@ import Image from "next/image";
 import { ArtistDetails } from "@/components/site/ArtistDetails";
 import { PageShell } from "@/components/site/PageShell";
 import { artists } from "@/data/artists";
+import { getArtistImageClass } from "@/lib/artistImage";
 import { festival } from "@/lib/festival";
 
 export const metadata: Metadata = {
@@ -32,7 +33,7 @@ export default function ArtistsPage() {
                     src={`/${artist.image}`}
                     alt=""
                     fill
-                    className="object-cover"
+                    className={getArtistImageClass(artist)}
                     sizes="(max-width: 640px) 100vw, 192px"
                   />
                 </div>

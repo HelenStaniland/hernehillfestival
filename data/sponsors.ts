@@ -46,9 +46,9 @@ export const sponsors: Sponsor[] = [
     tier: "partner",
   },
   {
-    id: "half-moon-dental-care",
-    name: "Half Moon Dental Care",
-    logo: "sponsors/half-moon-dental-care.png",
+    id: "half-moon-dental-centre",
+    name: "Half Moon Dental Centre",
+    logo: "sponsors/half-moon-dental-centre.png",
     website: "https://www.halfmoondental.com/",
     tier: "partner",
   },

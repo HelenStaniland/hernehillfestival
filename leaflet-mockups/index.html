@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Herne Hill Music Festival — A6 leaflet mockups</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --purple: #5b4b9a;
+        --lilac: #b8a4e6;
+        --mint: #72e0ca;
+        --blue-deep: #1a3560;
+        --ink: #141c2e;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: Lato, system-ui, sans-serif;
+        background: #0e1628;
+        color: #e8eef8;
+        min-height: 100vh;
+      }
+
+      header {
+        padding: 2rem 1.25rem 0.5rem;
+        max-width: 960px;
+        margin: 0 auto;
+      }
+
+      header h1 {
+        font-family: "Playfair Display", Georgia, serif;
+        font-weight: 500;
+        font-size: clamp(1.5rem, 3vw, 2.1rem);
+        margin: 0 0 0.4rem;
+      }
+
+      header p {
+        margin: 0;
+        color: #a8b6d0;
+        max-width: 40rem;
+        line-height: 1.5;
+        font-size: 0.95rem;
+      }
+
+      .note {
+        margin-top: 0.75rem;
+        font-size: 0.8rem;
+        color: var(--mint);
+      }
+
+      section {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 1.25rem 1.25rem 2rem;
+      }
+
+      section h2 {
+        margin: 0 0 0.85rem;
+        font-size: 0.78rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--lilac);
+      }
+
+      .pair {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 1.5rem;
+        align-items: start;
+      }
+
+      .label {
+        margin: 0 0 0.5rem;
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: #9eb0cc;
+      }
+
+      /* A6 proportion — larger for readability */
+      .flyer {
+        width: 100%;
+        max-width: 340px;
+        aspect-ratio: 105 / 148;
+        border-radius: 3px;
+        overflow: hidden;
+        position: relative;
+        box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+        background: var(--blue-deep);
+      }
+
+      .flyer img.ref {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .bg-classic {
+        background: linear-gradient(
+          165deg,
+          #15284f 0%,
+          var(--blue-deep) 28%,
+          var(--purple) 62%,
+          #4a6aaa 100%
+        );
+      }
+
+      .bg-programme {
+        background: linear-gradient(
+          180deg,
+          #15284f 0%,
+          var(--blue-deep) 45%,
+          #2a3560 100%
+        );
+      }
+
+      .inner {
+        position: absolute;
+        inset: 6%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .inner.left {
+        align-items: stretch;
+        text-align: left;
+      }
+
+      .logo {
+        width: 62%;
+        max-width: 180px;
+        height: auto;
+        display: block;
+        margin: 0.15rem 0 0.35rem;
+      }
+
+      .eyebrow {
+        font-size: 0.58rem;
+        font-weight: 700;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--lilac);
+        margin: 0.15rem 0 0.55rem;
+      }
+
+      .dates {
+        display: flex;
+        flex-direction: column;
+        gap: 0.45rem;
+        margin: 0.15rem 0 0.65rem;
+        width: 100%;
+      }
+
+      .date-block {
+        border: 1px solid rgba(114, 224, 202, 0.4);
+        padding: 0.45rem 0.5rem;
+        background: rgba(20, 28, 46, 0.18);
+      }
+
+      .date-block span {
+        display: block;
+        font-size: 0.52rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--lilac);
+        margin-bottom: 0.12rem;
+      }
+
+      .date-block strong {
+        display: block;
+        font-family: "Playfair Display", Georgia, serif;
+        font-size: 0.95rem;
+        font-weight: 500;
+        color: #fff;
+        line-height: 1.15;
+      }
+
+      .blurb {
+        font-size: 0.62rem;
+        line-height: 1.4;
+        color: rgba(255, 255, 255, 0.88);
+        margin: 0;
+        max-width: 22em;
+      }
+
+      .qr-row {
+        margin-top: auto;
+        display: flex;
+        align-items: center;
+        gap: 0.55rem;
+        width: 100%;
+        justify-content: center;
+        padding-top: 0.65rem;
+      }
+
+      .qr {
+        width: 36px;
+        height: 36px;
+        background: #fff;
+        color: var(--ink);
+        font-size: 0.4rem;
+        font-weight: 700;
+        display: grid;
+        place-items: center;
+        flex-shrink: 0;
+      }
+
+      .qr-row span {
+        font-size: 0.55rem;
+        color: rgba(255, 255, 255, 0.9);
+        text-align: left;
+        line-height: 1.35;
+      }
+
+      .prog-head {
+        font-size: 0.62rem;
+        font-weight: 700;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--mint);
+        margin: 0 0 0.55rem;
+        text-align: center;
+        width: 100%;
+      }
+
+      .cols {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0;
+        column-gap: 0.7rem;
+        width: 100%;
+        flex: 1;
+        min-height: 0;
+        position: relative;
+      }
+
+      .cols::before {
+        content: "";
+        position: absolute;
+        top: 0.15rem;
+        bottom: 0.15rem;
+        left: 50%;
+        width: 1px;
+        background: rgba(114, 224, 202, 0.55);
+        transform: translateX(-50%);
+        pointer-events: none;
+      }
+
+      .col {
+        min-width: 0;
+        display: flex;
+        flex-direction: column;
+        min-height: 100%;
+      }
+
+      .col:first-child {
+        padding-right: 0.55rem;
+      }
+
+      .col:last-child {
+        padding-left: 0.55rem;
+      }
+
+      .col h3 {
+        margin: 0 0 0.2rem;
+        font-size: 0.5rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--lilac);
+        padding-bottom: 0.3rem;
+        border-bottom: 1px solid rgba(114, 224, 202, 0.55);
+        flex-shrink: 0;
+      }
+
+      .col ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .col li {
+        flex: 1 1 0;
+        display: flex;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+        border-bottom: 1px solid rgba(114, 224, 202, 0.35);
+        min-height: 0;
+      }
+
+      .col li:last-child {
+        border-bottom: none;
+      }
+
+      .col li .event {
+        font-size: 0.45rem;
+        line-height: 1.28;
+        color: rgba(255, 255, 255, 0.92);
+        width: 100%;
+        padding: 0.12rem 0;
+      }
+
+      .col li strong {
+        color: #fff;
+        font-weight: 700;
+      }
+
+      .col li em {
+        font-style: normal;
+        color: var(--lilac);
+      }
+
+      .prog-foot {
+        margin-top: auto;
+        padding-top: 0.5rem;
+        border-top: 1px solid rgba(114, 224, 202, 0.55);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        width: 100%;
+      }
+
+      .prog-foot .qr {
+        width: 32px;
+        height: 32px;
+      }
+
+      .prog-foot span {
+        font-size: 0.5rem;
+        color: var(--mint);
+        text-align: left;
+        line-height: 1.35;
+      }
+
+      .others {
+        opacity: 0.55;
+      }
+
+      .others .flyer {
+        max-width: 220px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>A6 leaflet mockups</h1>
+      <p>
+        Classic front &amp; back — the design to refine. Refresh this page after
+        changes. Logo should appear as the mint heron lockup.
+      </p>
+      <p class="note">
+        If the logo is still missing, open this file via double-click from File
+        Explorer (not the editor preview).
+      </p>
+    </header>
+
+    <section>
+      <h2>Classic leaflet — editable preview</h2>
+      <div class="pair">
+        <div>
+          <p class="label">Front</p>
+          <div class="flyer bg-classic">
+            <div class="inner">
+              <img
+                class="logo"
+                src="assets/heron-logo-transparent.png"
+                alt="Herne Hill Music Festival"
+              />
+              <p class="eyebrow">Live in South London</p>
+              <div class="dates">
+                <div class="date-block">
+                  <span>Weekend one</span>
+                  <strong>9–12 October 2026</strong>
+                </div>
+                <div class="date-block">
+                  <span>Weekend two</span>
+                  <strong>16–18 October 2026</strong>
+                </div>
+              </div>
+              <p class="blurb">
+                Two weekends of live music across pubs, parks, churches and halls
+                in Herne Hill.
+              </p>
+              <div class="qr-row">
+                <div class="qr">QR</div>
+                <span>Full programme &amp; tickets<br />hernehillfestival.org</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <p class="label">Back</p>
+          <div class="flyer bg-programme">
+            <div class="inner left">
+              <p class="prog-head">Full programme 2026</p>
+              <div class="cols">
+                <div class="col">
+                  <h3>Weekend 1 · 9–12 Oct</h3>
+                  <ul>
+                    <li>
+                      <div class="event">
+                        <strong>Fri 9 · 20:00</strong><br />The Freddie Benedict Quartet<br /><em>The Half Moon Pub</em>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="event">
+                        <strong>Sat 10 · 10:30</strong><br />Coffee morning concert<br /><em>Herne Hill United Church</em>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="event">
+                        <strong>Sat 10 · 14:00</strong><br />Herne Hill Sings On<br /><em>St Faith’s Church</em>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="event">
+                        <strong>Sat 10 · 20:00</strong><br />Pop Up Jazz Club<br /><em>Station Hall</em>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="event">
+                        <strong>Sun 11 · 15:00</strong><br />Rita Tam &amp; Tuomo Karjalainen<br /><em>Brockwell Community Greenhouses</em>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="event">
+                        <strong>Sun 11 · 15:00</strong><br />South London Jazz Orchestra<br /><em>Ruskin Park Bandstand</em>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="event">
+                        <strong>Sun 11 · 19:30</strong><br />Come and Sing Festival Evensong<br /><em>St Faith’s Church</em>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="event">
+                        <strong>Mon 12 · 19:00</strong><br />Quantum Gong Bath Meditation<br /><em>Herne Hill Baptist Church</em>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="col">
+                  <h3>Weekend 2 · 16–18 Oct</h3>
+                  <ul>
+                    <li>
+                      <div class="event">
+                        <strong>Fri 16 · 20:00</strong><br />Vincent Burke &amp; Sascha Osborn<br /><em>The Half Moon Pub</em>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="event">
+                        <strong>Sat 17 · 10:00</strong><br />Margaret’s Music<br /><em>Herne Hill United Church</em>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="event">
+                        <strong>Sat 17 · 14:00</strong><br />Marama Cafe Band<br /><em>Brockwell Community Greenhouses</em>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="event">
+                        <strong>Sat 17 · 20:00</strong><br />John McClean and the Clan, with The Long String Hawkers and The Grove<br /><em>Effra Social</em>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="event">
+                        <strong>Sun 18 · 14:00</strong><br />Mama Grande<br /><em>Brockwell Hall</em>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="event">
+                        <strong>Sun 18 · 18:00</strong><br />Southwark Sinfonietta<br /><em>St Faith’s Community Centre</em>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="prog-foot">
+                <div class="qr">QR</div>
+                <span>Details &amp; tickets →<br />hernehillfestival.org</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="others">
+      <h2>Original chat comps (for comparison)</h2>
+      <div class="pair">
+        <div>
+          <p class="label">Front (generated)</p>
+          <div class="flyer">
+            <img
+              class="ref"
+              src="assets/leaflet-1-classic-front.png"
+              alt="Original classic front mockup"
+            />
+          </div>
+        </div>
+        <div>
+          <p class="label">Back (generated)</p>
+          <div class="flyer">
+            <img
+              class="ref"
+              src="assets/leaflet-1-classic-back.png"
+              alt="Original classic back mockup"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

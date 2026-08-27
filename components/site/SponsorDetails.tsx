@@ -19,7 +19,11 @@ export function SponsorDetails({ sponsor }: SponsorDetailsProps) {
           <img
             src={`/${sponsor.logo}`}
             alt={sponsor.name}
-            className="max-h-full max-w-full object-contain object-center"
+            className={`object-contain object-center ${
+              sponsor.id === "half-moon-dental-centre"
+                ? "max-h-[120%] max-w-[120%]"
+                : "max-h-full max-w-full"
+            }`}
           />
         </div>
       ) : null}

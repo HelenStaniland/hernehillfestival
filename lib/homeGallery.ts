@@ -6,6 +6,7 @@ export type HomeGalleryArtist = {
   id: string;
   name: string;
   image: string;
+  imagePosition?: "center" | "top" | "top-left";
   href?: string;
 };
 
@@ -33,6 +34,8 @@ export function getHomeGalleryArtists(): HomeGalleryArtist[] {
       id: artist.id,
       name: artist.name,
       image: artist.image,
+      imagePosition:
+        "imagePosition" in artist ? artist.imagePosition : undefined,
       href: artist.website,
     }));
 }

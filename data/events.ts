@@ -173,14 +173,14 @@ export const events: Event[] = [
       "dj-padlo",
     ],
     pageTitle: "John McClean and the Clan",
-    subtitle: "Ticketed live music 7–10pm · free DJ set from 10pm",
+    subtitle: "Ticketed live music 8–10pm · free DJ set from 10pm",
     description:
-      "John McClean and the Clan headline a fantastic lineup of live music at Effra Social which they've curated. They'll bring their distinctive blend of blues, soul, gospel and rock alongside The Grove and The Long String Hawkers.\n\nDoors open at 6:30pm. Ticketed live music runs from 7pm to 10pm, with London-based DJ PadLo on the decks from 10pm till late — free entry for the afterparty set.",
-    image: "artists/john-mcclean2.jpg",
+      "John McClean and the Clan headline a fantastic lineup of live music at Effra Social which they've curated. They'll bring their distinctive blend of blues, soul, gospel and rock alongside The Grove and The Long String Hawkers.\n\nDoors open at 6:30pm. Ticketed live music runs from 8pm to 10pm, with London-based DJ PadLo on the decks from 10pm till late — free entry for the afterparty set.",
+    image: "artists/john-mcclean3.jpeg",
     detailImage: "events/john-mcclean-effra-social.jpg",
     venueId: "effra-social",
     entryTime: "18:30",
-    time: "19:00",
+    time: "20:00",
     endTime: "22:00",
   },
   {

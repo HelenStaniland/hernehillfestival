@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { SponsorCarousel } from "@/components/site/SponsorCarousel";
+import { getArtistImageClass } from "@/lib/artistImage";
 import {
   getHomeGalleryArtists,
   getHomeGallerySponsors,
@@ -28,7 +29,7 @@ function GalleryTile({ item }: { item: HomeGalleryArtist }) {
         src={`/${item.image}`}
         alt={item.name}
         fill
-        className="object-cover"
+        className={getArtistImageClass(item)}
         sizes="256px"
       />
       <p className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-festival-blue-deep/95 to-transparent px-3 pb-3 pt-8 font-display text-xl tracking-wide">

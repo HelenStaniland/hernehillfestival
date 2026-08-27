@@ -8,6 +8,7 @@ import { EventPageActions } from "@/components/site/EventPageActions";
 import { PageShell } from "@/components/site/PageShell";
 import { VenueDetails } from "@/components/site/VenueDetails";
 import { events } from "@/data/events";
+import { getArtistImageClass } from "@/lib/artistImage";
 import { festival } from "@/lib/festival";
 import {
   formatEventDate,
@@ -183,7 +184,7 @@ export default async function EventPage({ params }: EventPageProps) {
                           src={`/${artist.image}`}
                           alt=""
                           fill
-                          className="object-cover"
+                          className={getArtistImageClass(artist)}
                           sizes="(max-width: 640px) 100vw, 112px"
                         />
                       </div>

@@ -9,12 +9,16 @@ const INTERVAL_MS = 4000;
 function SponsorSlide({ item }: { item: HomeGallerySponsor }) {
   const content = (
     <div className="flex flex-col items-center gap-2 text-center">
-      <div className="flex h-20 w-64 items-center justify-center rounded-xl border border-white/20 bg-white/5 px-5 py-3 sm:h-24 sm:w-72">
+      <div className="flex h-20 w-64 items-center justify-center overflow-visible rounded-xl border border-white/20 bg-white/5 px-5 py-3 sm:h-24 sm:w-72">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={`/${item.logo}`}
           alt=""
-          className="max-h-full max-w-full object-contain object-center"
+          className={`object-contain object-center ${
+            item.id === "half-moon-dental-centre"
+              ? "max-h-[120%] max-w-[120%]"
+              : "max-h-full max-w-full"
+          }`}
         />
       </div>
       <p className="max-w-72 text-sm font-semibold text-white/90">{item.name}</p>

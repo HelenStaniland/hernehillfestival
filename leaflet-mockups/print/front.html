@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>HHMF A6 Front — print</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* MOO A6: bleed 109×152mm, trim 105×148mm, safe 101×144mm */
+      @page {
+        size: 109mm 152mm;
+        margin: 0;
+      }
+
+      :root {
+        --purple: #5b4b9a;
+        --lilac: #b8a4e6;
+        --mint: #72e0ca;
+        --blue-deep: #1a3560;
+        --ink: #141c2e;
+        --bleed: 2mm;
+        --safe: 4mm;
+      }
+
+      * {
+        box-sizing: border-box;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        width: 109mm;
+        height: 152mm;
+        overflow: hidden;
+        font-family: Lato, system-ui, sans-serif;
+      }
+
+      .page {
+        width: 109mm;
+        height: 152mm;
+        position: relative;
+        background: linear-gradient(
+          165deg,
+          #15284f 0%,
+          var(--blue-deep) 28%,
+          var(--purple) 62%,
+          #4a6aaa 100%
+        );
+      }
+
+      .safe {
+        position: absolute;
+        top: 4mm;
+        right: 4mm;
+        left: 4mm;
+        bottom: 4mm;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .logo {
+        width: 54%;
+        max-width: 58mm;
+        height: auto;
+        display: block;
+        margin: 0.5mm 0 1.5mm;
+      }
+
+      .eyebrow {
+        font-size: 7.5pt;
+        font-weight: 700;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--lilac);
+        margin: 0.5mm 0 2.5mm;
+      }
+
+      .dates {
+        display: flex;
+        flex-direction: column;
+        gap: 2mm;
+        margin: 0 0 2.5mm;
+        width: 100%;
+      }
+
+      .date-block {
+        border: 0.35mm solid rgba(114, 224, 202, 0.45);
+        padding: 2.5mm 3mm;
+        background: rgba(20, 28, 46, 0.18);
+      }
+
+      .date-block span {
+        display: block;
+        font-size: 6.5pt;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--lilac);
+        margin-bottom: 0.8mm;
+      }
+
+      .date-block strong {
+        display: block;
+        font-family: "Playfair Display", Georgia, serif;
+        font-size: 14pt;
+        font-weight: 500;
+        color: #fff;
+        line-height: 1.15;
+      }
+
+      .blurb {
+        font-size: 8pt;
+        line-height: 1.4;
+        color: rgba(255, 255, 255, 0.9);
+        margin: 0;
+        max-width: 72mm;
+      }
+
+      .grow {
+        flex: 1 1 auto;
+        min-height: 4mm;
+        width: 100%;
+      }
+
+      .sponsors {
+        margin-top: 0;
+        padding-top: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.6mm;
+        flex-shrink: 0;
+      }
+
+      .sponsors-label {
+        margin: 0;
+        font-size: 5.5pt;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--lilac);
+      }
+
+      .sponsors-logos {
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        gap: 1.2mm;
+        width: auto;
+        max-width: 100%;
+      }
+
+      .sponsor {
+        display: flex;
+        flex: none;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.7mm;
+        width: 18mm;
+        margin: 0;
+        padding: 0;
+      }
+
+      .sponsor.principal {
+        width: 22mm;
+      }
+
+      .sponsor img {
+        display: block;
+        height: 9mm;
+        width: auto;
+        max-width: 18mm;
+        object-fit: contain;
+      }
+
+      .sponsor.principal img {
+        height: 12mm;
+        max-width: 22mm;
+      }
+
+      .sponsor img.logo-plate {
+        background: #ffffff;
+        padding: 0.5mm 0.75mm;
+        border-radius: 0.5mm;
+        height: 6.5mm;
+        max-width: 15mm;
+      }
+
+      .sponsor.llewelyns img {
+        height: 6.5mm;
+        max-width: 15mm;
+      }
+
+      /* Nudge moon down to sit with the other logos (PNG has transparent padding) */
+      .sponsor.half-moon img {
+        height: 11mm;
+        max-width: 20mm;
+        object-position: center bottom;
+        transform: translateY(1mm);
+        margin-bottom: -1mm;
+      }
+
+      .sponsor figcaption {
+        margin: 0;
+        font-size: 4.8pt;
+        font-weight: 700;
+        line-height: 1.15;
+        letter-spacing: 0.01em;
+        color: rgba(255, 255, 255, 0.9);
+        text-align: center;
+      }
+
+      .qr-row {
+        margin-top: 2mm;
+        display: flex;
+        align-items: center;
+        gap: 3mm;
+        width: 100%;
+        justify-content: center;
+        padding-top: 2mm;
+        border-top: 0.25mm solid rgba(114, 224, 202, 0.35);
+        flex-shrink: 0;
+      }
+
+      .qr-row img {
+        width: 12mm;
+        height: 12mm;
+        display: block;
+        background: #fff;
+        padding: 0.7mm;
+      }
+
+      .qr-row span {
+        font-size: 7pt;
+        color: rgba(255, 255, 255, 0.92);
+        text-align: left;
+        line-height: 1.35;
+      }
+
+      .edge-pad {
+        flex: 0 0 4mm;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <div class="safe">
+        <img
+          class="logo"
+          src="../assets/heron-logo-print.png"
+          alt="Herne Hill Music Festival"
+        />
+        <p class="eyebrow">Live in South London</p>
+        <div class="dates">
+          <div class="date-block">
+            <span>Weekend one</span>
+            <strong>9–12 October 2026</strong>
+          </div>
+          <div class="date-block">
+            <span>Weekend two</span>
+            <strong>16–18 October 2026</strong>
+          </div>
+        </div>
+        <p class="blurb">
+          Two weekends of live music across pubs, parks, churches and halls in
+          Herne Hill.
+        </p>
+        <div class="grow" aria-hidden="true"></div>
+        <div class="sponsors">
+          <p class="sponsors-label">With thanks to our sponsors</p>
+          <div class="sponsors-logos">
+            <figure class="sponsor principal">
+              <img
+                src="../../public/sponsors/herne-hill-school.svg"
+                alt=""
+              />
+              <figcaption>Herne Hill School</figcaption>
+            </figure>
+            <figure class="sponsor llewelyns">
+              <img
+                class="logo-plate"
+                src="../../public/sponsors/llewelyns.png"
+                alt=""
+              />
+              <figcaption>Llewelyn’s</figcaption>
+            </figure>
+            <figure class="sponsor">
+              <img
+                src="../../public/sponsors/petermans.png"
+                alt=""
+              />
+              <figcaption>Petermans</figcaption>
+            </figure>
+            <figure class="sponsor half-moon">
+              <img
+                src="../../public/sponsors/half-moon-dental-centre.png"
+                alt=""
+              />
+              <figcaption>Half Moon<br />Dental Centre</figcaption>
+            </figure>
+          </div>
+        </div>
+        <div class="qr-row">
+          <img src="../assets/qr-events.png" alt="QR code to events page" />
+          <span>Full programme &amp; tickets<br />hernehillfestival.org</span>
+        </div>
+        <div class="edge-pad" aria-hidden="true"></div>
+      </div>
+    </div>
+  </body>
+</html>
