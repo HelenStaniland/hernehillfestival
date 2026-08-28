@@ -31,7 +31,7 @@ const composites = [
       "the-long-string-hawkers.jpg",
       "the-grove.jpg",
       "john-mcclean2.jpg",
-      "dj-padlo2.jpg",
+      "dj-swerve.jpg",
     ],
   },
 ];

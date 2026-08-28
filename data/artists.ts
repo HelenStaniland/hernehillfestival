@@ -79,11 +79,12 @@ export const artists = [
     website: "https://johnmccleanandtheclan.com/",
   },
   {
-    id: "dj-padlo",
-    name: "DJ PadLo",
+    id: "dj-swerve",
+    name: "DJ Swerve",
     genre: "DJ",
-    image: "artists/dj-padlo2.jpg",
-    bio: "London-based PadLo hits the decks fusing a love for all danceable genres with amazing energy. PadLo has featured everywhere — from touring with rock bands to thunderous 3am disco dancing off new releases depending on his weekly record shopping!",
+    image: "artists/dj-swerve.jpg",
+    bio: "London-based DJ and producer with close to 30 years in the industry. After two decades on Kiss FM, Swerve continues on the airwaves via his monthly HoneyDip show on The BoAT Pod, blending hip hop, R&B, soul, funk, boogie and disco — on wax and digital.",
+    website: "https://www.djswerve.com/",
   },
   {
     id: "tuomo-karjalainen",

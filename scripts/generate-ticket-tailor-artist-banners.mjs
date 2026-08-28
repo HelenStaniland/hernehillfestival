@@ -22,7 +22,7 @@ const banners = [
   ["john-mcclean-and-the-clan", "john-mcclean2.jpg"],
   ["the-long-string-hawkers", "the-long-string-hawkers.jpg"],
   ["the-grove", "the-grove.jpg"],
-  ["dj-padlo", "dj-padlo2.jpg"],
+  ["dj-swerve", "dj-swerve.jpg"],
   ["tuomo-karjalainen", "tuomo-karjalainen.jpg"],
   ["freddie-benedict-quartet", "freddie-benedict-quartet.jpg"],
   ["vincent-burke", "vincent-burke.jpg"],
