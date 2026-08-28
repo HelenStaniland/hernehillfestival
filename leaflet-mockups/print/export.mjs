@@ -1,5 +1,5 @@
 /**
- * Export A6 leaflet front/back as MOO-ready PDFs (bleed 109×152mm).
+ * Export A5 leaflet front/back as Solopress-ready PDFs (bleed 154×216mm).
  * Usage: node leaflet-mockups/print/export.mjs
  *
  * Requires Google Chrome. Optionally uses puppeteer-core if installed
@@ -14,6 +14,10 @@ import { createRequire } from "node:module";
 const require = createRequire(import.meta.url);
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const outDir = path.join(__dirname, "out");
+const PAGE_W_MM = 154;
+const PAGE_H_MM = 216;
+const VIEWPORT_W = Math.round((PAGE_W_MM / 25.4) * 96);
+const VIEWPORT_H = Math.round((PAGE_H_MM / 25.4) * 96);
 const chrome =
   process.env.CHROME_PATH ||
   "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe";
@@ -28,25 +32,25 @@ async function exportWithPuppeteer() {
 
   for (const name of ["front", "back"]) {
     const page = await browser.newPage();
-    await page.setViewport({ width: 1287, height: 1795, deviceScaleFactor: 1 });
+    await page.setViewport({ width: VIEWPORT_W, height: VIEWPORT_H, deviceScaleFactor: 1 });
     const url = pathToFileURL(path.join(__dirname, `${name}.html`)).href;
     await page.goto(url, { waitUntil: "networkidle0", timeout: 60000 });
     await page.evaluate(() => document.fonts.ready);
     await new Promise((r) => setTimeout(r, 400));
     await page.pdf({
-      path: path.join(outDir, `a6-${name}.pdf`),
-      width: "109mm",
-      height: "152mm",
+      path: path.join(outDir, `a5-${name}.pdf`),
+      width: `${PAGE_W_MM}mm`,
+      height: `${PAGE_H_MM}mm`,
       printBackground: true,
       margin: { top: 0, right: 0, bottom: 0, left: 0 },
       preferCSSPageSize: true,
     });
     await page.screenshot({
-      path: path.join(outDir, `a6-${name}.png`),
+      path: path.join(outDir, `a5-${name}.png`),
       type: "png",
     });
     await page.close();
-    console.log("Wrote", `a6-${name}.pdf` /*, and png */);
+    console.log("Wrote", `a5-${name}.pdf` /*, and png */);
   }
 
   await browser.close();
@@ -65,7 +69,7 @@ async function exportWithChromeCli() {
   for (const name of ["front", "back"]) {
     const htmlPath = path.join(__dirname, `${name}.html`);
     await access(htmlPath);
-    const pdfPath = path.join(outDir, `a6-${name}.pdf`);
+    const pdfPath = path.join(outDir, `a5-${name}.pdf`);
     await run([
       "--headless=new",
       "--disable-gpu",
@@ -88,5 +92,5 @@ try {
 }
 
 console.log(
-  "Done. Upload out/a6-front.pdf and out/a6-back.pdf to MOO (A6, with bleed).",
+  "Done. Upload out/a5-front.pdf and out/a5-back.pdf to Solopress (A5, with bleed).",
 );

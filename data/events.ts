@@ -89,7 +89,7 @@ export const events: Event[] = [
     artistIds: ["rita-tam", "tuomo-karjalainen"],
     description:
       "South-East London singer-songwriter Rita Tam brings heartfelt folk pop shaped by her East-meets-West heritage, personal experiences and stories, including music from her album Flores, which explores hope, love and nature. She shares the afternoon with Finnish guitarist Tuomo Karjalainen, whose cinematic acoustic style weaves together classical, rock, world and soundtrack influences.",
-    venueId: "brockwell-greenhouses",
+    venueId: "brockwell-barn",
     time: "15:00",
     endTime: "17:00",
   },
@@ -111,11 +111,13 @@ export const events: Event[] = [
     id: "2026-10-11-evening",
     date: "2026-10-11",
     title: "Come and Sing Festival Evensong",
+    subtitle: "Rehearsal from 6pm · service at 7pm",
     description:
-      "Come together at St Faith’s Church for a special festival evensong, bringing voices and community together in this beautiful local setting.",
+      "Come together at St Faith’s Church for a special festival evensong, bringing voices and community together in this beautiful local setting. Rehearsal begins at 6pm, with the service at 7pm — all welcome to join in.",
     image: "events/festival-evensong.jpg",
     venueId: "st-faiths",
-    time: "19:30",
+    entryTime: "18:00",
+    time: "19:00",
     endTime: "20:30",
   },
   {
@@ -173,14 +175,14 @@ export const events: Event[] = [
       "dj-padlo",
     ],
     pageTitle: "John McClean and the Clan",
-    subtitle: "Ticketed live music 8–10pm · free DJ set from 10pm",
+    subtitle: "Ticketed live music 7–10pm · free DJ set from 10pm",
     description:
-      "John McClean and the Clan headline a fantastic lineup of live music at Effra Social which they've curated. They'll bring their distinctive blend of blues, soul, gospel and rock alongside The Grove and The Long String Hawkers.\n\nDoors open at 6:30pm. Ticketed live music runs from 8pm to 10pm, with London-based DJ PadLo on the decks from 10pm till late — free entry for the afterparty set.",
+      "John McClean and the Clan headline a fantastic lineup of live music at Effra Social which they've curated. They'll bring their distinctive blend of blues, soul, gospel and rock alongside The Grove and The Long String Hawkers.\n\nDoors open at 6:30pm. Ticketed live music runs from 7pm to 10pm, with London-based DJ PadLo on the decks from 10pm till late — free entry for the afterparty set.",
     image: "artists/john-mcclean3.jpeg",
     detailImage: "events/john-mcclean-effra-social.jpg",
     venueId: "effra-social",
     entryTime: "18:30",
-    time: "20:00",
+    time: "19:00",
     endTime: "22:00",
   },
   {

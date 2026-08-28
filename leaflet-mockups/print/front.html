@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>HHMF A6 Front — print</title>
+    <title>HHMF A5 Front — print</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -10,9 +10,9 @@
       rel="stylesheet"
     />
     <style>
-      /* MOO A6: bleed 109×152mm, trim 105×148mm, safe 101×144mm */
+      /* Solopress A5: bleed 154×216mm, trim 148×210mm, safe 5mm inside trim */
       @page {
-        size: 109mm 152mm;
+        size: 154mm 216mm;
         margin: 0;
       }
 
@@ -22,8 +22,8 @@
         --mint: #72e0ca;
         --blue-deep: #1a3560;
         --ink: #141c2e;
-        --bleed: 2mm;
-        --safe: 4mm;
+        --bleed: 3mm;
+        --safe: 8mm;
       }
 
       * {
@@ -36,15 +36,15 @@
       body {
         margin: 0;
         padding: 0;
-        width: 109mm;
-        height: 152mm;
+        width: 154mm;
+        height: 216mm;
         overflow: hidden;
         font-family: Lato, system-ui, sans-serif;
       }
 
       .page {
-        width: 109mm;
-        height: 152mm;
+        width: 154mm;
+        height: 216mm;
         position: relative;
         background: linear-gradient(
           165deg,
@@ -57,10 +57,10 @@
 
       .safe {
         position: absolute;
-        top: 4mm;
-        right: 4mm;
-        left: 4mm;
-        bottom: 4mm;
+        top: var(--safe);
+        right: var(--safe);
+        left: var(--safe);
+        bottom: var(--safe);
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -68,65 +68,65 @@
       }
 
       .logo {
-        width: 54%;
-        max-width: 58mm;
+        width: 50%;
+        max-width: 82mm;
         height: auto;
         display: block;
-        margin: 0.5mm 0 1.5mm;
+        margin: 1mm 0 2mm;
       }
 
       .eyebrow {
-        font-size: 7.5pt;
+        font-size: 10pt;
         font-weight: 700;
         letter-spacing: 0.2em;
         text-transform: uppercase;
         color: var(--lilac);
-        margin: 0.5mm 0 2.5mm;
+        margin: 0.8mm 0 3mm;
       }
 
       .dates {
         display: flex;
         flex-direction: column;
-        gap: 2mm;
-        margin: 0 0 2.5mm;
+        gap: 2.5mm;
+        margin: 0 0 3mm;
         width: 100%;
       }
 
       .date-block {
         border: 0.35mm solid rgba(114, 224, 202, 0.45);
-        padding: 2.5mm 3mm;
+        padding: 3mm 3.5mm;
         background: rgba(20, 28, 46, 0.18);
       }
 
       .date-block span {
         display: block;
-        font-size: 6.5pt;
+        font-size: 8.5pt;
         letter-spacing: 0.12em;
         text-transform: uppercase;
         color: var(--lilac);
-        margin-bottom: 0.8mm;
+        margin-bottom: 1mm;
       }
 
       .date-block strong {
         display: block;
         font-family: "Playfair Display", Georgia, serif;
-        font-size: 14pt;
+        font-size: 18pt;
         font-weight: 500;
         color: #fff;
         line-height: 1.15;
       }
 
       .blurb {
-        font-size: 8pt;
-        line-height: 1.4;
+        font-size: 10.25pt;
+        line-height: 1.35;
         color: rgba(255, 255, 255, 0.9);
         margin: 0;
-        max-width: 72mm;
+        max-width: 112mm;
       }
 
       .grow {
         flex: 1 1 auto;
-        min-height: 4mm;
+        min-height: 3mm;
         width: 100%;
       }
 
@@ -137,13 +137,13 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 1.6mm;
+        gap: 2mm;
         flex-shrink: 0;
       }
 
       .sponsors-label {
         margin: 0;
-        font-size: 5.5pt;
+        font-size: 7pt;
         font-weight: 700;
         letter-spacing: 0.14em;
         text-transform: uppercase;
@@ -154,7 +154,7 @@
         display: flex;
         align-items: flex-end;
         justify-content: center;
-        gap: 1.2mm;
+        gap: 1.8mm;
         width: auto;
         max-width: 100%;
       }
@@ -164,54 +164,54 @@
         flex: none;
         flex-direction: column;
         align-items: center;
-        gap: 0.7mm;
-        width: 18mm;
+        gap: 1mm;
+        width: 24mm;
         margin: 0;
         padding: 0;
       }
 
       .sponsor.principal {
-        width: 22mm;
+        width: 28mm;
       }
 
       .sponsor img {
         display: block;
-        height: 9mm;
+        height: 12mm;
         width: auto;
-        max-width: 18mm;
+        max-width: 24mm;
         object-fit: contain;
       }
 
       .sponsor.principal img {
-        height: 12mm;
-        max-width: 22mm;
+        height: 16mm;
+        max-width: 28mm;
       }
 
       .sponsor img.logo-plate {
         background: #ffffff;
-        padding: 0.5mm 0.75mm;
+        padding: 0.6mm 0.9mm;
         border-radius: 0.5mm;
-        height: 6.5mm;
-        max-width: 15mm;
+        height: 9mm;
+        max-width: 20mm;
       }
 
       .sponsor.llewelyns img {
-        height: 6.5mm;
-        max-width: 15mm;
+        height: 9mm;
+        max-width: 20mm;
       }
 
       /* Nudge moon down to sit with the other logos (PNG has transparent padding) */
       .sponsor.half-moon img {
-        height: 11mm;
-        max-width: 20mm;
+        height: 14mm;
+        max-width: 26mm;
         object-position: center bottom;
-        transform: translateY(1mm);
-        margin-bottom: -1mm;
+        transform: translateY(1.2mm);
+        margin-bottom: -1.2mm;
       }
 
       .sponsor figcaption {
         margin: 0;
-        font-size: 4.8pt;
+        font-size: 6.5pt;
         font-weight: 700;
         line-height: 1.15;
         letter-spacing: 0.01em;
@@ -220,34 +220,34 @@
       }
 
       .qr-row {
-        margin-top: 2mm;
+        margin-top: 5.5mm;
         display: flex;
         align-items: center;
-        gap: 3mm;
+        gap: 4mm;
         width: 100%;
         justify-content: center;
-        padding-top: 2mm;
+        padding-top: 3mm;
         border-top: 0.25mm solid rgba(114, 224, 202, 0.35);
         flex-shrink: 0;
       }
 
       .qr-row img {
-        width: 12mm;
-        height: 12mm;
+        width: 16mm;
+        height: 16mm;
         display: block;
         background: #fff;
-        padding: 0.7mm;
+        padding: 0.8mm;
       }
 
       .qr-row span {
-        font-size: 7pt;
+        font-size: 9pt;
         color: rgba(255, 255, 255, 0.92);
         text-align: left;
         line-height: 1.35;
       }
 
       .edge-pad {
-        flex: 0 0 4mm;
+        flex: 0 0 2.5mm;
         width: 100%;
       }
     </style>
@@ -272,8 +272,10 @@
           </div>
         </div>
         <p class="blurb">
-          Two weekends of live music across pubs, parks, churches and halls in
-          Herne Hill.
+          Herne Hill comes alive over two weekends of live music, performances,
+          and community events across the neighbourhood. The festival brings
+          together artists and audiences in celebration of local music and
+          culture.
         </p>
         <div class="grow" aria-hidden="true"></div>
         <div class="sponsors">

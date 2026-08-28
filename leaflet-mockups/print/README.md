@@ -1,23 +1,23 @@
-# MOO A6 print files
+# Solopress A5 print files
 
-Upload these to [MOO A6 flyers](https://www.moo.com/uk/flyers/a6):
+Upload these to [Solopress A5 flyers & leaflets](https://www.solopress.com/flyers-leaflets/a5/):
 
 | File | Side |
 |---|---|
-| `out/a6-front.pdf` | Front |
-| `out/a6-back.pdf` | Back |
+| `out/a5-front.pdf` | Front |
+| `out/a5-back.pdf` | Back |
 
 ## Specs used
-- **Bleed / artwork size:** 109 × 152 mm (matches MOO)
-- **Trim:** 105 × 148 mm
-- **Safe area:** content kept ~4 mm in from the artwork edge
+- **Bleed / artwork size:** 154 × 216 mm (3 mm bleed each side)
+- **Trim:** 148 × 210 mm
+- **Safe area:** content kept 8 mm in from the artwork edge (5 mm inside trim)
 - **QR code:** points to `https://hernehillfestival.org/events`
 
-## Tips for MOO
-1. Choose **A6**, then upload front and back separately (single-page PDFs).
-2. Prefer **Premium matte** or **gloss** for colour; uncoated if people will write on them.
-3. In the MOO preview, check that nothing important sits on the cut edge.
-4. PNG copies (`a6-front.png` / `a6-back.png`) are also in `out/` if you need an image upload; PDF is better for crisp type.
+## Tips for Solopress
+1. Choose **A5**, then upload front and back separately (single-page PDFs).
+2. Prefer **Silk** or **Gloss** for colour; **Uncoated** if people will write on them.
+3. In the Solopress preview, check that nothing important sits on the cut edge.
+4. PNG copies (`a5-front.png` / `a5-back.png`) are also in `out/` if you need an image upload; PDF is better for crisp type.
 
 ## Re-export after edits
 ```bash

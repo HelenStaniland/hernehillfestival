@@ -89,6 +89,19 @@ export const venues: Venue[] = [
     lng: -0.089709,
   },
   {
+    id: "brockwell-barn",
+    name: "Brockwell Barn, Community Greenhouses",
+    address: "Brockwell Park, Dulwich Road, London SE24 0PA",
+    website: "https://www.brockwellgreenhouses.org.uk/",
+    accessibility:
+      "Public buildings have step-free access, most grounds are wheelchair-accessible, and two accessible toilets are available. Some paths are narrow, uneven or surfaced with woodchip. Brockwell Park is hilly; avoid the steep Tulse Hill entrance if possible.",
+    accessibilityUrl: "https://www.brockwellgreenhouses.org.uk/visit-us/",
+    capacity: "30 seated / 50 standing (Dec–Jun)",
+    capacityUrl: "https://www.brockwellgreenhouses.org.uk/site-hire-at-bpcg/",
+    lat: 51.4499882,
+    lng: -0.1091145,
+  },
+  {
     id: "brockwell-greenhouses",
     name: "Brockwell Community Greenhouses",
     address: "Brockwell Park, Dulwich Road, London SE24 0PA",
