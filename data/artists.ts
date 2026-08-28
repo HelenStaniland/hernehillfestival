@@ -82,7 +82,7 @@ export const artists = [
     id: "dj-swerve",
     name: "DJ Swerve",
     genre: "DJ",
-    image: "artists/dj-swerve.jpg",
+    image: "artists/dj-swerve2.jpeg",
     bio: "London-based DJ and producer with close to 30 years in the industry. After two decades on Kiss FM, Swerve continues on the airwaves via his monthly HoneyDip show on The BoAT Pod, blending hip hop, R&B, soul, funk, boogie and disco — on wax and digital.",
     website: "https://www.djswerve.com/",
   },
