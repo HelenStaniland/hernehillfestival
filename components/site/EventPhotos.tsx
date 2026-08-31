@@ -10,6 +10,10 @@ type EventPhotosProps = {
 };
 
 function imageClassFor(event: ProgrammeEvent, src: string) {
+  if (event.imagePosition === "top") {
+    return "object-cover object-top";
+  }
+
   const artist =
     event.artists.find((item) => item.image === src) ??
     (event.artist?.image === src ? event.artist : undefined);
@@ -18,9 +22,7 @@ function imageClassFor(event: ProgrammeEvent, src: string) {
     return getArtistImageClass(artist);
   }
 
-  return event.imagePosition === "top"
-    ? "object-cover object-top"
-    : "object-cover";
+  return "object-cover";
 }
 
 function Photo({

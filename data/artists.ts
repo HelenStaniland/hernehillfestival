@@ -50,6 +50,7 @@ export const artists = [
     name: "Mama Grande",
     genre: "Latin",
     image: "artists/mama-grande.jpg",
+    imagePosition: "top" as const,
     bio: "Latin music and live performance from Mama Grande Production.",
     website: "https://www.instagram.com/mamagrandeproduction/",
   },
