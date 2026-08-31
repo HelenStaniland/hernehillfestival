@@ -5,10 +5,16 @@ import { SiteHeader } from "@/components/site/SiteHeader";
 type PageShellProps = {
   children: ReactNode;
   title: string;
+  subtitle?: string;
   description?: string;
 };
 
-export function PageShell({ children, title, description }: PageShellProps) {
+export function PageShell({
+  children,
+  title,
+  subtitle,
+  description,
+}: PageShellProps) {
   return (
     <>
       <SiteHeader />
@@ -16,6 +22,11 @@ export function PageShell({ children, title, description }: PageShellProps) {
         <div className="mx-auto max-w-5xl">
           <header className="mb-8 border-b-4 border-festival-mint pb-4">
             <h1 className="festival-page-title">{title}</h1>
+            {subtitle ? (
+              <p className="mt-2 text-xl font-semibold text-white/85 sm:text-2xl">
+                {subtitle}
+              </p>
+            ) : null}
             {description ? (
               <p className="mt-2 max-w-2xl festival-body">{description}</p>
             ) : null}

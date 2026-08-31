@@ -10,15 +10,15 @@ export const artists = [
     name: "Marama Cafe Band",
     genre: "Latin Jazz",
     image: "artists/Marama-Cafe-Band.jpg",
-    bio: "Marama Cafe Band is a jazz band that plays Latin jazz music. They are from London, England.",
-    website: "https://www.petewatsonaccordion.com/marama-cafe-band/",
+    bio: "A long time collaboration of three esteemed London musicians with many musical roots, Marama Café Band have been honing a heady mélange of gypsy jazz, Hungarian czardasz, East European folk styles, dirty tango, French musette and swing together for over 20 years, performing at many venues and festivals in the UK and Europe.",
+    website: "https://www.maramacafeband.com/",
   },
   {
     id: "pop-up-jazz-club",
     name: "Pop Up Jazz Club",
     genre: "Jazz",
     image: "artists/pop-up-jazz-club.jpg",
-    bio: "Pop Up Jazz Club brings live jazz in a speakeasy vibe to unexpected spaces around South London.",
+    bio: "Pop Up Jazz Club brings a relaxed night of live vocal jazz to Herne Hill, with local singers taking the stage alongside a live house band. Settle in at a candlelit table, bring a bottle and enjoy an evening of jazz standards, great voices and a wonderfully supportive atmosphere. Whether you know the performers or not, everyone is welcome — come for the music, stay for the company.",
     website: "https://popupjazzclub.com/",
   },
   {

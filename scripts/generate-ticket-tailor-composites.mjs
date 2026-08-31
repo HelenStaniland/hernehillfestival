@@ -27,16 +27,101 @@ const composites = [
   },
   {
     slug: "john-mcclean-effra-social-lineup",
-    sources: [
-      "the-long-string-hawkers.jpg",
-      "the-grove.jpg",
-      "john-mcclean2.jpg",
-      "dj-swerve2.jpeg",
+    layout: "featured-stack",
+    featured: { source: "john-mcclean3.jpeg" },
+    stacked: [
+      { source: "the-grove2.jpeg" },
+      {
+        source: "the-long-string-hawkers2.jpeg",
+        leftFocus: 0.28,
+        topFocus: 0.15,
+      },
     ],
   },
 ];
 
 await fs.mkdir(outputDir, { recursive: true });
+
+async function coverPanel(sourceName, width, height, crop = {}) {
+  const source = path.join(artistsDir, sourceName);
+  const { leftFocus, topFocus } = crop;
+
+  if (leftFocus === undefined && topFocus === undefined) {
+    return sharp(source)
+      .rotate()
+      .resize(width, height, {
+        fit: "cover",
+        position: sharp.strategy.attention,
+      })
+      .jpeg({ quality: 92, chromaSubsampling: "4:4:4" })
+      .toBuffer();
+  }
+
+  const rotated = await sharp(source).rotate().toBuffer();
+  const metadata = await sharp(rotated).metadata();
+  const sourceWidth = metadata.width;
+  const sourceHeight = metadata.height;
+  const targetRatio = width / height;
+  const sourceRatio = sourceWidth / sourceHeight;
+
+  let left = 0;
+  let top = 0;
+  let cropWidth = sourceWidth;
+  let cropHeight = sourceHeight;
+
+  if (sourceRatio < targetRatio) {
+    cropHeight = Math.round(sourceWidth / targetRatio);
+    const extra = sourceHeight - cropHeight;
+    top = Math.round(extra * (topFocus ?? 0.5));
+  } else {
+    cropWidth = Math.round(sourceHeight * targetRatio);
+    const extra = sourceWidth - cropWidth;
+    left = Math.round(extra * (leftFocus ?? 0.5));
+  }
+
+  return sharp(rotated)
+    .extract({ left, top, width: cropWidth, height: cropHeight })
+    .resize(width, height)
+    .jpeg({ quality: 92, chromaSubsampling: "4:4:4" })
+    .toBuffer();
+}
+
+async function makeFeaturedStack(entry, output) {
+  const featuredWidth = Math.round((WIDTH * 2) / 3);
+  const stackWidth = WIDTH - featuredWidth;
+  const stackHeight = Math.floor(HEIGHT / entry.stacked.length);
+
+  const featured = await coverPanel(
+    entry.featured.source,
+    featuredWidth,
+    HEIGHT,
+    entry.featured,
+  );
+  const stacked = await Promise.all(
+    entry.stacked.map((panel) =>
+      coverPanel(panel.source, stackWidth, stackHeight, panel),
+    ),
+  );
+
+  await sharp({
+    create: {
+      width: WIDTH,
+      height: HEIGHT,
+      channels: 3,
+      background: "#1a3560",
+    },
+  })
+    .composite([
+      { input: featured, left: 0, top: 0 },
+      ...stacked.map((panel, index) => ({
+        input: panel,
+        left: featuredWidth,
+        top: index * stackHeight,
+      })),
+    ])
+    .jpeg({ quality: 92, chromaSubsampling: "4:4:4" })
+    .toFile(output);
+}
 
 async function makePanelComposite(sources, output) {
   const panelWidth = Math.floor(WIDTH / sources.length);
@@ -80,6 +165,8 @@ for (const entry of composites) {
       .resize(WIDTH, HEIGHT, { fit: "cover", position: "centre" })
       .jpeg({ quality: 92, chromaSubsampling: "4:4:4" })
       .toFile(output);
+  } else if (entry.layout === "featured-stack") {
+    await makeFeaturedStack(entry, output);
   } else {
     await makePanelComposite(entry.sources, output);
   }

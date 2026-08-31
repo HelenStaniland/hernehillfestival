@@ -22,18 +22,25 @@ export function EventLineup({ event }: EventLineupProps) {
         {isChoirEvent ? (
           <p className="mt-1 text-sm font-semibold text-white/80">Choir</p>
         ) : null}
-        <ul className="mt-3 space-y-1">
-          {event.artists.map((artist) => (
-            <li key={artist.id}>
-              <Link
-                href={`/artists#${artist.id}`}
-                className="festival-link text-sm font-semibold"
-              >
-                {artist.name}
-              </Link>
-            </li>
-          ))}
-        </ul>
+        {event.subtitle ? (
+          <p className="mt-1 text-sm font-semibold text-white/80">
+            {event.subtitle}
+          </p>
+        ) : null}
+        {isChoirEvent || !event.subtitle ? (
+          <ul className="mt-3 space-y-1">
+            {event.artists.map((artist) => (
+              <li key={artist.id}>
+                <Link
+                  href={`/artists#${artist.id}`}
+                  className="festival-link text-sm font-semibold"
+                >
+                  {artist.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        ) : null}
       </>
     );
   }
@@ -108,11 +115,18 @@ export function getEventImage(event: ProgrammeEvent): string | undefined {
 }
 
 export function getEventImages(event: ProgrammeEvent): string[] {
-  if (event.artists.length >= 2 && event.artists.length <= 3) {
-    const billImages = event.artists
+  const billedArtists =
+    event.imageLayout === "featured-stack"
+      ? event.artists.filter((artist) => artist.genre !== "DJ").slice(0, 3)
+      : event.artists.length >= 2 && event.artists.length <= 3
+        ? event.artists
+        : [];
+
+  if (billedArtists.length >= 2) {
+    const billImages = billedArtists
       .map((artist) => artist.image)
       .filter((image): image is string => Boolean(image));
-    if (billImages.length === event.artists.length) {
+    if (billImages.length === billedArtists.length) {
       return billImages;
     }
   }

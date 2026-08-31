@@ -3,8 +3,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArtistDetails } from "@/components/site/ArtistDetails";
+import { BuyTicketsButton } from "@/components/site/BuyTicketsButton";
 import { getEventImages } from "@/components/site/EventLineup";
 import { EventPageActions } from "@/components/site/EventPageActions";
+import { EventPhotos } from "@/components/site/EventPhotos";
 import { PageShell } from "@/components/site/PageShell";
 import { VenueDetails } from "@/components/site/VenueDetails";
 import { events } from "@/data/events";
@@ -54,7 +56,6 @@ export default async function EventPage({ params }: EventPageProps) {
   const images = event.detailImage
     ? [event.detailImage]
     : getEventImages(event);
-  const imageCount = images.length;
   const lineupArtists =
     event.artists.length > 0
       ? event.artists
@@ -65,6 +66,7 @@ export default async function EventPage({ params }: EventPageProps) {
   return (
     <PageShell
       title={title}
+      subtitle={event.subtitle}
       description={`${formatEventDate(event.date)} · ${formatEventTimeRange(event)}`}
     >
       <p className="mb-6">
@@ -75,36 +77,12 @@ export default async function EventPage({ params }: EventPageProps) {
 
       {images.length > 0 ? (
         <figure className="mb-8">
-          <div
-            className={`flex w-full overflow-hidden rounded-xl bg-festival-blue-deep ${
-              imageCount === 3
-                ? "aspect-[12/5] sm:aspect-[12/4]"
-                : imageCount === 2
-                  ? "aspect-[8/4] sm:aspect-[8/3]"
-                  : "aspect-[16/9] sm:aspect-[21/9]"
-            }`}
-          >
-            {images.map((image) => (
-              <div key={image} className="relative min-h-0 min-w-0 flex-1">
-                <Image
-                  src={`/${image}`}
-                  alt=""
-                  fill
-                  className={
-                    event.imagePosition === "top"
-                      ? "object-cover object-top"
-                      : "object-cover"
-                  }
-                  sizes={
-                    imageCount >= 2
-                      ? `(max-width: 640px) ${Math.round(100 / imageCount)}vw, ${Math.round(1024 / imageCount)}px`
-                      : "(max-width: 640px) 100vw, 1024px"
-                  }
-                  priority
-                />
-              </div>
-            ))}
-          </div>
+          <EventPhotos
+            event={event}
+            images={images}
+            variant="hero"
+            priority
+          />
           {event.imageCredit ? (
             <figcaption className="mt-2 text-right text-xs text-white/60">
               {event.imageCredit}
@@ -123,11 +101,6 @@ export default async function EventPage({ params }: EventPageProps) {
             Entry from {formatEventTime(event.entryTime)}
           </p>
         ) : null}
-        {event.subtitle ? (
-          <p className="mt-3 text-lg font-semibold text-white/90">
-            {event.subtitle}
-          </p>
-        ) : null}
         {event.description ? (
           <p className="mt-4 max-w-2xl whitespace-pre-line festival-body text-base leading-relaxed">
             {event.description}
@@ -142,6 +115,11 @@ export default async function EventPage({ params }: EventPageProps) {
           >
             Find out more about {event.descriptionLink.label} →
           </a>
+        ) : null}
+        {event.ticketUrl ? (
+          <div className="mt-5">
+            <BuyTicketsButton href={event.ticketUrl} size="md" />
+          </div>
         ) : null}
 
         {event.venue ? (

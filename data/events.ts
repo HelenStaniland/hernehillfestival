@@ -20,8 +20,12 @@ export type Event = {
   image?: string;
   imagePosition?: "center" | "top";
   imageCredit?: string;
+  /** Headliner on the left, two support photos stacked on the right */
+  imageLayout?: "featured-stack";
   /** Optional image used only on the individual event page */
   detailImage?: string;
+  /** Ticket Tailor (or other) checkout URL; omit for free / unticketed events */
+  ticketUrl?: string;
 };
 
 export const events: Event[] = [
@@ -34,6 +38,7 @@ export const events: Event[] = [
     venueId: "half-moon",
     time: "20:00",
     endTime: "22:00",
+    ticketUrl: "https://buytickets.at/hernehillmusicfestival/2350835",
   },
   {
     id: "2026-10-10-morning",
@@ -70,6 +75,7 @@ export const events: Event[] = [
     venueId: "st-faiths",
     time: "14:00",
     endTime: "16:30",
+    ticketUrl: "https://buytickets.at/hernehillmusicfestival/2351776",
   },
   {
     id: "2026-10-10-evening",
@@ -77,11 +83,12 @@ export const events: Event[] = [
     artistId: "pop-up-jazz-club",
     subtitle: "Bring your own bottle",
     description:
-      "Pop Up Jazz Club brings its signature speakeasy atmosphere and live jazz to Station Hall for a lively Saturday night at the festival. This is a bring your own bottle event; glasses, ice buckets and bottle openers will be provided.",
+      "Pop Up Jazz Club brings its signature speakeasy atmosphere and live jazz to Station Hall for a lively Saturday night at the festival. An open, welcoming evening of live vocal jazz — local singers, the house band and candlelit tables; there’s no bar, so bring your own wine, beer or other drinks and we’ll provide the glasses, ice, ice buckets, bottle openers and, naturally, a strategically placed bowl of crisps or two.",
     venueId: "station-hall",
     entryTime: "19:30",
     time: "20:00",
     endTime: "23:00",
+    ticketUrl: "https://buytickets.at/hernehillmusicfestival/2353289",
   },
   {
     id: "2026-10-11-afternoon",
@@ -92,6 +99,7 @@ export const events: Event[] = [
     venueId: "brockwell-barn",
     time: "15:00",
     endTime: "17:00",
+    ticketUrl: "https://buytickets.at/hernehillmusicfestival/2353294",
   },
   {
     id: "2026-10-11-ruskin-park-afternoon",
@@ -133,6 +141,7 @@ export const events: Event[] = [
     venueId: "herne-hill-baptist-church",
     time: "19:00",
     endTime: "20:15",
+    ticketUrl: "https://buytickets.at/hernehillmusicfestival/2353866",
   },
   {
     id: "2026-10-16-evening",
@@ -143,6 +152,7 @@ export const events: Event[] = [
     venueId: "half-moon",
     time: "20:00",
     endTime: "22:00",
+    ticketUrl: "https://buytickets.at/hernehillmusicfestival/2353878",
   },
   {
     id: "2026-10-17-morning",
@@ -153,6 +163,7 @@ export const events: Event[] = [
     venueId: "herne-hill-united-church",
     time: "10:00",
     endTime: "11:30",
+    ticketUrl: "https://buytickets.at/hernehillmusicfestival/2353889",
   },
   {
     id: "2026-10-17-afternoon",
@@ -163,26 +174,29 @@ export const events: Event[] = [
     venueId: "brockwell-greenhouses",
     time: "14:00",
     endTime: "16:00",
+    ticketUrl: "https://buytickets.at/hernehillmusicfestival/2353899",
   },
   {
     id: "2026-10-17-evening",
     date: "2026-10-17",
     title: "John McClean and the Clan",
     artistIds: [
-      "the-long-string-hawkers",
-      "the-grove",
       "john-mcclean",
+      "the-grove",
+      "the-long-string-hawkers",
       "dj-swerve",
     ],
     pageTitle: "John McClean and the Clan",
-    subtitle: "Ticketed live music 7–10pm · free DJ set from 10pm",
+    subtitle: "with The Grove and The Long String Hawkers",
     description:
       "John McClean and the Clan headline a fantastic lineup of live music at Effra Social which they've curated. They'll bring their distinctive blend of blues, soul, gospel and rock alongside The Grove and The Long String Hawkers.\n\nDoors open at 6:30pm. Ticketed live music runs from 7pm to 10pm, with London-based DJ Swerve on the decks from 10pm till late — free entry for the afterparty set.",
     image: "artists/john-mcclean3.jpeg",
+    imageLayout: "featured-stack",
     venueId: "effra-social",
     entryTime: "18:30",
     time: "19:00",
     endTime: "22:00",
+    ticketUrl: "https://buytickets.at/hernehillmusicfestival/2353908",
   },
   {
     id: "2026-10-18-afternoon",
@@ -195,6 +209,7 @@ export const events: Event[] = [
     endTime: "16:00",
     subtitle: "Bar Available",
     imagePosition: "top",
+    ticketUrl: "https://buytickets.at/hernehillmusicfestival/2353914",
   },
   {
     id: "2026-10-18-evening",
@@ -205,5 +220,6 @@ export const events: Event[] = [
     venueId: "st-faiths-community-centre",
     time: "18:00",
     endTime: "20:00",
+    ticketUrl: "https://buytickets.at/hernehillmusicfestival/2353931",
   },
 ];

@@ -1,9 +1,10 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useMemo } from "react";
 import { EventLineup, getEventImages } from "@/components/site/EventLineup";
+import { EventPhotos } from "@/components/site/EventPhotos";
+import { BuyTicketsButton } from "@/components/site/BuyTicketsButton";
 import { VenueDetails } from "@/components/site/VenueDetails";
 import { buildEventIcs, eventIcsFilename } from "@/lib/calendar";
 import {
@@ -72,7 +73,6 @@ export function EventsBrowser({ programme }: EventsBrowserProps) {
             {day.events.map((event) => {
               const periodLabel = getEventPeriodLabel(event.id);
               const images = getEventImages(event);
-              const imageCount = images.length;
               const eventHref = getEventPath(event.id);
 
               return (
@@ -81,37 +81,14 @@ export function EventsBrowser({ programme }: EventsBrowserProps) {
                     {images.length > 0 ? (
                       <Link
                         href={eventHref}
-                        className={`flex w-full shrink-0 bg-festival-blue-deep sm:self-stretch ${
-                          imageCount === 3
-                            ? "aspect-[12/3] sm:aspect-auto sm:w-96 sm:min-h-48"
-                            : imageCount === 2
-                              ? "aspect-[8/3] sm:aspect-auto sm:w-72 sm:min-h-48"
-                              : "aspect-[4/3] sm:aspect-auto sm:w-48 sm:min-h-48"
-                        }`}
+                        className="block w-full shrink-0 sm:flex sm:w-auto sm:self-stretch"
                         aria-label="View event details"
                       >
-                        {images.map((image) => (
-                          <div
-                            key={image}
-                            className="relative min-h-0 min-w-0 flex-1"
-                          >
-                            <Image
-                              src={`/${image}`}
-                              alt=""
-                              fill
-                              className={
-                                event.imagePosition === "top"
-                                  ? "object-cover object-top"
-                                  : "object-cover"
-                              }
-                              sizes={
-                                imageCount >= 2
-                                  ? `(max-width: 640px) ${Math.round(100 / imageCount)}vw, ${Math.round(288 / imageCount)}px`
-                                  : "(max-width: 640px) 100vw, 192px"
-                              }
-                            />
-                          </div>
-                        ))}
+                        <EventPhotos
+                          event={event}
+                          images={images}
+                          variant="listing"
+                        />
                       </Link>
                     ) : null}
                     <div className="flex flex-1 flex-col p-5 sm:p-6">
@@ -138,6 +115,9 @@ export function EventsBrowser({ programme }: EventsBrowserProps) {
                         </div>
                       ) : null}
                       <div className="mt-4 flex flex-wrap gap-3">
+                        {event.ticketUrl ? (
+                          <BuyTicketsButton href={event.ticketUrl} />
+                        ) : null}
                         <Link
                           href={eventHref}
                           className="inline-flex items-center gap-2 rounded-lg border border-festival-mint/50 px-3 py-1.5 text-sm font-semibold text-festival-mint hover:bg-festival-mint/10"
