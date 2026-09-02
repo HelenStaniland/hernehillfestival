@@ -18,7 +18,7 @@ export type Event = {
   pageTitle?: string;
   artistIds?: string[];
   image?: string;
-  imagePosition?: "center" | "top";
+  imagePosition?: "center" | "top" | "upper";
   imageCredit?: string;
   /** Headliner on the left, two support photos stacked on the right */
   imageLayout?: "featured-stack";
@@ -135,9 +135,9 @@ export const events: Event[] = [
     artistId: "alicia-ma-ri-atu-ma",
     description:
       "With powerful quantum gong baths, mystical guided meditation, light language and more, Alicia Mâ Ri Atu Mâ’s Hush Hour is all about making time for you. A musician, sonic artist, nature lover and creative all-rounder, Alicia’s live festival session is as much an intimate performance as a transformative, immersive soundscape combining healing instruments, quantum technology, percussion and voice.",
-    image: "artists/alicia-ma-ri-atu-ma.jpg",
-    imagePosition: "top",
-    imageCredit: "Photo: Adrian Flower",
+    image: "artists/GongBath1.jpeg",
+    detailImage: "artists/GongBath2.jpeg",
+    imagePosition: "upper",
     venueId: "herne-hill-baptist-church",
     time: "19:00",
     endTime: "20:15",

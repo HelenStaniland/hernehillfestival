@@ -10,6 +10,9 @@ type EventPhotosProps = {
 };
 
 function imageClassFor(event: ProgrammeEvent, src: string) {
+  if (event.imagePosition === "upper") {
+    return "object-cover object-[center_28%]";
+  }
   if (event.imagePosition === "top") {
     return "object-cover object-top";
   }
