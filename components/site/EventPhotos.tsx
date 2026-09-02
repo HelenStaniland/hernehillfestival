@@ -11,7 +11,7 @@ type EventPhotosProps = {
 
 function imageClassFor(event: ProgrammeEvent, src: string) {
   if (event.imagePosition === "upper") {
-    return "object-cover object-[center_28%]";
+    return "object-cover object-[center_32%]";
   }
   if (event.imagePosition === "top") {
     return "object-cover object-top";
@@ -82,7 +82,9 @@ export function EventPhotos({
               ? "aspect-[12/5] sm:aspect-[12/4]"
               : imageCount === 2
                 ? "aspect-[8/4] sm:aspect-[8/3]"
-                : "aspect-[16/9] sm:aspect-[21/9]"
+                : event.imagePosition === "upper"
+                  ? "aspect-[16/9]"
+                  : "aspect-[16/9] sm:aspect-[21/9]"
           }`;
 
   const featuredSizes =
