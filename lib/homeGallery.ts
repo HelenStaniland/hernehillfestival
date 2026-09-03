@@ -6,7 +6,7 @@ export type HomeGalleryArtist = {
   id: string;
   name: string;
   image: string;
-  imagePosition?: "center" | "top" | "top-left";
+  imagePosition?: "center" | "top" | "top-left" | "bottom-left";
   href?: string;
 };
 

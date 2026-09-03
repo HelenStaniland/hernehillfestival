@@ -113,7 +113,9 @@ export default async function EventPage({ params }: EventPageProps) {
             rel="noopener noreferrer"
             className="festival-link mt-3 inline-block text-sm"
           >
-            Find out more about {event.descriptionLink.label} →
+            {event.descriptionLink.text ??
+              `Find out more about ${event.descriptionLink.label}`}{" "}
+            →
           </a>
         ) : null}
         {event.ticketUrl ? (
