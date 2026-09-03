@@ -115,6 +115,10 @@ export function getEventImage(event: ProgrammeEvent): string | undefined {
 }
 
 export function getEventImages(event: ProgrammeEvent): string[] {
+  if (event.images?.length) {
+    return event.images;
+  }
+
   const billedArtists =
     event.imageLayout === "featured-stack"
       ? event.artists.filter((artist) => artist.genre !== "DJ").slice(0, 3)

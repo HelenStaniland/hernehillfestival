@@ -16,6 +16,9 @@ function imageClassFor(event: ProgrammeEvent, src: string) {
   if (event.imagePosition === "top") {
     return "object-cover object-top";
   }
+  if (src === "artists/TuomoProjection.jpeg") {
+    return getArtistImageClass({ imagePosition: "bottom-left" });
+  }
 
   const artist =
     event.artists.find((item) => item.image === src) ??

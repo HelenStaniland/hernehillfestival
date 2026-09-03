@@ -20,6 +20,8 @@ export type Event = {
   pageTitle?: string;
   artistIds?: string[];
   image?: string;
+  /** Overrides the photos shown on the events listing and event page */
+  images?: string[];
   imagePosition?: "center" | "top" | "upper";
   imageCredit?: string;
   /** Headliner on the left, two support photos stacked on the right */
@@ -96,6 +98,7 @@ export const events: Event[] = [
     id: "2026-10-11-afternoon",
     date: "2026-10-11",
     artistIds: ["rita-tam", "tuomo-karjalainen"],
+    images: ["artists/rita-tam.jpg", "artists/TuomoProjection.jpeg"],
     description:
       "South-East London singer-songwriter Rita Tam brings heartfelt folk pop shaped by her East-meets-West heritage, personal experiences and stories, including music from her album Flores, which explores hope, love and nature. She shares the afternoon with Finnish guitarist Tuomo Karjalainen, whose cinematic acoustic style weaves together classical, rock, world and soundtrack influences.\n\nFor this special performance, Tuomo takes his music into a captivating dimension with live visual projections that dynamically react and evolve in real time alongside his guitar playing. Sound and light intertwine to create a mesmerising, immersive audio-visual journey—a truly unique live experience you won’t want to miss.",
     descriptionLink: {
