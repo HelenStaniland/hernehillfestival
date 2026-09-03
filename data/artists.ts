@@ -107,8 +107,9 @@ export const artists = [
     id: "calton-quintet",
     name: "The Calton Quintet",
     genre: "Classical",
-    image: "artists/calton-quintet.jpg",
-    bio: "A returning Herne Hill Music Festival ensemble, previously appearing at festival concerts including Music and Coffee at Herne Hill United Church.",
+    image: "artists/calton-quintet-artists.jpg",
+    imagePosition: "center-right" as const,
+    bio: "Five local amateur musicians who play in various South London orchestras, The Calton Quintet enjoy making chamber music together in their spare time — something they’ve been doing for about twenty years.",
   },
   {
     id: "vincent-burke",

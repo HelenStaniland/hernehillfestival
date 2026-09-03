@@ -26,7 +26,7 @@ export function ArtistDetails({
         <p className="font-semibold text-white">{artist.name}</p>
       )}
       {showBio && artist.bio ? (
-        <p className="mt-3 festival-body">{artist.bio}</p>
+        <p className="mt-3 whitespace-pre-line festival-body">{artist.bio}</p>
       ) : null}
       {artist.website ? (
         <a

@@ -28,7 +28,7 @@ export default function ArtistsPage() {
           >
             <div className="flex flex-col sm:flex-row">
               {artist.image ? (
-                <div className="relative aspect-[4/3] w-full shrink-0 bg-festival-blue-deep sm:aspect-auto sm:h-48 sm:w-48">
+                <div className="relative aspect-[4/3] w-full shrink-0 overflow-hidden bg-festival-blue-deep sm:aspect-auto sm:h-48 sm:w-48">
                   <Image
                     src={`/${artist.image}`}
                     alt=""

@@ -51,12 +51,12 @@ export const events: Event[] = [
     artistId: "calton-quintet",
     subtitle: "String quintet · light music",
     description:
-      "The Calton Quintet makes a welcome return to the festival for a relaxed morning of light music and coffee at Herne Hill United Church. A collection will be taken, with all proceeds going to the Lambeth & Croydon Foodbank.",
+      "Start your weekend at this relaxed event — sip tea and munch on cake while you chat and listen to the Calton string quintet playing music from Classical, through Tango and Ragtime, to the Beatles!\n\nEveryone welcome, including children.\n\nA collection will be taken, with all proceeds going to the Lambeth & Croydon Foodbank.",
     descriptionLink: {
       href: "https://lambethcroydon.foodbank.org.uk/home",
       label: "Lambeth & Croydon Foodbank",
     },
-    image: "events/coffee-morning.jpg",
+    image: "artists/calton-quintet2.png",
     venueId: "herne-hill-united-church",
     time: "10:30",
     endTime: "12:00",
