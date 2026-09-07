@@ -141,20 +141,6 @@ export const venues: Venue[] = [
     lng: -0.1135047,
   },
   {
-    id: "the-cuff-london",
-    name: "The Cuff London",
-    address: "Arch 648, 301-303 Railton Road, Herne Hill, London SE24 0JN",
-    website: "https://www.thecufflondon.co.uk/",
-    accessibility:
-      "Directory information reports ground-level wheelchair access, but no accessible toilet or dedicated accessible parking. Some facilities are on a mezzanine with no lift; contact the venue to confirm your requirements.",
-    accessibilityUrl:
-      "https://www.tagvenue.com/rooms/london/99449/the-cuff-london-arch-golf/arch-golf",
-    capacity: "80",
-    capacityUrl: "https://www.venuesearchlondon.com/venues/hire-off-the-cuff",
-    lat: 51.4529782,
-    lng: -0.102118,
-  },
-  {
     id: "brockwell-hall",
     name: "Brockwell Hall",
     address: "Brockwell Park, London SE24 9BJ",
