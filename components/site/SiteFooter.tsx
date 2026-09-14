@@ -1,13 +1,17 @@
 import Link from "next/link";
 import { festival, navLinks, pastFestivalsLink } from "@/lib/festival";
+import { SocialLinks } from "@/components/site/SocialLinks";
 
 export function SiteFooter() {
   return (
     <footer className="mt-auto border-t border-white/15 bg-festival-blue-deep px-4 py-6 text-white sm:px-6">
       <div className="mx-auto flex max-w-5xl flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-        <p className="text-sm text-white/70">
-          © {new Date().getFullYear()} {festival.name}
-        </p>
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
+          <p className="text-sm text-white/70">
+            © {new Date().getFullYear()} {festival.name}
+          </p>
+          <SocialLinks />
+        </div>
         <nav aria-label="Footer">
           <ul className="flex flex-wrap gap-4">
             {navLinks.map((link) => (

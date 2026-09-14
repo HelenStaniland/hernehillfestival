@@ -32,6 +32,24 @@ export const pastFestivalsLink = {
   label: "Past festivals",
 } as const;
 
+export const socialLinks = [
+  {
+    id: "twitter",
+    label: "Twitter",
+    href: "https://twitter.com/hernehillfest/",
+  },
+  {
+    id: "instagram",
+    label: "Instagram",
+    href: "https://www.instagram.com/hernehillmfest/",
+  },
+  {
+    id: "facebook",
+    label: "Facebook",
+    href: "https://www.facebook.com/pages/Herne-Hill-Music-Festival/353425944718559",
+  },
+] as const;
+
 export const homeFeatures = [
   {
     href: "/news",

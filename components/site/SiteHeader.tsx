@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { festival, navLinks } from "@/lib/festival";
+import { SocialLinks } from "@/components/site/SocialLinks";
 
 export function SiteHeader() {
   const pathname = usePathname();
@@ -10,12 +11,15 @@ export function SiteHeader() {
   return (
     <header className="border-b-4 border-festival-mint bg-festival-blue-deep text-white">
       <div className="mx-auto flex max-w-5xl flex-col gap-4 px-4 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-6">
-        <Link
-          href="/"
-          className="font-display text-2xl leading-none tracking-wide text-white hover:text-festival-mint sm:text-3xl"
-        >
-          {festival.name}
-        </Link>
+        <div className="flex flex-col items-start gap-1">
+          <Link
+            href="/"
+            className="font-display text-2xl leading-none tracking-wide text-white hover:text-festival-mint sm:text-3xl"
+          >
+            {festival.name}
+          </Link>
+          <SocialLinks />
+        </div>
 
         <nav aria-label="Main">
           <ul className="flex flex-wrap gap-x-1 gap-y-1 sm:gap-x-2">
