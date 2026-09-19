@@ -33,7 +33,6 @@ const banners = [
   ["south-london-jazz-orchestra", "south-london-jazz-orchestra.jpg"],
   ["cambria-choir", "cambria-choir.jpg"],
   ["west-norwood-community-choir", "west-norwood-community-choir.jpg"],
-  ["lambeth-ladies-choir", "lambeth-ladies-choir.jpg"],
   ["nunhead-community-choir", "nunhead-community-choir.jpg"],
   ["note-orious", "note-orious.jpg"],
 ];

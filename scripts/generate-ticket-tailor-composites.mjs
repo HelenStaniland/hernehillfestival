@@ -14,8 +14,8 @@ const HEIGHT = 600;
 const composites = [
   {
     slug: "herne-hill-sings-on",
-    // Reuse the existing five-panel choir composite.
-    copyFrom: path.join(eventsDir, "herne-hill-sings-on.jpg"),
+    // Reuse the site choir composite.
+    copyFrom: path.join(eventsDir, "herne-hill-sings-on-composite.jpg"),
   },
   {
     slug: "rita-tam-tuomo-karjalainen",

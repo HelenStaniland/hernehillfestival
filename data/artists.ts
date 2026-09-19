@@ -162,14 +162,6 @@ export const artists = [
       "https://london.choirslist.com/recruiting-choir/srl-713-west-norwood-community-choir",
   },
   {
-    id: "lambeth-ladies-choir",
-    name: "Lambeth Ladies Choir",
-    genre: "Choir",
-    image: "artists/lambeth-ladies-choir.jpg",
-    bio: "A community choir rehearsing on Friday afternoons at Chatsworth Baptist Church Hall, West Norwood. Performances range from classical to pop and reggae.",
-    website: "https://www.lambethladieschoir.org/",
-  },
-  {
     id: "nunhead-community-choir",
     name: "Nunhead Community Choir",
     genre: "Choir",

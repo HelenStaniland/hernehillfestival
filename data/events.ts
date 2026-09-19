@@ -66,16 +66,15 @@ export const events: Event[] = [
     date: "2026-10-10",
     title: "Herne Hill Sings On",
     description:
-      "The Cambria Choir, West Norwood Community Choir, Lambeth Ladies Choir, Nunhead Community Choir and Note-Orious come together for a joyful celebration of community singing. Expect an afternoon of rich harmonies, infectious enthusiasm and a wonderfully varied repertoire, showcasing the breadth of choral music across South London.",
+      "The Cambria Choir, West Norwood Community Choir, Nunhead Community Choir and Note-Orious come together for a joyful celebration of community singing. Expect an afternoon of rich harmonies, infectious enthusiasm and a wonderfully varied repertoire, showcasing the breadth of choral music across South London.",
     artistIds: [
       "cambria-choir",
       "west-norwood-community-choir",
-      "lambeth-ladies-choir",
       "nunhead-community-choir",
       "note-orious",
     ],
     image: "artists/cambria-choir.jpg",
-    detailImage: "events/herne-hill-sings-on.jpg",
+    detailImage: "events/herne-hill-sings-on-composite.jpg",
     venueId: "st-faiths",
     time: "14:00",
     endTime: "16:30",
