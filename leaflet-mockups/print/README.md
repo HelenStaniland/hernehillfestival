@@ -68,3 +68,27 @@ Ask the printer for **hem + eyelets** (typically 50 mm hem). If they want extra 
 ```bash
 node leaflet-mockups/print/export-banner.mjs
 ```
+
+## Evergreen roller banner (850 × 2000 mm)
+
+Reusable door-side standee: brand only, no dates or listings. Print once and use every year.
+
+| File | Use |
+|---|---|
+| `out/roller-banner.pdf` | Print file (finished 850 × 2000 mm) |
+| `out/roller-banner.png` | Full-size preview |
+| `out/roller-banner-preview.png` | Screen-sized preview |
+
+### Specs used
+- **Finished size:** 850 × 2000 mm (standard UK roller banner)
+- **Safe area:** 50 mm left/right, 55 mm top
+- **Cassette:** bottom 150 mm is empty so the stand does not cover the QR
+- **QR code:** points to `https://hernehillfestival.org/events` (this year’s programme)
+- **Background:** full bleed — navy/mint can run into the top rail
+
+Ask the printer for a **standard 85 cm roller banner**. Confirm whether their hardware wants a slightly taller graphic (some kits are 850 × 2150 mm including the pole pocket); if so, they can add navy from the top/bottom edges.
+
+### Re-export roller banner after edits
+```bash
+node leaflet-mockups/print/export-roller-banner.mjs
+```

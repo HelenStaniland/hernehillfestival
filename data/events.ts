@@ -130,7 +130,7 @@ export const events: Event[] = [
     title: "Come and Sing Festival Evensong",
     subtitle: "Rehearsal from 6pm · service at 7pm",
     description:
-      "Come together at St Faith’s Church for a special festival evensong, bringing voices and community together in this beautiful local setting. Rehearsal begins at 6pm, with the service at 7pm — all welcome to join in.",
+      "Come together at St Faith’s Church for a special festival evensong, bringing voices and community together in this beautiful local setting. Rehearsal begins at 6pm, with the service at 7pm — all welcome to join in.\n\nRepertoire:\nIntroit — Peace I leave with you by Amy Beach\nCanticles — Canticles in C by Charles Villiers Stanford\nResponses — L’Estrange by Joanna Forbes\nAnthem — O thou the central orb by Charles Wood",
     image: "events/festival-evensong.jpg",
     venueId: "st-faiths",
     entryTime: "18:00",

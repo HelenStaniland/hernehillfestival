@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>HHMF evergreen roller banner — 850 × 2000 mm</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Playfair+Display:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* Standard UK roller banner: 850 × 2000 mm finished graphic.
+         Keep type and QR inside .safe. Bottom 150 mm is cassette / stand. */
+      @page {
+        size: 850mm 2000mm;
+        margin: 0;
+      }
+
+      :root {
+        --purple: #5b4b9a;
+        --lilac: #b8a4e6;
+        --mint: #72e0ca;
+        --blue-deep: #1a3560;
+        --safe-x: 50mm;
+        --safe-top: 55mm;
+        --cassette: 150mm;
+        --scene-h: 500mm;
+      }
+
+      * {
+        box-sizing: border-box;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        width: 850mm;
+        height: 2000mm;
+        overflow: hidden;
+        font-family: Lato, system-ui, sans-serif;
+        background: #111;
+      }
+
+      @media screen {
+        html {
+          width: 100%;
+          height: auto;
+          overflow: auto;
+          background: #1a1a1a;
+        }
+        body {
+          transform: scale(0.22);
+          transform-origin: top center;
+          margin: 0 auto 24px;
+        }
+      }
+
+      .page {
+        width: 850mm;
+        height: 2000mm;
+        position: relative;
+        overflow: hidden;
+        background: linear-gradient(
+          165deg,
+          #15284f 0%,
+          var(--blue-deep) 28%,
+          var(--purple) 62%,
+          #4a6aaa 100%
+        );
+      }
+
+      .top-bar {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        height: 10mm;
+        background: var(--mint);
+      }
+
+      .scene {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: var(--scene-h);
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      .scene img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: 20% 100%;
+      }
+
+      .safe {
+        position: absolute;
+        top: var(--safe-top);
+        right: var(--safe-x);
+        bottom: 530mm;
+        left: var(--safe-x);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .logo-slot {
+        flex: 1 1 auto;
+        min-height: 0;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10mm 0 6mm;
+      }
+
+      .logo-slot img {
+        width: 680mm;
+        height: auto;
+        max-height: 100%;
+        object-fit: contain;
+        mix-blend-mode: screen;
+      }
+
+      .copy {
+        flex-shrink: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .eyebrow {
+        margin: 0;
+        font-size: 18mm;
+        font-weight: 700;
+        letter-spacing: 0.32em;
+        text-transform: uppercase;
+        color: var(--lilac);
+      }
+
+      .welcome {
+        margin: 12mm 0 0;
+        font-family: "Playfair Display", Georgia, serif;
+        font-weight: 700;
+        font-size: 46mm;
+        line-height: 1.05;
+        color: #fff;
+      }
+
+      .blurb {
+        margin: 10mm 0 0;
+        max-width: 700mm;
+        font-size: 18mm;
+        line-height: 1.28;
+        color: rgba(255, 255, 255, 0.88);
+      }
+
+      .genres {
+        margin: 16mm 0 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8mm;
+        max-width: 720mm;
+      }
+
+      .genres span {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 6mm 12mm;
+        border: 1.6mm solid rgba(114, 224, 202, 0.55);
+        font-size: 16mm;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--mint);
+        white-space: nowrap;
+      }
+
+      .cta {
+        flex-shrink: 0;
+        width: 100%;
+        margin-top: 20mm;
+        padding-top: 16mm;
+        border-top: 1.6mm solid rgba(114, 224, 202, 0.45);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .cta img {
+        width: 130mm;
+        height: 130mm;
+        background: #fff;
+        padding: 7mm;
+      }
+
+      .scan {
+        margin: 8mm 0 0;
+        font-size: 15mm;
+        font-weight: 700;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--lilac);
+        line-height: 1.2;
+      }
+
+      .url {
+        margin: 6mm 0 0;
+        font-size: 28mm;
+        font-weight: 700;
+        color: var(--mint);
+        letter-spacing: 0.01em;
+      }
+
+      .cassette-guide {
+        display: none;
+      }
+
+      @media screen {
+        .cassette-guide {
+          display: block;
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          height: var(--cassette);
+          background: repeating-linear-gradient(
+            -45deg,
+            rgba(0, 0, 0, 0.08),
+            rgba(0, 0, 0, 0.08) 8mm,
+            transparent 8mm,
+            transparent 16mm
+          );
+          border-top: 1.2mm dashed rgba(255, 255, 255, 0.35);
+          color: rgba(255, 255, 255, 0.7);
+          font-size: 14mm;
+          font-weight: 700;
+          letter-spacing: 0.16em;
+          text-transform: uppercase;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <div class="top-bar" aria-hidden="true"></div>
+      <div class="scene" aria-hidden="true">
+        <img src="../assets/chatgpt-skyline-graded.png" alt="" />
+      </div>
+      <div class="safe">
+        <div class="logo-slot">
+          <img src="../assets/heron-logo-print.png" alt="Herne Hill Music Festival" />
+        </div>
+
+        <div class="copy">
+          <p class="eyebrow">Live in South London</p>
+          <p class="welcome">You’re in the right place</p>
+          <p class="blurb">
+            Live music, performances and community events across the neighbourhood.
+          </p>
+          <div class="genres" aria-label="Festival music">
+            <span>Jazz</span>
+            <span>Classical</span>
+            <span>Folk</span>
+            <span>Choirs</span>
+            <span>Family</span>
+          </div>
+        </div>
+
+        <div class="cta">
+          <img src="../assets/qr-events.png" alt="QR code to this year’s programme" />
+          <p class="scan">Scan for this year’s programme</p>
+          <p class="url">hernehillfestival.org</p>
+        </div>
+      </div>
+      <div class="cassette-guide">Stand / cassette — keep clear</div>
+    </div>
+  </body>
+</html>
