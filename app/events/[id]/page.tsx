@@ -18,11 +18,16 @@ import {
   formatEventTimeRange,
   getEventById,
   getEventPageTitle,
+  type ProgrammeEvent,
 } from "@/lib/programme";
 
 type EventPageProps = {
   params: Promise<{ id: string }>;
 };
+
+function contactMailto(contact: NonNullable<ProgrammeEvent["contactEmail"]>) {
+  return `mailto:${contact.address}?subject=${encodeURIComponent(contact.subject)}&body=${encodeURIComponent(contact.body)}`;
+}
 
 export function generateStaticParams() {
   return events.map((event) => ({ id: event.id }));
@@ -105,6 +110,16 @@ export default async function EventPage({ params }: EventPageProps) {
           <p className="mt-4 max-w-2xl whitespace-pre-line festival-body text-base leading-relaxed">
             {event.description}
           </p>
+        ) : null}
+        {event.contactEmail ? (
+          <div className="mt-5">
+            <a
+              href={contactMailto(event.contactEmail)}
+              className="inline-flex items-center gap-2 rounded-lg bg-festival-mint px-5 py-2.5 text-sm font-semibold text-festival-ink hover:bg-white"
+            >
+              Register interest
+            </a>
+          </div>
         ) : null}
         {event.descriptionLink ? (
           <a

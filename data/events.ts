@@ -30,6 +30,12 @@ export type Event = {
   detailImage?: string;
   /** Ticket Tailor (or other) checkout URL; omit for free / unticketed events */
   ticketUrl?: string;
+  /** Opens the visitor’s email app with a short message already written */
+  contactEmail?: {
+    address: string;
+    subject: string;
+    body: string;
+  };
 };
 
 export const events: Event[] = [
@@ -130,7 +136,12 @@ export const events: Event[] = [
     title: "Come and Sing Festival Evensong",
     subtitle: "Rehearsal from 6pm · service at 7pm",
     description:
-      "Come together at St Faith’s Church for a special festival evensong, bringing voices and community together in this beautiful local setting. Rehearsal begins at 6pm, with the service at 7pm — all welcome to join in.\n\nRepertoire:\nIntroit — Peace I leave with you by Amy Beach\nCanticles — Canticles in C by Charles Villiers Stanford\nResponses — L’Estrange by Joanna Forbes\nAnthem — O thou the central orb by Charles Wood",
+      "Come together at St Faith’s Church for a special festival evensong, bringing voices and community together in this beautiful local setting. Rehearsal begins at 6pm, with the service at 7pm — all welcome to join in.\n\nRepertoire:\nIntroit — Peace I leave with you by Amy Beach\nCanticles — Canticles in C by Charles Villiers Stanford\nResponses — L’Estrange by Joanna Forbes\nAnthem — O thou the central orb by Charles Wood\n\nIf you’d like to attend this event, kindly register your interest with us at St Faith’s.",
+    contactEmail: {
+      address: "music@stfaithschurch.org",
+      subject: "Come and Sing Evensong - Herne Hill Festival",
+      body: "I would like to register my interest in attending the Come and Sing Evensong at the Herne Hill Festival on Sunday October 11th.\n\nThanks!",
+    },
     image: "events/festival-evensong.jpg",
     venueId: "st-faiths",
     entryTime: "18:00",
