@@ -23,7 +23,7 @@
         --mint: #72e0ca;
         --blue-deep: #1a3560;
         --safe-x: 50mm;
-        --safe-top: 55mm;
+        --safe-top: 36mm;
         --cassette: 150mm;
         --scene-h: 500mm;
       }
@@ -73,15 +73,6 @@
         );
       }
 
-      .top-bar {
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 0;
-        height: 10mm;
-        background: var(--mint);
-      }
-
       .scene {
         position: absolute;
         left: 0;
@@ -104,12 +95,35 @@
         position: absolute;
         top: var(--safe-top);
         right: var(--safe-x);
-        bottom: 530mm;
+        bottom: 500mm;
         left: var(--safe-x);
         display: flex;
         flex-direction: column;
         align-items: center;
         text-align: center;
+      }
+
+      .kicker {
+        flex-shrink: 0;
+        width: 100%;
+        margin: 32mm 0 0;
+        font-size: 50mm;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        text-indent: 0.16em;
+        text-transform: uppercase;
+        color: var(--mint);
+        transform: translateY(14mm);
+      }
+
+      .main {
+        flex: 1 1 auto;
+        min-height: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
       }
 
       .logo-slot {
@@ -119,67 +133,70 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 10mm 0 6mm;
+        padding: 0;
       }
 
       .logo-slot img {
-        width: 680mm;
+        width: 600mm;
         height: auto;
-        max-height: 100%;
+        max-height: 620mm;
         object-fit: contain;
         mix-blend-mode: screen;
+        transform: translateY(28mm);
       }
 
       .copy {
-        flex-shrink: 0;
+        flex: 0 0 auto;
         width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
+        margin: 0 0 48mm;
       }
 
       .eyebrow {
         margin: 0;
-        font-size: 18mm;
+        font-size: 28mm;
         font-weight: 700;
-        letter-spacing: 0.32em;
+        letter-spacing: 0.24em;
+        text-indent: 0.24em;
         text-transform: uppercase;
         color: var(--lilac);
       }
 
       .welcome {
-        margin: 12mm 0 0;
+        margin: 16mm 0 0;
         font-family: "Playfair Display", Georgia, serif;
         font-weight: 700;
-        font-size: 46mm;
-        line-height: 1.05;
+        font-size: 52mm;
+        line-height: 1.1;
         color: #fff;
       }
 
       .blurb {
-        margin: 10mm 0 0;
-        max-width: 700mm;
-        font-size: 18mm;
-        line-height: 1.28;
+        margin: 14mm 0 0;
+        max-width: 100%;
+        font-size: 22mm;
+        line-height: 1.35;
         color: rgba(255, 255, 255, 0.88);
       }
 
       .genres {
-        margin: 16mm 0 0;
+        margin: 22mm 0 0;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 8mm;
-        max-width: 720mm;
+        gap: 10mm;
+        max-width: 760mm;
       }
 
       .genres span {
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        padding: 6mm 12mm;
+        padding: 8mm 14mm;
         border: 1.6mm solid rgba(114, 224, 202, 0.55);
-        font-size: 16mm;
+        font-size: 19mm;
         font-weight: 700;
         letter-spacing: 0.08em;
         text-transform: uppercase;
@@ -188,10 +205,17 @@
       }
 
       .cta {
-        flex-shrink: 0;
+        flex: 0 0 auto;
         width: 100%;
-        margin-top: 20mm;
-        padding-top: 16mm;
+        margin: 0 0 52mm;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .cta-inner {
+        width: 100%;
+        padding-top: 24mm;
         border-top: 1.6mm solid rgba(114, 224, 202, 0.45);
         display: flex;
         flex-direction: column;
@@ -199,25 +223,25 @@
       }
 
       .cta img {
-        width: 130mm;
-        height: 130mm;
+        width: 160mm;
+        height: 160mm;
         background: #fff;
-        padding: 7mm;
+        padding: 8mm;
       }
 
       .scan {
-        margin: 8mm 0 0;
-        font-size: 15mm;
+        margin: 10mm 0 0;
+        font-size: 18mm;
         font-weight: 700;
-        letter-spacing: 0.18em;
+        letter-spacing: 0.16em;
         text-transform: uppercase;
         color: var(--lilac);
         line-height: 1.2;
       }
 
       .url {
-        margin: 6mm 0 0;
-        font-size: 28mm;
+        margin: 8mm 0 0;
+        font-size: 34mm;
         font-weight: 700;
         color: var(--mint);
         letter-spacing: 0.01em;
@@ -257,34 +281,38 @@
   </head>
   <body>
     <div class="page">
-      <div class="top-bar" aria-hidden="true"></div>
       <div class="scene" aria-hidden="true">
         <img src="../assets/chatgpt-skyline-graded.png" alt="" />
       </div>
       <div class="safe">
-        <div class="logo-slot">
-          <img src="../assets/heron-logo-print.png" alt="Herne Hill Music Festival" />
-        </div>
+        <p class="kicker">Welcome to</p>
+        <div class="main">
+          <div class="logo-slot">
+            <img src="../assets/heron-logo-print.png" alt="Herne Hill Music Festival" />
+          </div>
 
-        <div class="copy">
-          <p class="eyebrow">Live in South London</p>
-          <p class="welcome">You’re in the right place</p>
-          <p class="blurb">
-            Live music, performances and community events across the neighbourhood.
-          </p>
-          <div class="genres" aria-label="Festival music">
-            <span>Jazz</span>
-            <span>Classical</span>
-            <span>Folk</span>
-            <span>Choirs</span>
-            <span>Family</span>
+          <div class="copy">
+            <p class="eyebrow">Live in South London</p>
+            <p class="welcome">You’re in the right place</p>
+            <p class="blurb">
+              Live music, performances and community events across the neighbourhood.
+            </p>
+            <div class="genres" aria-label="Festival music">
+              <span>Jazz</span>
+              <span>Classical</span>
+              <span>Folk</span>
+              <span>Choirs</span>
+              <span>Family</span>
+            </div>
           </div>
         </div>
 
         <div class="cta">
-          <img src="../assets/qr-events.png" alt="QR code to this year’s programme" />
-          <p class="scan">Scan for this year’s programme</p>
-          <p class="url">hernehillfestival.org</p>
+          <div class="cta-inner">
+            <img src="../assets/qr-events.png" alt="QR code to this year’s programme" />
+            <p class="scan">Scan for this year’s programme</p>
+            <p class="url">hernehillfestival.org</p>
+          </div>
         </div>
       </div>
       <div class="cassette-guide">Stand / cassette — keep clear</div>

@@ -1,10 +1,13 @@
 /**
- * Export evergreen 850 × 2000 mm roller banner at print resolution.
+ * Export evergreen 850 × 2000 mm roller banner at print resolution
+ * for Solopress Standard pull-up (850 × 2000 mm).
+ *
  * Usage: node leaflet-mockups/print/export-roller-banner.mjs
  *
  * Writes:
- *   out/roller-banner.pdf — send this to the printer (850 × 2000 mm)
- *   out/roller-banner.png — screen preview at the same artwork
+ *   out/roller-banner.pdf — upload this (print-ready, 300 DPI)
+ *   out/roller-banner.png — full-resolution PNG
+ *   out/roller-banner-preview.png — screen-sized preview
  *
  * Requires Google Chrome and puppeteer-core.
  */
@@ -17,14 +20,16 @@ import sharp from "sharp";
 const require = createRequire(import.meta.url);
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const outDir = path.join(__dirname, "out");
+const htmlFile = process.argv[2] || "roller-banner.html";
+const outBase = process.argv[3] || "roller-banner";
 const PAGE_W_MM = 850;
 const PAGE_H_MM = 2000;
-const PRINT_DPI = 150;
+const PRINT_DPI = 300;
+const FALLBACK_DPI = [200];
+const STRIPS = 4;
 const CSS_DPI = 96;
 const VIEWPORT_W = Math.round((PAGE_W_MM / 25.4) * CSS_DPI);
 const VIEWPORT_H = Math.round((PAGE_H_MM / 25.4) * CSS_DPI);
-const PIXEL_W = Math.round((PAGE_W_MM / 25.4) * PRINT_DPI);
-const PIXEL_H = Math.round((PAGE_H_MM / 25.4) * PRINT_DPI);
 const chrome =
   process.env.CHROME_PATH ||
   "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe";
@@ -70,34 +75,42 @@ function rgbJpegPdf(jpeg, widthPx, heightPx) {
   ]);
 }
 
+function pixelsFor(dpi) {
+  return {
+    w: Math.round((PAGE_W_MM / 25.4) * dpi),
+    h: Math.round((PAGE_H_MM / 25.4) * dpi),
+  };
+}
+
 async function capturePrintPng(dpi) {
   const puppeteer = require("puppeteer-core");
-  const pixelW = Math.round((PAGE_W_MM / 25.4) * dpi);
+  const { w: pixelW } = pixelsFor(dpi);
   const dsf = pixelW / VIEWPORT_W;
   const browser = await puppeteer.launch({
     executablePath: chrome,
     headless: true,
-    protocolTimeout: 300000,
+    protocolTimeout: 600000,
     args: [
       "--font-render-hinting=none",
       "--hide-scrollbars",
       "--disable-gpu",
+      "--disable-dev-shm-usage",
     ],
   });
 
   try {
     const page = await browser.newPage();
-    page.setDefaultTimeout(180000);
+    page.setDefaultTimeout(300000);
     await page.emulateMediaType("print");
     await page.setViewport({
       width: VIEWPORT_W,
       height: VIEWPORT_H,
       deviceScaleFactor: dsf,
     });
-    const url = pathToFileURL(path.join(__dirname, "roller-banner.html")).href;
+    const url = pathToFileURL(path.join(__dirname, htmlFile)).href;
     await page.goto(url, { waitUntil: "networkidle0", timeout: 180000 });
     await page.evaluate(() => document.fonts.ready);
-    await new Promise((r) => setTimeout(r, 800));
+    await new Promise((r) => setTimeout(r, 1000));
 
     const clip = await page.evaluate(() => {
       const r = document.querySelector(".page").getBoundingClientRect();
@@ -109,13 +122,49 @@ async function capturePrintPng(dpi) {
       };
     });
 
-    const png = await page.screenshot({
-      type: "png",
-      clip,
-      captureBeyondViewport: true,
-    });
+    const strips = [];
+    for (let i = 0; i < STRIPS; i++) {
+      const y0 = clip.y + (clip.height * i) / STRIPS;
+      const y1 = clip.y + (clip.height * (i + 1)) / STRIPS;
+      process.stdout.write(`  strip ${i + 1}/${STRIPS}…\n`);
+      const png = await page.screenshot({
+        type: "png",
+        clip: {
+          x: clip.x,
+          y: y0,
+          width: clip.width,
+          height: y1 - y0,
+        },
+        captureBeyondViewport: true,
+      });
+      strips.push(png);
+    }
     await page.close();
-    return png;
+
+    const metas = [];
+    for (const strip of strips) {
+      metas.push(await sharp(strip).metadata());
+    }
+    const width = Math.min(...metas.map((m) => m.width));
+    const height = metas.reduce((sum, m) => sum + m.height, 0);
+    const composites = [];
+    let top = 0;
+    for (let i = 0; i < strips.length; i++) {
+      composites.push({ input: strips[i], left: 0, top });
+      top += metas[i].height;
+    }
+
+    return sharp({
+      create: {
+        width,
+        height,
+        channels: 3,
+        background: { r: 21, g: 40, b: 79 },
+      },
+    })
+      .composite(composites)
+      .png({ compressionLevel: 1 })
+      .toBuffer();
   } finally {
     await browser.close();
   }
@@ -123,42 +172,45 @@ async function capturePrintPng(dpi) {
 
 await mkdir(outDir, { recursive: true });
 
-console.log(
-  `Capturing ${PAGE_W_MM}×${PAGE_H_MM} mm at ${PRINT_DPI} DPI (${PIXEL_W}×${PIXEL_H} px)…`,
-);
-
+const dpiAttempts = [PRINT_DPI, ...FALLBACK_DPI];
 let pngBuffer;
-let usedDpi = PRINT_DPI;
-try {
-  pngBuffer = await capturePrintPng(PRINT_DPI);
-} catch (err) {
-  console.warn(`150 DPI capture failed (${err.message}); retrying at 100 DPI`);
-  usedDpi = 100;
-  pngBuffer = await capturePrintPng(100);
+let usedDpi;
+
+for (const dpi of dpiAttempts) {
+  const { w, h } = pixelsFor(dpi);
+  console.log(
+    `Capturing ${PAGE_W_MM}×${PAGE_H_MM} mm at ${dpi} DPI (${w}×${h} px)…`,
+  );
+  try {
+    pngBuffer = await capturePrintPng(dpi);
+    usedDpi = dpi;
+    break;
+  } catch (err) {
+    console.warn(`${dpi} DPI capture failed (${err.message})`);
+  }
 }
 
-const pngPath = path.join(outDir, "roller-banner.png");
-const pdfPath = path.join(outDir, "roller-banner.pdf");
-const previewPath = path.join(outDir, "roller-banner-preview.png");
+if (!pngBuffer) {
+  throw new Error("Could not capture the banner at any print resolution.");
+}
 
+const target = pixelsFor(usedDpi);
 const printPng = await sharp(pngBuffer)
-  .resize(
-    Math.round((PAGE_W_MM / 25.4) * usedDpi),
-    Math.round((PAGE_H_MM / 25.4) * usedDpi),
-    {
-      fit: "fill",
-      kernel: sharp.kernel.lanczos3,
-    },
-  )
+  .resize(target.w, target.h, {
+    fit: "fill",
+    kernel: sharp.kernel.lanczos3,
+  })
   .withMetadata({ density: usedDpi })
   .png({ compressionLevel: 6 })
   .toBuffer();
 
 const jpeg = await sharp(printPng)
-  .jpeg({ quality: 95, chromaSubsampling: "4:4:4" })
+  .jpeg({ quality: 98, chromaSubsampling: "4:4:4", mozjpeg: true })
   .toBuffer();
 const meta = await sharp(printPng).metadata();
 
+const pngPath = path.join(outDir, `${outBase}.png`);
+const previewPath = path.join(outDir, `${outBase}-preview.png`);
 await writeFile(pngPath, printPng);
 
 const preview = await sharp(printPng)
@@ -168,21 +220,33 @@ const preview = await sharp(printPng)
 await writeFile(previewPath, preview);
 
 const pdf = rgbJpegPdf(jpeg, meta.width, meta.height);
-try {
-  await writeFile(pdfPath, pdf);
-} catch (err) {
-  if (err.code === "EBUSY" || err.code === "EPERM") {
-    const fallback = path.join(outDir, "roller-banner-new.pdf");
-    await writeFile(fallback, pdf);
-    console.warn(
-      `Could not overwrite roller-banner.pdf (${err.code}); wrote ${path.basename(fallback)}`,
-    );
-  } else {
-    throw err;
+const pdfNames = [
+  `${outBase}.pdf`,
+  `${outBase}-new.pdf`,
+  `${outBase}-2.pdf`,
+];
+let writtenPdf = null;
+for (const name of pdfNames) {
+  try {
+    await writeFile(path.join(outDir, name), pdf);
+    writtenPdf = name;
+    break;
+  } catch (err) {
+    if (err.code !== "EBUSY" && err.code !== "EPERM") throw err;
   }
+}
+if (!writtenPdf) {
+  throw new Error(
+    "Could not write a PDF (files are open). Close the PDF and export again.",
+  );
+}
+if (writtenPdf !== `${outBase}.pdf`) {
+  console.warn(`Could not overwrite ${outBase}.pdf; wrote ${writtenPdf}`);
 }
 
 console.log(
-  `Wrote roller-banner.pdf and roller-banner.png (${meta.width}×${meta.height} px, ${usedDpi} DPI, ${(printPng.length / 1e6).toFixed(1)} MB PNG).`,
+  `Wrote ${writtenPdf} and ${outBase}.png (${meta.width}×${meta.height} px, ${usedDpi} DPI, ${(printPng.length / 1e6).toFixed(1)} MB PNG, ${(pdf.length / 1e6).toFixed(1)} MB PDF).`,
 );
-console.log("Done. Upload out/roller-banner.pdf at 850 × 2000 mm (standard roller banner).");
+console.log(
+  "Upload the PDF to Solopress Standard pull-up, 850 × 2000 mm.",
+);

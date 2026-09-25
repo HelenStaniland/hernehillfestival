@@ -73,20 +73,24 @@ node leaflet-mockups/print/export-banner.mjs
 
 Reusable door-side standee: brand only, no dates or listings. Print once and use every year.
 
+Upload `out/roller-banner.pdf` to [Solopress pull-up banners](https://www.solopress.com/roller-banners/pull-up/) — choose **Standard (850 × 2000 mm)**.
+
 | File | Use |
 |---|---|
-| `out/roller-banner.pdf` | Print file (finished 850 × 2000 mm) |
-| `out/roller-banner.png` | Full-size preview |
+| `out/roller-banner.pdf` | Print file for Solopress (850 × 2000 mm, 300 DPI) |
+| `out/roller-banner.png` | Full-resolution PNG |
 | `out/roller-banner-preview.png` | Screen-sized preview |
 
 ### Specs used
-- **Finished size:** 850 × 2000 mm (standard UK roller banner)
-- **Safe area:** 50 mm left/right, 55 mm top
-- **Cassette:** bottom 150 mm is empty so the stand does not cover the QR
+- **Finished size:** 850 × 2000 mm (Solopress Standard pull-up)
+- **Resolution:** 300 DPI at finished size
+- **Colour:** RGB (Solopress convert to CMYK)
+- **Safe area:** 50 mm left/right, type kept well above the cassette
+- **Cassette:** bottom 150 mm is skyline only so the stand does not cover the QR
 - **QR code:** points to `https://hernehillfestival.org/events` (this year’s programme)
-- **Background:** full bleed — navy/mint can run into the top rail
+- **Upload limit:** Solopress max 100 MB — this PDF is a high-quality JPEG inside a single-page PDF
 
-Ask the printer for a **standard 85 cm roller banner**. Confirm whether their hardware wants a slightly taller graphic (some kits are 850 × 2150 mm including the pole pocket); if so, they can add navy from the top/bottom edges.
+If Solopress ask for a slightly taller graphic (some kits are 850 × 2100 mm including the pole pocket), they can extend the skyline at the bottom.
 
 ### Re-export roller banner after edits
 ```bash

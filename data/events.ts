@@ -143,7 +143,7 @@ export const events: Event[] = [
     title: "Quantum Gong Bath Meditation",
     artistId: "alicia-ma-ri-atu-ma",
     description:
-      "With powerful quantum gong baths, mystical guided meditation, light language and more, Alicia Mâ Ri Atu Mâ’s Hush Hour is all about making time for you. A musician, sonic artist, nature lover and creative all-rounder, Alicia’s live festival session is as much an intimate performance as a transformative, immersive soundscape combining healing instruments, quantum technology, percussion and voice.",
+      "With powerful quantum gong baths, mystical guided meditation, light language and more, Alicia Mâ Ri Atu Mâ’s Hush Hour is all about making time for you. A musician, sonic artist, nature lover and creative all-rounder, Alicia’s live festival session is as much an intimate performance as a transformative, immersive soundscape combining healing instruments, quantum technology, percussion and voice.\n\nParticipants need to bring their own blankets, mats and cushions.",
     image: "artists/GongBath1.jpeg",
     detailImage: "artists/GongBath2.jpeg",
     imagePosition: "upper",
