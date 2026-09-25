@@ -117,7 +117,7 @@ export default async function EventPage({ params }: EventPageProps) {
               href={contactMailto(event.contactEmail)}
               className="inline-flex items-center gap-2 rounded-lg bg-festival-mint px-5 py-2.5 text-sm font-semibold text-festival-ink hover:bg-white"
             >
-              Register interest
+              Register Interest
             </a>
           </div>
         ) : null}

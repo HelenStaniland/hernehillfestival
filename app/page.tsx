@@ -70,6 +70,28 @@ export default function Home() {
           </section>
 
           <NewsletterSignup />
+
+          <section
+            className="mt-10 festival-card px-6 py-10 sm:px-10"
+            aria-labelledby="contact-heading"
+          >
+            <h2
+              id="contact-heading"
+              className="font-display text-3xl tracking-tight sm:text-4xl"
+            >
+              Contact us
+            </h2>
+            <p className="mt-4 max-w-2xl text-lg leading-8 text-white/90">
+              Questions about the festival? Email{" "}
+              <a
+                href={`mailto:${festival.contactEmail}`}
+                className="festival-link"
+              >
+                {festival.contactEmail}
+              </a>
+              {"."}
+            </p>
+          </section>
         </div>
       </main>
 

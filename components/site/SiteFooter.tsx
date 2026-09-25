@@ -5,35 +5,44 @@ import { SocialLinks } from "@/components/site/SocialLinks";
 export function SiteFooter() {
   return (
     <footer className="mt-auto border-t border-white/15 bg-festival-blue-deep px-4 py-6 text-white sm:px-6">
-      <div className="mx-auto flex max-w-5xl flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-        <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
-          <p className="text-sm text-white/70">
-            © {new Date().getFullYear()} {festival.name}
-          </p>
-          <SocialLinks />
-        </div>
-        <nav aria-label="Footer">
-          <ul className="flex flex-wrap gap-4">
-            {navLinks.map((link) => (
-              <li key={link.href}>
-                <Link
-                  href={link.href}
+      <div className="mx-auto flex max-w-5xl flex-col gap-4">
+        <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
+            <p className="text-sm text-white/70">
+              © {new Date().getFullYear()} {festival.name}
+            </p>
+            <SocialLinks />
+          </div>
+          <nav aria-label="Footer">
+            <ul className="flex flex-wrap gap-4">
+              {navLinks.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-sm font-semibold text-white/90 hover:text-festival-mint"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+              <li>
+                <a
+                  href={pastFestivalsLink.href}
                   className="text-sm font-semibold text-white/90 hover:text-festival-mint"
                 >
-                  {link.label}
-                </Link>
+                  {pastFestivalsLink.label}
+                </a>
               </li>
-            ))}
-            <li>
-              <a
-                href={pastFestivalsLink.href}
-                className="text-sm font-semibold text-white/90 hover:text-festival-mint"
-              >
-                {pastFestivalsLink.label}
-              </a>
-            </li>
-          </ul>
-        </nav>
+            </ul>
+          </nav>
+        </div>
+        <p className="text-sm text-white/80">
+          <span className="font-semibold text-white">Contact us</span>
+          {" · "}
+          <a href={`mailto:${festival.contactEmail}`} className="festival-link">
+            {festival.contactEmail}
+          </a>
+        </p>
       </div>
     </footer>
   );
