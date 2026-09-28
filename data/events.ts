@@ -8,6 +8,8 @@ export type Event = {
   artistId?: string;
   title?: string;
   subtitle?: string;
+  /** Short line shown only on the all-events listing */
+  listingNote?: string;
   /** Longer copy for the individual event page */
   description?: string;
   descriptionLink?: {
@@ -153,8 +155,10 @@ export const events: Event[] = [
     date: "2026-10-12",
     title: "Quantum Gong Bath Meditation",
     artistId: "alicia-ma-ri-atu-ma",
+    listingNote:
+      "A sound healing practice where you lie down and bathe in the resonant sound waves and vibrations of a large metal gong.",
     description:
-      "With powerful quantum gong baths, mystical guided meditation, light language and more, Alicia Mâ Ri Atu Mâ’s Hush Hour is all about making time for you. A musician, sonic artist, nature lover and creative all-rounder, Alicia’s live festival session is as much an intimate performance as a transformative, immersive soundscape combining healing instruments, quantum technology, percussion and voice.\n\nParticipants need to bring their own blankets, mats and cushions.",
+      "With powerful quantum gong baths, mystical guided meditation, light language and more, Alicia Mâ Ri Atu Mâ’s Hush Hour is all about making time for you. A musician, sonic artist, nature lover and creative all-rounder, Alicia’s live festival session is as much an intimate performance as a transformative, immersive soundscape combining healing instruments, quantum technology, percussion and voice.\n\nPeople don’t always know what to expect when coming to a gong bath for the first time. So, for the uninitiated, gong bathing is probably the easiest way to get into a meditative state, without having to do anything other than show up, lie down, and relax (bathe) in the sound waves of a large metal gong.\n\nGongs can help to cleanse and clear the debris of the past both on a personal and ancestral level. Blocked emotions are often released, physical aches and pains can improve, and many find their sleep patterns enhanced too.\n\nBathing in sound can be relaxing, invigorating, an entertaining, immersive event, a deeeeep meditation experience, a physical sensation, or a spiritual awakener. The experience is unique for each person who comes.\n\nParticipants need to bring their own blankets, mats and cushions.",
     image: "artists/GongBath1.jpeg",
     detailImage: "artists/GongBath2.jpeg",
     imagePosition: "upper",

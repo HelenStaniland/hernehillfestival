@@ -104,6 +104,11 @@ export function EventsBrowser({ programme }: EventsBrowserProps) {
                         </p>
                       ) : null}
                       <EventLineup event={event} />
+                      {event.listingNote ? (
+                        <p className="mt-2 max-w-xl festival-body text-sm">
+                          {event.listingNote}
+                        </p>
+                      ) : null}
                       {event.venue ? (
                         <div className="mt-3">
                           <VenueDetails
