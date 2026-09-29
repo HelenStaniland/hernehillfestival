@@ -182,8 +182,10 @@ export const events: Event[] = [
     id: "2026-10-17-morning",
     date: "2026-10-17",
     artistId: "margaret-omoniyi",
+    listingNote:
+      "Interactive live music for babies and children aged 0–7, with songs, stories, puppets and live instruments.",
     description:
-      "Join Margaret and friends for an interactive musical experience for parents, carers and children aged 0–7. Children will experience a musical feast of songs and stories, with props and puppets to spark the imagination — all performed with live musical instruments.",
+      "Join Margaret and friends for an interactive live music session for babies and children aged 0–7 in Herne Hill, South London. Parents and carers can enjoy a musical feast of songs and stories, with props and puppets to spark the imagination — all performed with live musical instruments.",
     venueId: "herne-hill-united-church",
     time: "10:00",
     endTime: "11:30",
