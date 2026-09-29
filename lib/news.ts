@@ -1,6 +1,3 @@
-import { events } from "@/data/events";
-import { festival } from "@/lib/festival";
-
 export type NewsItem = {
   id: string;
   title: string;
@@ -9,22 +6,18 @@ export type NewsItem = {
 };
 
 export function getNewsItems(): NewsItem[] {
-  const items: NewsItem[] = [
+  return [
     {
-      id: "festival-dates",
-      title: "Save the dates",
-      body: `${festival.name} returns across two weekends: ${festival.weekends.map((w) => w.dates).join("; ")}.`,
+      id: "festival-returns",
+      title: "Herne Hill Music Festival returns this October",
+      body: "Herne Hill Music Festival returns from 9–18 October, with two weekends of live music and community events across Herne Hill.\n\nThis year’s programme brings together jazz, classical music, community choirs, folk, Latin music, family events, sound meditation and more at venues across the neighbourhood.",
+      link: { href: "/events", label: "Explore the full programme" },
+    },
+    {
+      id: "tickets-on-sale",
+      title: "Tickets are now on sale",
+      body: "Tickets are available now for this year’s festival events. Some venues have limited capacity, so we’d recommend booking ahead for anything you particularly want to see.",
+      link: { href: "/events", label: "View events & book tickets" },
     },
   ];
-
-  if (events.length > 0) {
-    items.push({
-      id: "events-live",
-      title: "Events on the programme",
-      body: `${events.length} ${events.length === 1 ? "gig" : "gigs"} listed so far — more to come.`,
-      link: { href: "/events", label: "View events" },
-    });
-  }
-
-  return items;
 }

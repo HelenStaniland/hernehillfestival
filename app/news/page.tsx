@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { FeaturedEvent } from "@/components/site/FeaturedEvent";
 import { PageShell } from "@/components/site/PageShell";
 import { festival } from "@/lib/festival";
 import { getNewsItems } from "@/lib/news";
+
+const featuredEventId = "2026-10-09-evening";
 
 export const metadata: Metadata = {
   title: `News | ${festival.name}`,
@@ -20,7 +23,11 @@ export default function NewsPage() {
             <h2 className="font-display text-2xl tracking-wide text-white">
               {item.title}
             </h2>
-            <p className="mt-2 festival-body">{item.body}</p>
+            {item.body.split("\n\n").map((paragraph) => (
+              <p key={paragraph} className="mt-2 festival-body">
+                {paragraph}
+              </p>
+            ))}
             {item.link ? (
               <Link href={item.link.href} className="festival-link mt-3 inline-block">
                 {item.link.label} →
@@ -29,6 +36,7 @@ export default function NewsPage() {
           </li>
         ))}
       </ul>
+      <FeaturedEvent eventId={featuredEventId} />
     </PageShell>
   );
 }
