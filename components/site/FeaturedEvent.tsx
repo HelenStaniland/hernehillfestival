@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { AdmissionDetails } from "@/components/site/AdmissionDetails";
 import { getEventImages } from "@/components/site/EventLineup";
 import { getArtistImageClass } from "@/lib/artistImage";
 import {
@@ -75,6 +76,7 @@ export function FeaturedEvent({ eventId }: FeaturedEventProps) {
           {description ? (
             <p className="mt-3 max-w-2xl festival-body">{description}</p>
           ) : null}
+          <AdmissionDetails admission={event.admission} />
           <Link href={href} className="festival-link mt-4 inline-block">
             Find out more & book →
           </Link>

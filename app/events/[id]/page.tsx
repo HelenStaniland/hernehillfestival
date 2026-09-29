@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { AdmissionDetails } from "@/components/site/AdmissionDetails";
 import { ArtistDetails } from "@/components/site/ArtistDetails";
 import { BuyTicketsButton } from "@/components/site/BuyTicketsButton";
 import { getEventImages } from "@/components/site/EventLineup";
@@ -116,16 +117,6 @@ export default async function EventPage({ params }: EventPageProps) {
             {event.description}
           </p>
         ) : null}
-        {event.contactEmail ? (
-          <div className="mt-5">
-            <a
-              href={contactMailto(event.contactEmail)}
-              className="inline-flex items-center gap-2 rounded-lg bg-festival-mint px-5 py-2.5 text-sm font-semibold text-festival-ink hover:bg-white"
-            >
-              Register to Sing
-            </a>
-          </div>
-        ) : null}
         {event.descriptionLink ? (
           <a
             href={event.descriptionLink.href}
@@ -137,6 +128,17 @@ export default async function EventPage({ params }: EventPageProps) {
               `Find out more about ${event.descriptionLink.label}`}{" "}
             →
           </a>
+        ) : null}
+        <AdmissionDetails admission={event.admission} />
+        {event.contactEmail ? (
+          <div className="mt-5">
+            <a
+              href={contactMailto(event.contactEmail)}
+              className="inline-flex items-center gap-2 rounded-lg bg-festival-mint px-5 py-2.5 text-sm font-semibold text-festival-ink hover:bg-white"
+            >
+              Register to Sing
+            </a>
+          </div>
         ) : null}
         {event.ticketUrl ? (
           <div className="mt-5">

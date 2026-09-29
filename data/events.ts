@@ -1,3 +1,25 @@
+export type AdmissionTicketType =
+  | "standard"
+  | "adult"
+  | "concession"
+  | "child"
+  | "family";
+
+/** Face value and booking fee for one ticket type. Amounts are GBP. */
+export type AdmissionTicket = {
+  type: AdmissionTicketType;
+  /** Face value before the booking fee. 0 means this ticket type is free. */
+  price: number;
+  /** Unavoidable booking fee. Omit when there is no fee. */
+  bookingFee?: number;
+  /** Visitor-facing name when the type alone is not specific enough. */
+  label?: string;
+};
+
+export type Admission =
+  | { kind: "free"; registrationRequired?: boolean }
+  | { kind: "paid"; tickets: [AdmissionTicket, ...AdmissionTicket[]] };
+
 export type Event = {
   id: string; // e.g. 2026-10-11-morning
   date: string; // YYYY-MM-DD
@@ -32,6 +54,7 @@ export type Event = {
   detailImage?: string;
   /** Ticket Tailor (or other) checkout URL; omit for free / unticketed events */
   ticketUrl?: string;
+  admission: Admission;
   /** Opens the visitor’s email app with a short message already written */
   contactEmail?: {
     address: string;
@@ -51,6 +74,13 @@ export const events: Event[] = [
     time: "20:00",
     endTime: "22:00",
     ticketUrl: "https://buytickets.at/hernehillmusicfestival/2350835",
+    admission: {
+      kind: "paid",
+      tickets: [
+        { type: "standard", price: 20, bookingFee: 1.25 },
+        { type: "concession", price: 15, bookingFee: 1 },
+      ],
+    },
   },
   {
     id: "2026-10-10-morning",
@@ -68,6 +98,7 @@ export const events: Event[] = [
     venueId: "herne-hill-united-church",
     time: "10:30",
     endTime: "12:00",
+    admission: { kind: "free" },
   },
   {
     id: "2026-10-10-afternoon",
@@ -87,6 +118,13 @@ export const events: Event[] = [
     time: "14:00",
     endTime: "16:30",
     ticketUrl: "https://buytickets.at/hernehillmusicfestival/2351776",
+    admission: {
+      kind: "paid",
+      tickets: [
+        { type: "standard", price: 7, bookingFee: 0.7 },
+        { type: "concession", price: 5, bookingFee: 0.5 },
+      ],
+    },
   },
   {
     id: "2026-10-10-evening",
@@ -100,6 +138,10 @@ export const events: Event[] = [
     time: "20:00",
     endTime: "23:00",
     ticketUrl: "https://buytickets.at/hernehillmusicfestival/2353289",
+    admission: {
+      kind: "paid",
+      tickets: [{ type: "standard", price: 8, bookingFee: 1 }],
+    },
   },
   {
     id: "2026-10-11-afternoon",
@@ -117,6 +159,10 @@ export const events: Event[] = [
     time: "15:00",
     endTime: "17:00",
     ticketUrl: "https://buytickets.at/hernehillmusicfestival/2353294",
+    admission: {
+      kind: "paid",
+      tickets: [{ type: "standard", price: 13, bookingFee: 1 }],
+    },
   },
   {
     id: "2026-10-11-ruskin-park-afternoon",
@@ -131,6 +177,7 @@ export const events: Event[] = [
     venueId: "ruskin-park-bandstand",
     time: "15:00",
     endTime: "17:00",
+    admission: { kind: "free" },
   },
   {
     id: "2026-10-11-evening",
@@ -150,6 +197,7 @@ export const events: Event[] = [
     entryTime: "18:00",
     time: "19:00",
     endTime: "20:30",
+    admission: { kind: "free", registrationRequired: true },
   },
   {
     id: "2026-10-12-evening",
@@ -167,6 +215,10 @@ export const events: Event[] = [
     time: "19:00",
     endTime: "20:15",
     ticketUrl: "https://buytickets.at/hernehillmusicfestival/2353866",
+    admission: {
+      kind: "paid",
+      tickets: [{ type: "standard", price: 22, bookingFee: 1.25 }],
+    },
   },
   {
     id: "2026-10-16-evening",
@@ -178,6 +230,10 @@ export const events: Event[] = [
     time: "20:00",
     endTime: "22:00",
     ticketUrl: "https://buytickets.at/hernehillmusicfestival/2353878",
+    admission: {
+      kind: "paid",
+      tickets: [{ type: "standard", price: 20, bookingFee: 1.25 }],
+    },
   },
   {
     id: "2026-10-17-morning",
@@ -191,6 +247,19 @@ export const events: Event[] = [
     time: "10:00",
     endTime: "11:30",
     ticketUrl: "https://buytickets.at/hernehillmusicfestival/2353889",
+    admission: {
+      kind: "paid",
+      tickets: [
+        { type: "adult", price: 10.5, bookingFee: 1 },
+        { type: "child", price: 6, bookingFee: 0.6 },
+        {
+          type: "family",
+          label: "Family of Four",
+          price: 25,
+          bookingFee: 1.25,
+        },
+      ],
+    },
   },
   {
     id: "2026-10-17-afternoon",
@@ -202,6 +271,10 @@ export const events: Event[] = [
     time: "14:00",
     endTime: "16:00",
     ticketUrl: "https://buytickets.at/hernehillmusicfestival/2353899",
+    admission: {
+      kind: "paid",
+      tickets: [{ type: "standard", price: 13, bookingFee: 1 }],
+    },
   },
   {
     id: "2026-10-17-evening",
@@ -224,6 +297,13 @@ export const events: Event[] = [
     time: "19:00",
     endTime: "22:00",
     ticketUrl: "https://buytickets.at/hernehillmusicfestival/2353908",
+    admission: {
+      kind: "paid",
+      tickets: [
+        { type: "standard", price: 12, bookingFee: 0.9 },
+        { type: "concession", price: 8, bookingFee: 0.7 },
+      ],
+    },
   },
   {
     id: "2026-10-18-afternoon",
@@ -237,6 +317,13 @@ export const events: Event[] = [
     subtitle: "Bar Available",
     imagePosition: "top",
     ticketUrl: "https://buytickets.at/hernehillmusicfestival/2353914",
+    admission: {
+      kind: "paid",
+      tickets: [
+        { type: "standard", price: 15, bookingFee: 1 },
+        { type: "concession", price: 11, bookingFee: 1 },
+      ],
+    },
   },
   {
     id: "2026-10-18-evening",
@@ -248,5 +335,12 @@ export const events: Event[] = [
     time: "18:00",
     endTime: "20:00",
     ticketUrl: "https://buytickets.at/hernehillmusicfestival/2353931",
+    admission: {
+      kind: "paid",
+      tickets: [
+        { type: "adult", price: 10, bookingFee: 1 },
+        { type: "child", price: 0 },
+      ],
+    },
   },
 ];

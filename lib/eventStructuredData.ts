@@ -1,4 +1,5 @@
 import { getEventImages } from "@/components/site/EventLineup";
+import { admissionOffers } from "@/lib/admission";
 import { festival } from "@/lib/festival";
 import { formatLondonDateTime } from "@/lib/londonDateTime";
 import {
@@ -89,11 +90,7 @@ function performers(event: ProgrammeEvent) {
 }
 
 function offers(event: ProgrammeEvent) {
-  if (!event.ticketUrl) return undefined;
-  return {
-    "@type": "Offer" as const,
-    url: event.ticketUrl,
-  };
+  return admissionOffers(event.admission, event.ticketUrl);
 }
 
 export function buildEventJsonLd(event: ProgrammeEvent) {

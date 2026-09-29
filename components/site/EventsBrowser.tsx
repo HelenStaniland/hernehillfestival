@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useMemo } from "react";
+import { AdmissionDetails } from "@/components/site/AdmissionDetails";
 import { EventLineup, getEventImages } from "@/components/site/EventLineup";
 import { EventPhotos } from "@/components/site/EventPhotos";
 import { BuyTicketsButton } from "@/components/site/BuyTicketsButton";
@@ -119,6 +120,7 @@ export function EventsBrowser({ programme }: EventsBrowserProps) {
                           />
                         </div>
                       ) : null}
+                      <AdmissionDetails admission={event.admission} compact />
                       <div className="mt-4 flex flex-wrap gap-3">
                         {event.ticketUrl ? (
                           <BuyTicketsButton href={event.ticketUrl} />
