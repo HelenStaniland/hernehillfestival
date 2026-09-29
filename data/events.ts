@@ -136,9 +136,10 @@ export const events: Event[] = [
     id: "2026-10-11-evening",
     date: "2026-10-11",
     title: "Come and Sing Festival Evensong",
-    subtitle: "Rehearsal from 6pm · service at 7pm",
+    listingNote:
+      "Join the festival choir for a special Evensong at St Faith’s — rehearse from 6pm, with the service at 7pm. All singers welcome.",
     description:
-      "Come together at St Faith’s Church for a special festival evensong, bringing voices and community together in this beautiful local setting. Rehearsal begins at 6pm, with the service at 7pm — all welcome to join in.\n\nRepertoire:\nIntroit — Peace I leave with you by Amy Beach\nCanticles — Canticles in C by Charles Villiers Stanford\nResponses — L’Estrange by Joanna Forbes\nAnthem — O thou the central orb by Charles Wood\n\nIf you’d like to attend this event, kindly register your interest with us at St Faith’s.",
+      "Come and sing at a special Festival Evensong at St Faith’s Church in Herne Hill. Singers of all abilities are welcome to join the festival choir for an evening of beautiful choral music — simply come along for the rehearsal at 6pm, followed by the service at 7pm.\n\nRepertoire:\nIntroit — Peace I leave with you by Amy Beach\nCanticles — Canticles in C by Charles Villiers Stanford\nResponses — L’Estrange by Joanna Forbes\nAnthem — O thou the central orb by Charles Wood\n\nIf you’d like to attend this event, kindly register your interest with us at St Faith’s.",
     contactEmail: {
       address: "music@stfaithschurch.org",
       subject: "Come and Sing Evensong - Herne Hill Festival",

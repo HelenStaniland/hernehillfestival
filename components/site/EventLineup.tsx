@@ -87,9 +87,9 @@ export function EventLineup({ event }: EventLineupProps) {
           {event.artist.genre}
         </p>
       ) : null}
-      {event.title && !event.artist ? (
+      {event.title && !event.artist && event.subtitle ? (
         <p className="mt-1 text-sm font-semibold text-white/80">
-          {event.subtitle ?? "Details to be announced"}
+          {event.subtitle}
         </p>
       ) : event.subtitle && !(event.title && !event.artist) ? (
         <p className="mt-1 text-sm font-semibold text-white/80">
