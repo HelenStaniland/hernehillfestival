@@ -18,6 +18,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(festival.url),
   title: `${festival.name} | Herne Hill`,
   description: festival.intro,
 };

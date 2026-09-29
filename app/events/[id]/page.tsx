@@ -11,6 +11,11 @@ import { PageShell } from "@/components/site/PageShell";
 import { VenueDetails } from "@/components/site/VenueDetails";
 import { events } from "@/data/events";
 import { getArtistImageClass } from "@/lib/artistImage";
+import { eventPageMetadata } from "@/lib/eventMetadata";
+import {
+  buildEventJsonLd,
+  serializeJsonLd,
+} from "@/lib/eventStructuredData";
 import { festival } from "@/lib/festival";
 import {
   formatEventDate,
@@ -42,14 +47,7 @@ export async function generateMetadata({
     return { title: `Event | ${festival.name}` };
   }
 
-  const title = getEventPageTitle(event);
-  const when = `${formatEventDate(event.date)} · ${formatEventTimeRange(event)}`;
-  const where = event.venue?.name ? ` at ${event.venue.name}` : "";
-
-  return {
-    title: `${title} | ${festival.name}`,
-    description: `${title} — ${when}${where}. Part of ${festival.name}.`,
-  };
+  return eventPageMetadata(event);
 }
 
 export default async function EventPage({ params }: EventPageProps) {
@@ -69,6 +67,13 @@ export default async function EventPage({ params }: EventPageProps) {
         : [];
 
   return (
+    <>
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{
+        __html: serializeJsonLd(buildEventJsonLd(event)),
+      }}
+    />
     <PageShell
       title={title}
       subtitle={event.subtitle}
@@ -205,5 +210,6 @@ export default async function EventPage({ params }: EventPageProps) {
         <EventPageActions event={event} />
       </div>
     </PageShell>
+    </>
   );
 }
