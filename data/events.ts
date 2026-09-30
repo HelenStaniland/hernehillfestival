@@ -266,7 +266,7 @@ export const events: Event[] = [
     date: "2026-10-17",
     artistId: "marama-cafe-band",
     description:
-      "Marama Cafe Band brings an afternoon of vibrant Latin jazz to Brockwell Community Greenhouses, combining infectious rhythms with the relaxed atmosphere of this much-loved local venue.",
+      "Marama Cafe Band brings an afternoon of vibrant Gypsy jazz to Brockwell Community Greenhouses, combining infectious rhythms with the relaxed atmosphere of this much-loved local venue.",
     venueId: "brockwell-greenhouses",
     time: "14:00",
     endTime: "16:00",

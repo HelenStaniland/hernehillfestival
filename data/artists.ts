@@ -8,7 +8,7 @@ export const artists = [
   {
     id: "marama-cafe-band",
     name: "Marama Cafe Band",
-    genre: "Latin Jazz",
+    genre: "Gypsy Jazz",
     image: "artists/Marama-Cafe-Band.jpg",
     bio: "A long time collaboration of three esteemed London musicians with many musical roots, Marama Café Band have been honing a heady mélange of gypsy jazz, Hungarian czardasz, East European folk styles, dirty tango, French musette and swing together for over 20 years, performing at many venues and festivals in the UK and Europe.",
     website: "https://www.maramacafeband.com/",
