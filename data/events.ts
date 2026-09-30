@@ -32,6 +32,8 @@ export type Event = {
   subtitle?: string;
   /** Short line shown only on the all-events listing */
   listingNote?: string;
+  /** Replaces the artist genre line on the all-events listing */
+  listingSubtitle?: string;
   /** Longer copy for the individual event page */
   description?: string;
   descriptionLink?: {
@@ -232,17 +234,21 @@ export const events: Event[] = [
     ticketUrl: "https://buytickets.at/hernehillmusicfestival/2353878",
     admission: {
       kind: "paid",
-      tickets: [{ type: "standard", price: 20, bookingFee: 1.25 }],
+      tickets: [
+        { type: "standard", price: 20, bookingFee: 1.25 },
+        { type: "concession", price: 15, bookingFee: 1.25 },
+      ],
     },
   },
   {
     id: "2026-10-17-morning",
     date: "2026-10-17",
     artistId: "margaret-omoniyi",
+    listingSubtitle: "Live music for little ones",
     listingNote:
-      "Interactive live music for babies and children aged 0–7, with songs, stories, puppets and live instruments.",
+      "Songs, stories, puppets and real live instruments in a joyful, interactive musical adventure for babies and children aged 0–7.",
     description:
-      "Join Margaret and friends for an interactive live music session for babies and children aged 0–7 in Herne Hill, South London. Parents and carers can enjoy a musical feast of songs and stories, with props and puppets to spark the imagination — all performed with live musical instruments.",
+      "Bring your little ones along for a joyful morning of live music, songs and stories! Margaret and friends lead an interactive musical adventure for babies and children aged 0–7, with puppets, colourful props and plenty of opportunities to join in — all accompanied by live musical instruments.",
     venueId: "herne-hill-united-church",
     time: "10:00",
     endTime: "11:30",

@@ -82,9 +82,11 @@ export function EventLineup({ event }: EventLineupProps) {
           </Link>
         </p>
       ) : null}
-      {!event.title && event.artist?.genre && event.artist.genre !== "TBA" ? (
+      {!event.title &&
+      (event.listingSubtitle ||
+        (event.artist?.genre && event.artist.genre !== "TBA")) ? (
         <p className="mt-1 text-sm font-semibold text-white/80">
-          {event.artist.genre}
+          {event.listingSubtitle ?? event.artist?.genre}
         </p>
       ) : null}
       {event.title && !event.artist && event.subtitle ? (
