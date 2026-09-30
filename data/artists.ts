@@ -131,7 +131,7 @@ export const artists = [
     id: "margaret-omoniyi",
     name: "Margaret’s Music",
     genre: "Children's workshop",
-    image: "artists/margaret-omoniyi.jpg",
+    image: "artists/MargaretAndChildren.jpeg",
     bio: "Margaret’s Music was created in 2014 by Margaret Omoniyi, a primary teacher turned community music leader in Peckham, Nunhead and Bermondsey. Its family classes, holiday camps and choirs help children aged 0–17 find their musical potential.",
     website: "https://www.margaretsmusicltd.com/",
   },
