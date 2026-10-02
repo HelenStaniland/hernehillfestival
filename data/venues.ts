@@ -149,7 +149,7 @@ export const venues: Venue[] = [
       "Wheelchair access, accessible toilets, ramps and lifts are available. Two Blue Badge bays are beside the hall, reached by a step-free but uneven route approximately 800 metres inside the park. There is no designated drop-off point.",
     accessibilityUrl:
       "https://www.accessable.co.uk/london-borough-of-lambeth/access-guides/brockwell-park",
-    capacity: "Capacity up to 200 guests.",
+    capacity: "Capacity 70",
     capacityUrl: "https://hire.lambeth.gov.uk/venues/369-brockwell-hall",
     lat: 51.4515818,
     lng: -0.1012349,
