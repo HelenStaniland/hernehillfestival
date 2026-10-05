@@ -120,9 +120,13 @@ export function EventsBrowser({ programme }: EventsBrowserProps) {
                           />
                         </div>
                       ) : null}
-                      <AdmissionDetails admission={event.admission} compact />
+                      <AdmissionDetails
+                        admission={event.admission}
+                        soldOut={event.soldOut}
+                        compact
+                      />
                       <div className="mt-4 flex flex-wrap gap-3">
-                        {event.ticketUrl ? (
+                        {event.ticketUrl && !event.soldOut ? (
                           <BuyTicketsButton href={event.ticketUrl} />
                         ) : null}
                         <Link

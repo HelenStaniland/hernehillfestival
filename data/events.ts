@@ -56,6 +56,8 @@ export type Event = {
   detailImage?: string;
   /** Ticket Tailor (or other) checkout URL; omit for free / unticketed events */
   ticketUrl?: string;
+  /** Hides the buy button and shows the event as sold out */
+  soldOut?: boolean;
   admission: Admission;
   /** Opens the visitor’s email app with a short message already written */
   contactEmail?: {
@@ -140,6 +142,7 @@ export const events: Event[] = [
     time: "20:00",
     endTime: "23:00",
     ticketUrl: "https://buytickets.at/hernehillmusicfestival/2353289",
+    soldOut: true,
     admission: {
       kind: "paid",
       tickets: [{ type: "standard", price: 8, bookingFee: 1 }],

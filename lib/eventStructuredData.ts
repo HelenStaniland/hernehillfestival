@@ -90,7 +90,7 @@ function performers(event: ProgrammeEvent) {
 }
 
 function offers(event: ProgrammeEvent) {
-  return admissionOffers(event.admission, event.ticketUrl);
+  return admissionOffers(event.admission, event.ticketUrl, event.soldOut);
 }
 
 export function buildEventJsonLd(event: ProgrammeEvent) {

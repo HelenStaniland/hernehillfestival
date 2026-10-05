@@ -90,13 +90,18 @@ type EventOffer = {
   price: number;
   priceCurrency: "GBP";
   url?: string;
+  availability?: "https://schema.org/SoldOut";
 };
 
 export function admissionOffers(
   admission: Admission,
   ticketUrl?: string,
+  soldOut = false,
 ): EventOffer | EventOffer[] {
-  const url = ticketUrl ? { url: ticketUrl } : {};
+  const url = ticketUrl && !soldOut ? { url: ticketUrl } : {};
+  const availability = soldOut
+    ? ({ availability: "https://schema.org/SoldOut" } as const)
+    : {};
 
   if (admission.kind === "free") {
     return {
@@ -104,6 +109,7 @@ export function admissionOffers(
       price: 0,
       priceCurrency: "GBP",
       ...url,
+      ...availability,
     };
   }
 
@@ -113,6 +119,7 @@ export function admissionOffers(
     price: customerTotalPence(ticket) / 100,
     priceCurrency: "GBP" as const,
     ...url,
+    ...availability,
   }));
 
   return offers.length === 1 ? offers[0] : offers;

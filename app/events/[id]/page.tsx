@@ -129,7 +129,10 @@ export default async function EventPage({ params }: EventPageProps) {
             →
           </a>
         ) : null}
-        <AdmissionDetails admission={event.admission} />
+        <AdmissionDetails
+          admission={event.admission}
+          soldOut={event.soldOut}
+        />
         {event.contactEmail ? (
           <div className="mt-5">
             <a
@@ -140,7 +143,7 @@ export default async function EventPage({ params }: EventPageProps) {
             </a>
           </div>
         ) : null}
-        {event.ticketUrl ? (
+        {event.ticketUrl && !event.soldOut ? (
           <div className="mt-5">
             <BuyTicketsButton href={event.ticketUrl} size="md" />
           </div>

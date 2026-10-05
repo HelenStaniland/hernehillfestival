@@ -56,7 +56,11 @@ export function buildEventIcs(event: ProgrammeEvent): string {
   const descriptionParts = [
     event.entryTime ? `Entry from ${formatEventTime(event.entryTime)}` : null,
     event.venue ? `At ${event.venue.name}` : null,
-    event.ticketUrl ? `Tickets: ${event.ticketUrl}` : null,
+    event.soldOut
+      ? "Sold out"
+      : event.ticketUrl
+        ? `Tickets: ${event.ticketUrl}`
+        : null,
     event.venue?.website ?? null,
   ].filter((part): part is string => Boolean(part));
 

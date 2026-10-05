@@ -76,9 +76,12 @@ export function FeaturedEvent({ eventId }: FeaturedEventProps) {
           {description ? (
             <p className="mt-3 max-w-2xl festival-body">{description}</p>
           ) : null}
-          <AdmissionDetails admission={event.admission} />
+          <AdmissionDetails
+            admission={event.admission}
+            soldOut={event.soldOut}
+          />
           <Link href={href} className="festival-link mt-4 inline-block">
-            Find out more & book →
+            {event.soldOut ? "Find out more →" : "Find out more & book →"}
           </Link>
         </div>
       </div>
