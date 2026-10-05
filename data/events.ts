@@ -238,8 +238,8 @@ export const events: Event[] = [
     admission: {
       kind: "paid",
       tickets: [
-        { type: "standard", price: 20, bookingFee: 1.25 },
-        { type: "concession", price: 15, bookingFee: 1 },
+        { type: "standard", price: 12, bookingFee: 0.75 },
+        { type: "concession", price: 10, bookingFee: 0.75 },
       ],
     },
   },
